@@ -240,3 +240,23 @@ Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.2
   
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
+  [1m[35m (40.9ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+Started GET "/" for 172.18.0.1 at 2024-09-22 12:25:50 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | GC: 7.7ms)
+Completed 200 OK in 77ms (Views: 68.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.7ms)
+
+
+Started GET "/manifest.json" for 172.18.0.1 at 2024-09-22 12:25:50 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
