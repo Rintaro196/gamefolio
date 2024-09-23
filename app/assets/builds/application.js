@@ -969,18 +969,18 @@ function unindent(strings, ...values) {
   return lines.map((line) => line.slice(indent)).join("\n");
 }
 function interpolate(strings, values) {
-  return strings.reduce((result, string, i2) => {
-    const value = values[i2] == void 0 ? "" : values[i2];
+  return strings.reduce((result, string, i) => {
+    const value = values[i] == void 0 ? "" : values[i];
     return result + string + value;
   }, "");
 }
 function uuid() {
-  return Array.from({ length: 36 }).map((_, i2) => {
-    if (i2 == 8 || i2 == 13 || i2 == 18 || i2 == 23) {
+  return Array.from({ length: 36 }).map((_, i) => {
+    if (i == 8 || i == 13 || i == 18 || i == 23) {
       return "-";
-    } else if (i2 == 14) {
+    } else if (i == 14) {
       return "4";
-    } else if (i2 == 19) {
+    } else if (i == 19) {
       return (Math.floor(Math.random() * 4) + 8).toString(16);
     } else {
       return Math.floor(Math.random() * 15).toString(16);
@@ -2421,8 +2421,8 @@ var Idiomorph = /* @__PURE__ */ function() {
           to.setAttribute(fromAttribute.name, fromAttribute.value);
         }
       }
-      for (let i2 = toAttributes.length - 1; 0 <= i2; i2--) {
-        const toAttribute = toAttributes[i2];
+      for (let i = toAttributes.length - 1; 0 <= i; i--) {
+        const toAttribute = toAttributes[i];
         if (ignoreAttribute(toAttribute.name, to, "remove", ctx)) {
           continue;
         }
@@ -8400,7 +8400,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const openButton = document.querySelector('[data-drawer-show="drawer-navigation"]');
   const closeButton = document.querySelector('[data-drawer-hide="drawer-navigation"]');
   const drawer = document.getElementById("drawer-navigation");
-  const hrefLinks = document.querySelectorAll("#linklist a");
+  const hrefLinks = document.querySelectorAll(".linklist");
   if (openButton) {
     openButton.addEventListener("click", function() {
       drawer.classList.remove("-translate-x-full");
@@ -8411,11 +8411,11 @@ document.addEventListener("DOMContentLoaded", function() {
       drawer.classList.add("-translate-x-full");
     });
   }
-  for (i = 0; i < hrefLink.length; i++) {
-    hrefLink[i].addEventListener("click", () => {
+  hrefLinks.forEach((link) => {
+    link.addEventListener("click", function() {
       drawer.classList.add("-translate-x-full");
     });
-  }
+  });
 });
 /*! Bundled license information:
 
