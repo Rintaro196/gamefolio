@@ -2433,3 +2433,782 @@ Processing by HomePagesController#home as HTML
 Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
 
 
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:43:00 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:44:09 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.4ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:45:43 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:46:11 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:46:30 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:46:31 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.3ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.6ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:46:37 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.7ms | GC: 0.2ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:46:37 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:46:38 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:47:03 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:47:29 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.1ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:48:14 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:48:17 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.2ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:48:24 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.1ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.5ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:48:39 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.2ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.5ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:48:54 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:49:17 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:49:32 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:49:45 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 15:50:17 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:52:21 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:52:33 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:52:53 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:52:55 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:53:58 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.2ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.2ms | GC: 0.3ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.5ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:54:10 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:54:31 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.1ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-23 15:55:03 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:56:52 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:57:01 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:57:50 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.4ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:58:12 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.8ms | GC: 0.3ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 2.7ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:58:23 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.2ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:58:45 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.4ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:59:25 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:59:39 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 15:59:54 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:00:24 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:00:34 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:00:40 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:00:46 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.1ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:01:21 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:02:03 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.2ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.4ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:02:58 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:04:11 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:05:15 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:05:25 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:05:36 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 0.4ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:07:50 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:08:03 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:08:15 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 0.4ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:08:51 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 10.240.2.23 at 2024-09-23 16:09:05 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 16:10:27 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.6ms | GC: 0.1ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 16:11:36 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 8.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::Template::Error (The asset "fg_logo.png" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "fg_logo.png" is not present in the asset pipeline.
+)
+    1: <div class="flex justify-center my-8">
+    2:   <div class="text-center nes-container is-dark w-3/5 min-w-min">
+    3:     <%= image_tag 'fg_logo.png' %>
+    4:     <h1 class="text-6xl">GAMEFOLIO</h1>
+    5:     <p class="text-xl">ゲーム × ポートフォリオ × SNS</p>
+    6:     <div class="mt-10">
+  
+app/views/home_pages/home.html.erb:3
+Started GET "/" for 10.240.0.199 at 2024-09-23 16:12:06 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.6ms | GC: 0.1ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 16:12:52 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.7ms | GC: 0.2ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | GC: 0.7ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 16:13:07 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 1.9ms | GC: 0.2ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-23 16:13:37 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 1.0ms | GC: 0.3ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.6ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
