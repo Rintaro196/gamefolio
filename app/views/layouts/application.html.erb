@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title><%= content_for(:title) || "Gamefolio" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -27,12 +27,17 @@
   </head>
 
   <body class="bg-zinc-950">
-    <header class="bg-sky-400 flex items-center justify-between">
-      <%= image_tag 'gf_logo.png', height: '50', width: '50', class: "outline ml-4 my-2" %>
-      <div class="mr-4">
-        <%= link_to "ログイン", "#", class: "nes-btn" %>
-      </div>
-    </header>
-    <%= yield %>
+    <div class="flex flex-col min-h-screen">
+      <header class="bg-sky-400 flex items-center justify-between">
+        <%= render "shared/before_header" %>
+      </header>
+      <main class="flex-grow">
+        <%= render "layouts/sidebar" %>
+        <%= yield %>
+      </main>
+      <footer class="bg-zinc-500 h-12">
+        <%= render "shared/footer" %>
+      </footer>
+    </div>
   </body>
 </html>
