@@ -25,4 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
           drawer.classList.add('-translate-x-full');
         });
     }
-  });
+});
