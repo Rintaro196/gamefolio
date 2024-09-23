@@ -28,7 +28,11 @@
 
   <body class="bg-zinc-950">
     <header class="bg-sky-400 flex items-center justify-between">
-      <%= image_tag 'gf_logo.png', height: '50', width: '50', class: "outline ml-4 my-2" %>
+      <div class="my-4 ml-6">
+        <button class="nes-btn is-primary nes-pointer" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+          <%= image_tag 'gf_logo.png', class: "w-10 h-10" %>
+        </button>
+        </div>
       <div class="mr-4">
         <%= link_to "ログイン", "#", class: "nes-btn" %>
       </div>
