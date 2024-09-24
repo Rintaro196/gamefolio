@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <%= favicon_link_tag("gf_favicon.ico") %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+      html, body, pre, code, kbd, samp {
+          font-family: "DotGothic16";
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/ed5990692e.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-zinc-950">
+    <div class="flex flex-col min-h-screen">
+      <header class="bg-sky-400 flex items-center justify-between">
+        <%= render "shared/before_header" %>
+      </header>
+      <main class="flex-grow">
+        <%= render "layouts/sidebar" %>
+        <%= yield %>
+      </main>
+      <footer class="bg-zinc-500 h-12">
+        <%= render "shared/footer" %>
+      </footer>
+    </div>
   </body>
 </html>
