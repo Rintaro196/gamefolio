@@ -58,4 +58,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'meta-tags'
+gem "meta-tags"
