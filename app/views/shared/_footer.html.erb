@@ -1,19 +1,16 @@
-<div class="relative flex items-center justify-between gap-8 justify-between">
-  <div class="flex justify-start mx-4">
-    <%= image_tag 'gf_logo.png', class:"w-12" %>
+<div class="relative flex justify-end items-center gap-8 h-12">
+  <div class="absolute left-1/2 transform -translate-x-1/2 items-center">
+    <p class="text-white text-center m-0">© 2024 Mana</p>
   </div>
-  <div class="absolute left-1/2 transform -translate-x-1/2 mt-3">
-    <p class="text-white text-center">Gamefolio © 2024 Mana</p>
-  </div>
-  <div class="flex justify-end space-x-2 mx-4">
+  <div class="text-right space-x-2 mx-4">
     <div class="hidden md:inline">
       <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
       <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
     </div>
-    <%= link_to "https://github.com/Rintaro196/gamefolio", target: "_blank" do %>
+    <%= link_to "https://github.com/Rintaro196/gamefolio", class: "hover:no-underline", target: "_blank" do %>
       <i class="fa-brands fa-square-github fa-xl" style="color: #ffffff;"></i>
     <% end %>
-    <%= link_to "#", target: "_blank" do %>
+    <%= link_to "#", class: "hover:no-underline", target: "_blank" do %>
       <i class="fa-brands fa-square-x-twitter fa-xl" style="color: #ffffff;"></i>
     <% end %>
   </div>

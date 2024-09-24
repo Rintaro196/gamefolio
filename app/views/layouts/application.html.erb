@@ -19,25 +19,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
     <style>
       html, body, pre, code, kbd, samp {
           font-family: "DotGothic16";
       }
     </style>
+
     <script src="https://kit.fontawesome.com/ed5990692e.js" crossorigin="anonymous"></script>
+    
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
-  <body class="bg-zinc-950">
-    <div class="flex flex-col min-h-screen">
-      <header class="bg-sky-400 flex items-center justify-between">
+  <body class="bg-[url('bg_image.png')] bg-repeat bg-c m-0 p-0">
+    <div class="flex flex-col h-screen">
+      <header class="bg-lime-400 flex items-center justify-between h-16">
         <%= render "shared/before_header" %>
       </header>
       <main class="flex-grow">
         <%= render "layouts/sidebar" %>
         <%= yield %>
       </main>
-      <footer class="bg-zinc-500 h-12">
+      <footer class="bg-zinc-500">
         <%= render "shared/footer" %>
       </footer>
     </div>
