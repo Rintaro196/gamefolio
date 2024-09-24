@@ -3513,3 +3513,379 @@ Processing by HomePagesController#home as HTML
 Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 10.240.2.23 at 2024-09-24 08:58:38 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="flex items-center gap-8">
+  <div>
+    <%= image_tag 'gf_logo.png', class: "w-12" %>
+  </div>
+  <div>
+    <p class="text-white">Gamefolio © 2024 Mana</p>
+  </div>
+  <div>
+    <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
+    <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
+  </div>
+    <%= link_to "#" do>
+      <i class="fa-brands fa-square-github" style="color: #ffffff;"></i>
+    <% end %>
+</div>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/myapp/app/views/shared/_footer.html.erb:12: syntax error, unexpected '>'
+...buffer.append=( link_to "#" do>
+...                              ^
+/myapp/app/views/shared/_footer.html.erb:15: unknown regexp options - dv
+</div>'.freeze;
+ ^~~~
+/myapp/app/views/shared/_footer.html.erb:17: unterminated string meets end of file
+          end
+             ^
+)
+1:    <div class="flex items-center gap-8">
+2:      <div>
+3:        <%= image_tag 'gf_logo.png', class: "w-12" %>
+4:      </div>
+5:      <div>
+6:        <p class="text-white">Gamefolio © 2024 Mana</p>
+7:      </div>
+8:      <div>
+9:        <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
+10:        <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
+11:      </div>
+12:        <%= link_to "#" do>
+13:          <i class="fa-brands fa-square-github" style="color: #ffffff;"></i>
+14:        <% end %>
+15:    </div>
+  
+app/views/shared/_footer.html.erb:12: syntax error, unexpected '>'
+app/views/shared/_footer.html.erb:15: unknown regexp options - dv
+app/views/shared/_footer.html.erb:17: unterminated string meets end of file
+app/views/layouts/application.html.erb:41
+Started GET "/favicon.ico" for 10.240.2.23 at 2024-09-24 08:58:40 +0900
+Cannot render console from 10.240.2.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:00:12 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="flex items-center gap-8">
+  <div>
+    <%= image_tag 'gf_logo.png', class: "w-12" %>
+  </div>
+  <div>
+    <p class="text-white">Gamefolio © 2024 Mana</p>
+  </div>
+  <div>
+    <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
+    <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
+  </div>
+  <div>
+    <%= link_to "#" do>
+      <i class="fa-brands fa-square-github" style="color: #ffffff;"></i>
+    <% end %>
+  </div>
+</div>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/myapp/app/views/shared/_footer.html.erb:13: syntax error, unexpected '>'
+...buffer.append=( link_to "#" do>
+...                              ^
+/myapp/app/views/shared/_footer.html.erb:16: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/shared/_footer.html.erb:18: unknown regexp options - vw
+...safe_append='<!-- END app/views/shared/_footer.html.erb -->'...
+...                         ^~~~~~
+/myapp/app/views/shared/_footer.html.erb:19: unterminated string meets end of file
+          end
+             ^
+)
+1:    <div class="flex items-center gap-8">
+2:      <div>
+3:        <%= image_tag 'gf_logo.png', class: "w-12" %>
+4:      </div>
+5:      <div>
+6:        <p class="text-white">Gamefolio © 2024 Mana</p>
+7:      </div>
+8:      <div>
+9:        <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
+10:        <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
+11:      </div>
+12:      <div>
+13:        <%= link_to "#" do>
+14:          <i class="fa-brands fa-square-github" style="color: #ffffff;"></i>
+15:        <% end %>
+16:      </div>
+17:    </div>
+  
+app/views/shared/_footer.html.erb:13: syntax error, unexpected '>'
+app/views/shared/_footer.html.erb:16: unknown regexp options - dv
+app/views/shared/_footer.html.erb:18: unknown regexp options - vw
+app/views/shared/_footer.html.erb:19: unterminated string meets end of file
+app/views/layouts/application.html.erb:41
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:00:39 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="flex items-center gap-8">
+  <div>
+    <%= image_tag 'gf_logo.png', class: "w-12" %>
+  </div>
+  <div>
+    <p class="text-white">Gamefolio © 2024 Mana</p>
+  </div>
+  <div>
+    <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
+    <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
+  </div>
+  <div>
+    <%= link_to "#" do>
+      <i class="fa-brands fa-square-github" style="color: #ffffff;"></i>
+    <% end %>
+  </div>
+</div>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/myapp/app/views/shared/_footer.html.erb:13: syntax error, unexpected '>'
+...buffer.append=( link_to "#" do>
+...                              ^
+/myapp/app/views/shared/_footer.html.erb:16: unknown regexp options - dv
+  </div>
+   ^~~~
+/myapp/app/views/shared/_footer.html.erb:18: unknown regexp options - vw
+...safe_append='<!-- END app/views/shared/_footer.html.erb -->'...
+...                         ^~~~~~
+/myapp/app/views/shared/_footer.html.erb:19: unterminated string meets end of file
+          end
+             ^
+)
+1:    <div class="flex items-center gap-8">
+2:      <div>
+3:        <%= image_tag 'gf_logo.png', class: "w-12" %>
+4:      </div>
+5:      <div>
+6:        <p class="text-white">Gamefolio © 2024 Mana</p>
+7:      </div>
+8:      <div>
+9:        <%= link_to "プライバシーポリシー", "#", class: "text-white hover:text-green-300 hover:no-underline" %>
+10:        <%= link_to "問い合わせ", "#", class: "text-white hover:text-green-300 hover:no-underline mx-2" %>
+11:      </div>
+12:      <div>
+13:        <%= link_to "#" do>
+14:          <i class="fa-brands fa-square-github" style="color: #ffffff;"></i>
+15:        <% end %>
+16:      </div>
+17:    </div>
+  
+app/views/shared/_footer.html.erb:13: syntax error, unexpected '>'
+app/views/shared/_footer.html.erb:16: unknown regexp options - dv
+app/views/shared/_footer.html.erb:18: unknown regexp options - vw
+app/views/shared/_footer.html.erb:19: unterminated string meets end of file
+app/views/layouts/application.html.erb:41
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:00:58 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:01:41 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:02:01 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.4ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:02:02 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.3ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:02:27 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:02:39 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.1ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:03:10 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:03:16 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:04:24 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:05:12 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:05:29 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 10.240.0.199 at 2024-09-24 09:05:53 +0900
+Cannot render console from 10.240.0.199! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 10.240.3.196 at 2024-09-24 09:07:40 +0900
+Cannot render console from 10.240.3.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomePagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_before_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
