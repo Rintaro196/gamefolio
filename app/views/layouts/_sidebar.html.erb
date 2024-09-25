@@ -1,23 +1,23 @@
-<div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-indigo-400" tabindex="-1" aria-labelledby="drawer-navigation-label">
-    <h5 id="drawer-navigation-label" class="text-base text-white font-semibold uppercase">メニュー</h5>
-    <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-indigo-300 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center" >
+<div id="sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transform -translate-x-full transition-transform duration-300 bg-indigo-400">
+    <h5 class="text-base text-white font-semibold uppercase">メニュー</h5>
+    <button id="closeSidebar" class="text-gray-400 bg-transparent hover:bg-indigo-300 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center" >
         <i class="nes-icon close is-small"></i>
     </button>
   <div class="py-4 overflow-y-auto">
       <ul class="space-y-2 font-medium">
          <li>
-            <%= link_to "トップへ戻る", root_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group", id: "linklist" %>
+            <%= link_to "トップへ戻る", root_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group linklist" %>
          </li>
          <li>
-            <%= link_to "みんなのゲームログ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group", id: "linklist" %>
+            <%= link_to "みんなのゲームログ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group linklist" %>
          </li>
       </ul>
       <ul class="space-y-2 pt-2 font-medium border-t border-gray-200">
       <li>
-         <%= link_to "プライバシーポリシー", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group", id: "linklist" %>
+         <%= link_to "プライバシーポリシー", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group linklist" %>
       </li>
       <li>
-         <%= link_to "問い合わせ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group", id: "linklist" %>
+         <%= link_to "問い合わせ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group linklist" %>
       </li>
    </ul>
    </div>

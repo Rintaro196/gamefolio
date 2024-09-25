@@ -2,27 +2,26 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 
-document.addEventListener('DOMContentLoaded', function () {
-    const openButton = document.querySelector('[data-drawer-show="drawer-navigation"]');
-    const closeButton = document.querySelector('[data-drawer-hide="drawer-navigation"]');
-    const drawer = document.getElementById('drawer-navigation');
-    const hrefLinks = document.querySelectorAll('.linklist');
-  
-    if (openButton) {
-      openButton.addEventListener('click', function () {
-        drawer.classList.remove('-translate-x-full');
-      });
-    }
-  
-    if (closeButton) {
-      closeButton.addEventListener('click', function () {
-        drawer.classList.add('-translate-x-full');
-      });
-    }
+document.addEventListener('turbo:load', function() {
+  const toggleSidebar = document.getElementById('toggleSidebar');
+  const closeSidebar = document.getElementById('closeSidebar');
+  const sidebar = document.getElementById('sidebar');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-    hrefLinks.forEach(link => {
-      link.addEventListener('click', function () {
-          drawer.classList.add('-translate-x-full');
-      });
+  toggleSidebar.addEventListener('click', function() {
+    sidebar.classList.toggle('-translate-x-full');
+    sidebar.classList.toggle('translate-x-0');
+  });
+
+  closeSidebar.addEventListener('click', function() {
+    sidebar.classList.add('-translate-x-full');
+    sidebar.classList.remove('translate-x-0');
+  });
+
+  sidebarLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      sidebar.classList.add('-translate-x-full');
+      sidebar.classList.remove('translate-x-0');
+    });
   });
 });
