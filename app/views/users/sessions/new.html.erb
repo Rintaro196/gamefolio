@@ -1,7 +1,9 @@
-<h2>Log in</h2>
-
-<%= form_with model: @user, url: session_path(resource_name) do |f| %>
-  <div class="field">
+<div class="flex justify-center my-8">
+  <div class="text-center nes-container is-dark w-2/5 min-w-min">
+    <h2 class="text-5xl mb-4">つづきから</h2>
+    <div class="text-3xl">
+      <%= form_with model: @user, url: session_path(resource_name) do |f| %>
+    <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -22,5 +24,8 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+</div>
+</div>
+</div>
 
 <%= render "users/shared/links" %>
