@@ -14,7 +14,6 @@
     <%= favicon_link_tag("gf_favicon.ico") %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +31,7 @@
 
   <body class="bg-[url('bg_image.png')] bg-cover bg-center bg-c m-0 p-0">
     <div class="flex flex-col h-screen">
-      <header class="bg-indigo-400 flex items-center justify-between h-16">
+      <header class="bg-indigo-400 flex items-center justify-between h-24">
         <%= render "shared/before_header" %>
       </header>
       <main class="flex-grow">
