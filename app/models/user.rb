@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, :user_code, presence: true
   validates :name, :age, length: { maximum: 255 }
-  validates :user_code, length] { ,maximum: 64 }
+  validates :user_code, length: { maximum: 64 }
 end
