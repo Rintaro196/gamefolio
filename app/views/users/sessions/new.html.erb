@@ -1,30 +1,22 @@
-<div class="flex justify-center my-8">
-  <div class="text-center nes-container is-dark w-2/5 min-w-min">
-    <h2 class="text-5xl mb-4">つづきから</h2>
-    <div class="text-3xl">
+<div class="flex justify-center text-center my-8">
+  <div class="nes-container is-dark w-2/5 min-w-min">
+    <h2 class="text-5xl m-4">つづきから</h2>
       <%= form_with model: @user, url: session_path(resource_name) do |f| %>
     <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, "メールアドレス", class: "text-2xl" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "nes-field nes-input is-dark" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field my-6">
+    <%= f.label :password, "復活の呪文", class: "text-2xl" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "nes-field nes-input is-dark" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions my-4">
+    <%= f.submit "スタート",
+      class: "bg-blue-950 text-blue-400 border border-blue-400 border-b-4 font-medium overflow-hidden relative w-40 px-4 py-2 rounded-md hover:brightness-150 group" %>
   </div>
 <% end %>
-</div>
 </div>
 </div>
 
