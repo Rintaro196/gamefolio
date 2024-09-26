@@ -1,14 +1,15 @@
-<div class="flex justify-center text-center my-8">
-  <div class="nes-container is-dark w-2/5 min-w-min">
-    <h2 class="text-5xl m-4">つづきから</h2>
+<div class="flex justify-center my-8">
+  <div class="card border-sloid border-white border-2 bg-gray-950 w-2/5 min-w-min">
+    <div class="card-body items-center text-center">
+    <h2 class="card-title text-white text-4xl">つづきから</h2>
       <%= form_with model: @user, url: session_path(resource_name) do |f| %>
-    <div class="nes-field">
-    <%= f.label :email, "メールアドレス", class: "text-2xl" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "nes-input is-dark" %>
+    <div class="field">
+    <%= f.label :email, "メールアドレス", class: "text-white text-2xl" %></br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-bordered input-primary w-80 max-w-xs" %>
   </div>
 
   <div class="nes-field my-6">
-    <%= f.label :password, "復活の呪文", class: "text-2xl" %>
+    <%= f.label :password, "復活の呪文", class: "text-white text-2xl" %></br>
     <%= f.password_field :password, autocomplete: "current-password", class: "nes-input is-dark" %>
   </div>
 
@@ -17,6 +18,7 @@
       class: "bg-blue-950 text-blue-400 border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
   </div>
 <% end %>
+</div>
 </div>
 </div>
 
