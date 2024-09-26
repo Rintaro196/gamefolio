@@ -5,12 +5,27 @@
 
       <%= form_with model: @user, url: registration_path(resource_name) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
+      
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :name, "ユーザーネーム", class: "text-white text-2xl" %></br>
+          </div>
+            <%= f.text_field :name, autofocus: true, autocomplete: "username", class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+        </div>
 
         <div class="field mt-6">
           <div class="mb-4">
-          <%= f.label :email, "メールアドレス", class: "text-white text-2xl" %><br />
+            <%= f.label :user_code, "ユーザーID", class: "text-white text-2xl" %></br>
+            <em class="text-white">(他ユーザーと重複不可)</em></br>
           </div>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            <%= f.text_field :user_code, class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :email, "メールアドレス", class: "text-white text-2xl" %></br>
+          </div>
+            <%= f.email_field :email, autocomplete: "email", class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
         </div>
 
   <div class="field mt-6">
@@ -26,13 +41,15 @@
 
   <div class="field mt-6">
     <div class="mb-4">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, "復活の呪文再詠唱", class: "text-white text-2xl" %>
     </div>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",
+     class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions my-8">
+    <%= f.submit "スタート",
+      class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
   </div>
 <% end %>
 </div>
