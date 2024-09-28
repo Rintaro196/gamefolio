@@ -20,6 +20,9 @@
        <li>
           <%= link_to "問い合わせ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
        </li>
+       <li>
+         <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+      </li>
      </ul>
    </div>
 </div>
