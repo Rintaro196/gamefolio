@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+    attributes:
+      user:
+        name: 'ユーザーネーム'
+        user_code: 'ユーザーID'
+        email: 'メールアドレス'
+        password: '復活の呪文'
+        password_confirmation: '復活の呪文再詠唱'
+  errors:
+    messages:
+      blank: "を入力してください"
