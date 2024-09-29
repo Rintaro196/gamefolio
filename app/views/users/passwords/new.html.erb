@@ -1,16 +1,16 @@
-<h2>Forgot your password?</h2>
+<div class="flex justify-center my-10">
+  <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+    <div class="items-center text-center">
 
-<%= form_with model: @user, url: password_path(resource_name), html: { method: :post } do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+      <h2 class="text-white text-6xl my-6">復活の呪文再設定</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="my-6">
+        <p class="text-white text-2xl">準備中…</p>
+        <p class="text-white text-2xl">もう少し待っててね</p>
+      </div>
+
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+</div>
 
 <%= render "users/shared/links" %>

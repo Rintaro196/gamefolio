@@ -35,6 +35,12 @@
         <%= render "shared/before_header" %>
       </header>
       <main class="flex-grow">
+        <% if flash[:notice] %>
+          <p class="notice flex justify-center text-white bg-lime-400 h-10"><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p class="alert flex justify-center items-center text-white bg-red-400 h-10"><%= flash[:alert] %></p>
+        <% end %>
         <%= render "layouts/sidebar" %>
         <%= yield %>
       </main>
