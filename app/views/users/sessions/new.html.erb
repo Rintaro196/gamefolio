@@ -1,0 +1,33 @@
+<div class="flex justify-center my-8">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+    <div class="items-center text-center">
+      <h2 class="text-white text-6xl mt-6">つづきから</h2>
+
+      <%= form_with model: @user, url: session_path(resource_name) do |f| %>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :email, "メールアドレス", class: "text-white text-2xl" %></br>
+          </div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",
+            class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :password, "復活の呪文", class: "text-white text-2xl" %></br>
+          </div>
+          <%= f.password_field :password, autocomplete: "current-password",
+            class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+        </div>
+
+        <div class="actions my-8">
+        <%= f.submit "スタート",
+          class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "users/shared/links" %>

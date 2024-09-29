@@ -1,9 +1,10 @@
-<div id="sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transform -translate-x-full transition-transform duration-300 bg-indigo-400">
-   <h5 class="text-base text-white font-semibold uppercase">メニュー</h5>
-   <button id="close-sidebar" class="text-gray-400 bg-transparent hover:bg-indigo-300 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center" >
-       <i class="nes-icon close is-small"></i>
+<div id="sidebar" class="fixed top-0 left-0 z-40 w-96 h-screen p-4 overflow-y-auto transform -translate-x-full transition-transform duration-300 bg-indigo-400">
+   <h5 class="text-2xl text-white uppercase">
+      <i class="fa-solid fa-gamepad" style="color: #ffffff;"></i> メニュー</h5>
+   <button id="close-sidebar" class="btn btn-outline btn-primary btn-sm m-2 absolute top-2.5 end-2.5" >
+      <i class="fa-solid fa-x fa-x"></i>
    </button>
- <div class="py-4 overflow-y-auto">
+   <div class="py-4 overflow-y-auto text-xl">
      <ul class="space-y-2 font-medium">
         <li>
            <%= link_to "トップへ戻る", root_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
@@ -13,12 +14,15 @@
         </li>
      </ul>
      <ul class="space-y-2 pt-2 font-medium border-t border-gray-200">
-     <li>
-        <%= link_to "プライバシーポリシー", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
-     </li>
-     <li>
-        <%= link_to "問い合わせ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
-     </li>
-  </ul>
-  </div>
+       <li>
+          <%= link_to "プライバシーポリシー", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+       </li>
+       <li>
+          <%= link_to "問い合わせ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+       </li>
+       <li>
+         <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+      </li>
+     </ul>
+   </div>
 </div>
