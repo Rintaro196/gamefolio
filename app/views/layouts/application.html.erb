@@ -32,15 +32,15 @@
   <body class="bg-[url('bg_image.png')] bg-cover bg-fixed h-full">
     <div class="flex flex-col min-h-screen">
       <header class="bg-indigo-800 flex items-center justify-between h-24">
-        <%= render "shared/before_header" %>
+        <%= render "shared/header" %>
       </header>
       <main class="flex-grow">
-        <% if flash[:notice] %>
-          <p class="notice flex justify-center text-white bg-lime-400 h-10"><%= flash[:notice] %></p>
-        <% end %>
-        <% if flash[:alert] %>
-          <p class="alert flex justify-center items-center text-white bg-red-400 h-10"><%= flash[:alert] %></p>
-        <% end %>
+          <% if flash[:notice] %>
+            <p class="notice flex items-center justify-center text-white bg-lime-400 h-10"><%= flash[:notice] %></p>
+          <% end %>
+          <% if flash[:alert] %>
+            <p class="alert flex items-center justify-center text-white bg-red-400 h-10"><%= flash[:alert] %></p>
+          <% end %>
         <%= render "layouts/sidebar" %>
         <%= yield %>
       </main>
