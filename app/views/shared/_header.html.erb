@@ -5,6 +5,11 @@
 </div>
 <% if user_signed_in? %>
   <div class="mr-4 md:mr-40">
+      <%= link_to "#" do %>
+        <button class="btn btn-circle btn-outline btn-info">
+          <i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i>
+        </button>
+      <% end %>
     <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete },
       class: "bg-rose-950 text-2xl text-rose-400 border border-rose-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
   </div>
