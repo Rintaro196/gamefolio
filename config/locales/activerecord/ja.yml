@@ -9,6 +9,12 @@ ja:
         email: 'メールアドレス'
         password: '復活の呪文'
         password_confirmation: '復活の呪文再詠唱'
+  enums:
+    user:
+      gender:
+        male: '男性'
+        female: '女性'
+        other: 'その他'
   errors:
     messages:
       blank: "を入力してください"
