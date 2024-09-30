@@ -61,3 +61,5 @@ end
 gem "meta-tags"
 
 gem "devise"
+
+gem "enum_help"

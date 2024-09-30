@@ -108,6 +108,8 @@ GEM
       responders
       warden (~> 1.2.3)
     drb (2.2.1)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.13.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -309,6 +311,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  enum_help
   jbuilder
   jsbundling-rails
   meta-tags
