@@ -1,0 +1,11 @@
+<head>
+  <title><% content_for(:title, "#{@user.name}") %></title>
+</head>
+<div class="flex justify-center my-8">
+  <div class="rounded-lg border-solid border-white border-4 bg-gray-950  w-full sm:w-3/5 lg:w-2/5">
+    <div class="items-center text-center">
+      <h1 class="text-white text-3xl my-6"><%= @user.name %></h1>
+      <p class="text-white">こちらユーザー詳細ページです</p>
+    </div>
+  </div>
+</div>
