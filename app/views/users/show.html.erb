@@ -5,7 +5,13 @@
   <div class="rounded-lg border-solid border-white border-4 bg-gray-950  w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
       <h1 class="text-white text-3xl my-6"><%= @user.name %></h1>
-      <p class="text-white">こちらユーザー詳細ページです</p>
+      <p class="text-white mb-6">こちらユーザー詳細ページです</p>
     </div>
   </div>
+</div>
+<div class="text-center">
+  <%= link_to edit_user_registration_path do %>
+    <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
+      編集</button>
+  <% end %>
 </div>
