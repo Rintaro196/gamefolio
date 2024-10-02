@@ -6,6 +6,12 @@ ja:
       user:
         name: 'ユーザーネーム'
         user_code: 'ユーザーID'
+        age: '年齢'
+        gender: '性別'
+        profile: 'プロフィール'
+        twitter: 'Xアカウント'
+        twitch: 'twitchチャンネル'
+        discord: 'discordアカウント'
         email: 'メールアドレス'
         password: '復活の呪文'
         password_confirmation: '復活の呪文再詠唱'
