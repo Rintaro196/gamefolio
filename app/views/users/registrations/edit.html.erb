@@ -25,18 +25,15 @@
             class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
-        <div class="mt-6">
-          <div class="mb-4">
+        <div class="field mt-8">
+          <div class="inline pr-4">
             <%= f.label :gender, class: "text-white text-2xl" %>
+            <%= f.select :gender, User.genders_i18n.invert, {}, class: "select select-accent" %>
           </div>
-            <%= f.select :gender, User.genders.keys.map { |gender| [gender.titleize, gender] }, { class: "select select-accent" } %>
-        </div>
-        
-        <div class="field mt-6">
-          <div class="mb-4">
+          <div class="inline">
             <%= f.label :age, class: "text-white text-2xl" %>
+            <%= f.number_field :age, min: 1, class: "input input-accent min-w-xs" %>
           </div>
-          <%= f.number_field :age, min: 1, class: "textarea textarea-accent min-w-xs" %>
         </div>
 
         <div class="field mt-6">
