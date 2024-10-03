@@ -4,8 +4,12 @@
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-solid border-white border-4 bg-gray-950  w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
-      <h1 class="text-white text-3xl my-6"><%= @user.name %></h1>歳
-      <p class="text-white mb-6">年齢： <%= @user.age %>歳</p>
+      <h1 class="text-white text-6xl my-6"><%= @user.name %></h1>
+      <div class="grid grid-cols-2 gap-4">
+        <p class="text-white text-2xl mb-4">年齢： <%= @user.age %>歳</p>
+        <p class="text-white text-2xl mb-4">性別： <%= @user.gender_i18n %></p>
+        <p class="col-span-2 text-white text-2xl mb-4"><%= @user.profile %></p>
+      </div>
     </div>
   </div>
 </div>

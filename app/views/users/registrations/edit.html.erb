@@ -43,6 +43,29 @@
           <%= f.text_area :profile, class: "textarea textarea-accent w-2/3 h-24 min-w-xs" %>
         </div>
 
+        <div class="divider divider-primary m-12">SNSアカウント</div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :twitter, class: "text-white text-2xl" %>
+          </div>
+          <%= f.text_field :twitter, placeholder: "URL", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :twitch, class: "text-white text-2xl" %>
+          </div>
+          <%= f.text_field :twitch, placeholder: "URL", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :discord, class: "text-white text-2xl" %>
+          </div>
+          <%= f.text_field :discord, placeholder: "ID", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
+        </div>
+
         <div class="actions my-8">
           <%= f.submit "更新",
             class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
