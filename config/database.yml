@@ -83,4 +83,8 @@ test:
 #
 production:
   adapter: postgresql
+  database: <%= ENV['DATABASE_NAME'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD']
   url: <%= ENV['DATABASE_URL'] %>
