@@ -82,7 +82,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
+  <<: *default
   database: <%= ENV['DATABASE_NAME'] %>
   host: <%= ENV['DATABASE_HOST'] %>
   username: <%= ENV['DATABASE_USER'] %>
