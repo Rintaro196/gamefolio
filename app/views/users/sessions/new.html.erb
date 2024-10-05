@@ -1,3 +1,6 @@
+<head>
+  <title><% content_for(:title, "つづきから") %></title>
+</head>
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
@@ -10,7 +13,7 @@
             <%= f.label :email, "メールアドレス", class: "text-white text-2xl" %></br>
           </div>
           <%= f.email_field :email, autofocus: true, autocomplete: "email",
-            class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
@@ -18,7 +21,7 @@
             <%= f.label :password, "復活の呪文", class: "text-white text-2xl" %></br>
           </div>
           <%= f.password_field :password, autocomplete: "current-password",
-            class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="actions my-8">

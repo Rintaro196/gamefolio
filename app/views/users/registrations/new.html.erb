@@ -1,3 +1,6 @@
+<head>
+  <title><% content_for(:title, "はじめから") %></title>
+</head>
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-solid border-white border-4 bg-gray-950  w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
@@ -11,7 +14,7 @@
           <div class="mb-4">
             <%= f.label :name, "ユーザーネーム", class: "text-white text-2xl" %></br>
           </div>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
@@ -19,14 +22,14 @@
             <%= f.label :user_code, "ユーザーID", class: "text-white text-2xl" %></br>
             <em class="text-white">(他ユーザーと重複不可)</em></br>
           </div>
-            <%= f.text_field :user_code, class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            <%= f.text_field :user_code, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
           <div class="mb-4">
             <%= f.label :email, "メールアドレス", class: "text-white text-2xl" %></br>
           </div>
-            <%= f.email_field :email, autocomplete: "email", class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            <%= f.email_field :email, autocomplete: "email", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
@@ -37,7 +40,7 @@
             <% end %><br />
           </div>
           <%= f.password_field :password, autocomplete: "new-password",
-            class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
@@ -45,7 +48,7 @@
             <%= f.label :password_confirmation, "復活の呪文再詠唱", class: "text-white text-2xl" %>
           </div>
           <%= f.password_field :password_confirmation, autocomplete: "new-password",
-            class: "input input-bordered input-accent h-12 w-80 max-w-xs" %>
+            class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="actions my-8">
