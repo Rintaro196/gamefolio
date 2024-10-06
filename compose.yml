@@ -5,6 +5,7 @@ services:
     environment:
       TZ: Asia/Tokyo
       POSTGRES_PASSWORD: password
+      RAILS_ENV: development
     volumes:
       - postgresql_data:/var/lib/postgresql/data
     ports:
