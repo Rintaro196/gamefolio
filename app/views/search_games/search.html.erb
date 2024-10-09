@@ -24,15 +24,6 @@
       <% if game["platforms"].present? %>
         <p>Platforms: <%= game["platforms"].map { |platform| platform["name"] }.join(", ") %></p>
       <% end %>
-
-      <% if game["release_dates"].present? %>
-        <p>Release Dates:</p>
-        <ul>
-          <% game["release_dates"].each do |release_date| %>
-            <li><%= release_date["human"] %> (Region: <%= release_date["region"] %>)</li>
-          <% end %>
-        </ul>
-      <% end %>
     </div>
   <% end %>
 <% elsif @game_title.present? %>
