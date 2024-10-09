@@ -22,10 +22,7 @@ class SearchGamesController < ApplicationController
           "Authorization" => "Bearer #{ENV['ACCESS_TOKEN']}"
         }
     
-        query = <<-QUERY
-          fields name, genres.name, platforms.name, cover.url, release_dates.human, release_dates.region;
-          where name ~ "#{title}";
-        QUERY
+        query = "search #{title}; fields name, genres.name, platforms.name, cover.url, game_localizations.region, game_localizations.cover.image_id, game_localizations.name; where category = (0,2,4,8,9,10,11) & version_parent = null;"
     
         response = HTTParty.post(url, headers: headers, body: query)
 
