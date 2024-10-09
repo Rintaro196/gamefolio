@@ -1,6 +1,6 @@
 <h1>Game Search</h1>
 
-<%= form_with url: games_search_path, method: :get, local: true do |form| %>
+<%= form_with url: search_games_path, method: :get, local: true do |form| %>
   <%= form.label :title, "Enter Game Title" %>
   <%= form.text_field :title %>
   <%= form.submit "Search" %>
