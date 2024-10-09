@@ -1,0 +1,31 @@
+<h1>Game Search</h1>
+
+<%= form_with url: search_games_path, method: :get, local: true do |form| %>
+  <%= form.label :title, "Enter Game Title" %>
+  <%= form.text_field :title %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<% if @game_info.present? %>
+  <h2>Results for "<%= @game_title %>"</h2>
+
+  <% @game_info.each do |game| %>
+    <div class="game">
+      <h3><%= game["name"] %></h3>
+
+      <% if game["cover"] && game["cover"]["url"] %>
+        <img src="<%= game['cover']['url'] %>" alt="<%= game['name'] %> cover">
+      <% end %>
+
+      <% if game["genres"].present? %>
+        <p>Genres: <%= game["genres"].map { |genre| genre["name"] }.join(", ") %></p>
+      <% end %>
+
+      <% if game["platforms"].present? %>
+        <p>Platforms: <%= game["platforms"].map { |platform| platform["name"] }.join(", ") %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% elsif @game_title.present? %>
+  <p>No results found for "<%= @game_title %>".</p>
+<% end %>
