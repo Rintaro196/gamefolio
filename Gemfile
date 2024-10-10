@@ -67,3 +67,5 @@ gem "enum_help"
 gem "dotenv-rails"
 
 gem "httparty"
+
+gem "whenever", require: false
