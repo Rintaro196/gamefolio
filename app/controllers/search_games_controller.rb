@@ -17,9 +17,10 @@ class SearchGamesController < ApplicationController
 
     def search_game(title)
         url = "https://api.igdb.com/v4/games"
+        access_token = Token.access_token.find_by(id: 1)
         headers = {
           "Client-ID" => ENV["CLIENT_ID"],
-          "Authorization" => "Bearer #{ENV['ACCESS_TOKEN']}"
+          "Authorization" => "Bearer #{access_token}"
         }
 
         query = "search \"#{title}\"; fields name, genres.name, platforms.name, cover.url, game_localizations.region, game_localizations.cover.image_id, game_localizations.name; where category = (0,2,4,8,9,10,11) & version_parent = null;"
