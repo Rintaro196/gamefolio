@@ -1,10 +1,13 @@
-<h1>Game Search</h1>
+<h1 class="text-white text-4xl text-center">ゲーム検索</h1>
 
+<div class="flex justify-center">
 <%= form_with url: search_games_path, method: :get, local: true do |form| %>
-  <%= form.label :title, "Enter Game Title" %>
-  <%= form.text_field :title %>
-  <%= form.submit "Search" %>
+  <%= form.label :title, "ゲームタイトル", class: "text-white text-2xl" %>
+  <%= form.text_field :title, class: "input input-bordered input-accent w-80 min-w-xs" %>
+  <%= form.submit "検索",
+    class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
 <% end %>
+</div>
 
 <% if @game_info.present? %>
   <h2>Results for "<%= @game_title %>"</h2>
