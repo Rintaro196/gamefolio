@@ -1,0 +1,21 @@
+databases:
+  - name: gamefolio_database
+    databaseName: gamefolio_production
+    user: mana
+    region: singapore
+
+services:
+  - type: web
+    name: gamefolio
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gamefolio_production
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
