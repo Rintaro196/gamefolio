@@ -26,7 +26,6 @@ module ApplicationHelper
 
       twitter: {
         card: "summary_large_image",
-        # site: '@', # アプリの公式Twitterアカウントがあれば
         image: image_url("ogp_image.png")
       }
     }
