@@ -82,5 +82,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: gamefolio_production
+  username: mana
+  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
