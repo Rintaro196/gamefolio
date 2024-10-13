@@ -1,31 +1,22 @@
-<h1>Game Search</h1>
-
+<head>
+  <title><% content_for(:title, "ゲーム検索") %></title>
+</head>
+<h1 class="text-white text-4xl text-center mt-6">ゲーム検索</h1>
+<p class="text-gray-300 text-center mb-6">※英語で検索すると精度が高くなります</p>
+<div class="flex justify-center">
 <%= form_with url: search_games_path, method: :get, local: true do |form| %>
-  <%= form.label :title, "Enter Game Title" %>
-  <%= form.text_field :title %>
-  <%= form.submit "Search" %>
+  <%= form.label :title, "ゲームタイトル", class: "text-white text-2xl mr-2" %>
+  <%= form.text_field :title, class: "input input-bordered input-accent mr-2 w-80 min-w-xs" %>
+  <%= form.submit "検索",
+    class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
 <% end %>
+</div>
 
 <% if @game_info.present? %>
-  <h2>Results for "<%= @game_title %>"</h2>
+  <h2 class="text-lime-400 text-center text-2xl my-4">"<%= @game_title %>"の検索結果一覧</h2>
 
-  <% @game_info.each do |game| %>
-    <div class="game">
-      <h3><%= game["name"] %></h3>
+  <%= render "search_games/games", game_info: @game_info %>
 
-      <% if game["cover"] && game["cover"]["url"] %>
-        <img src="<%= game['cover']['url'] %>" alt="<%= game['name'] %> cover">
-      <% end %>
-
-      <% if game["genres"].present? %>
-        <p>Genres: <%= game["genres"].map { |genre| genre["name"] }.join(", ") %></p>
-      <% end %>
-
-      <% if game["platforms"].present? %>
-        <p>Platforms: <%= game["platforms"].map { |platform| platform["name"] }.join(", ") %></p>
-      <% end %>
-    </div>
-  <% end %>
 <% elsif @game_title.present? %>
-  <p>No results found for "<%= @game_title %>".</p>
+  <p xlass="text-center text-white text-2xl">"<%= @game_title %>"の検索結果はありません</p>
 <% end %>

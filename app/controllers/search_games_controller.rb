@@ -27,6 +27,33 @@ class SearchGamesController < ApplicationController
 
         response = HTTParty.post(url, headers: headers, body: query)
 
-        JSON.parse(response.body)
+        games = JSON.parse(response.body)
+
+        games.map { |game| choose_japanese_localization(game) }
+    end
+
+    def choose_japanese_localization(game_data)
+      japanese_localization = game_data["game_localizations"]&.find { |loc| loc["region"] == 3 }
+
+      if japanese_localization
+        {
+          name: japanese_localization["name"] || game_data["name"],
+          cover_url: japanese_localization["cover"] ? cover_image_url(japanese_localization["cover"]["image_id"]) : game_data.dig("cover", "url"),
+          genres: game_data["genres"]&.map { |genre| genre["name"] },
+          platforms: game_data["platforms"]&.map { |platform| platform["name"] }
+        }
+      else
+        {
+          name: game_data["name"],
+          cover_url: game_data.dig("cover", "url"),
+          genres: game_data["genres"]&.map { |genre| genre["name"] },
+          platforms: game_data["platforms"]&.map { |platform| platform["name"] }
+        }
+      end
+    end
+
+    def cover_image_url(image_id)
+      return nil unless image_id
+      "https://images.igdb.com/igdb/image/upload/t_cover_big/#{image_id}.jpg"
     end
 end
