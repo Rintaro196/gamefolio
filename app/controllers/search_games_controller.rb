@@ -41,7 +41,7 @@ class SearchGamesController < ApplicationController
           cover_url: japanese_localization["cover"] ? cover_image_url(japanese_localization["cover"]["image_id"]) : game_data.dig("cover", "url"),
           genres: game_data["genres"]&.map { |genre| genre["name"] },
           platforms: game_data["platforms"]&.map { |platform| platform["name"] }
-        }
+        
       else
         {
           name: game_data["name"],
