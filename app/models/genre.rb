@@ -1,6 +1,6 @@
 class Genre < ApplicationRecord
-    has_many :games_genrus, dependent: :destroy
-    has_many :games, thought: :games_genres
+    has_many :game_genrus, dependent: :destroy
+    has_many :games, thought: :game_genres
     
     validates :name, presence: true
 end
