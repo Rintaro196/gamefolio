@@ -35,6 +35,7 @@ class IgdbService
   
         if japanese_localization
           {
+            igdb_id: game_data["id"], 
             name: japanese_localization["name"] || game_data["name"],
             cover_url: japanese_localization["cover"] ? cover_image_url(japanese_localization["cover"]["image_id"]) : game_data.dig("cover", "url"),
             genres: game_data["genres"]&.map { |genre| genre["name"] } || [],
@@ -42,6 +43,7 @@ class IgdbService
           
         else
           {
+            igdb_id: game_data["id"], 
             name: game_data["name"],
             cover_url: game_data.dig("cover", "url"),
             genres: game_data["genres"]&.map { |genre| genre["name"] },

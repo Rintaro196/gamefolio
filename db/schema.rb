@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_15_015757) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_16_053749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +39,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_15_015757) do
     t.string "cover_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "igdb_id"
+    t.index ["igdb_id"], name: "index_games_on_igdb_id", unique: true
   end
 
   create_table "genres", force: :cascade do |t|
