@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show]
 
-  get "search_games/search", to: "search_games#search", as: "search_games"
+  get "games/search", to: "games#search", as: "search_games"
 end
