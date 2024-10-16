@@ -11,7 +11,8 @@ class IgdbService
           "Authorization" => "Bearer #{@access_token}"
         }
     end
-
+   
+    #トークン取得処理（仮）
     # def get_access_token
     #    response = HTTParty.post("https://id.twitch.tv/oauth2/token?client_id=#{@client_id}&client_secret=#{@client_secret}&grant_type=client_credentials")
     #    response.parsed_response["access_token"]
