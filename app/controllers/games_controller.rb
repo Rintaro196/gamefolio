@@ -12,9 +12,6 @@ class GamesController < ApplicationController
     end
   end
 
-  def add_to_game_library
-  end
-
   def save_game
     game_data = params[:game_info]
     game = Game.find_or_initialize_by(igdb_id: game_data[:igdb_id])
