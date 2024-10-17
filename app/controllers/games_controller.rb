@@ -18,14 +18,26 @@ class GamesController < ApplicationController
   def save_game
     game_data = params[:game_info]
     game = Game.find_or_initialize_by(igdb_id: game_data[:igdb_id])
-    game.update(
-      name: game_data[:name],
-      cover_url: game_data[:cover_url],
-      genres: game_data[:genres]&.join(', '),
-      platforms: game_data[:platforms]&.join(', ')
-    )
+    game.name = game_data[:name],
+    game.cover_url = game_data[:cover_url],
+    game.save!
 
-    if game.persisted?
+    genres = game_data[:genres].map do |genre_name|
+      Genre.find_by(name: genre_name)
+    end.compact
+
+    platforms = game_data[:platforms].map do |platform_name|
+      Platform.find_by(name: platform_name)
+    end.compact
+
+    game.genres = genres
+    game.platforms = platforms
+
+    unless current_user.games.include?(game)
+      current_user.games << game
+    end
+
+    if current_user.game.persisted?
       flash[:notice] = "ゲームライブラリに登録しました"
     else
       flash[:alert] = "ゲームライブラリに登録出来ませんでした"
