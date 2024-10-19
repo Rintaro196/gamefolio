@@ -37,6 +37,7 @@ class GamesController < ApplicationController
 
     if game.persisted?
       flash[:notice] = "ゲームライブラリに登録しました"
+      redirect_to user_games_path(id: current_user.id)
     else
       flash[:alert] = "ゲームライブラリに登録出来ませんでした"
     end

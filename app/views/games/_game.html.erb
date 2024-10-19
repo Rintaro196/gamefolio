@@ -28,6 +28,8 @@
               </div>
             <% end %>
           </div>
+          <%= form_with url: save_game_path, method: :post do %>
+            <%= hidden_field_tag "game[igdb_id]", game[:igdb_id] %>
         </div>
       </div>
     </div>
