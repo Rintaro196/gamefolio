@@ -29,7 +29,18 @@
             <% end %>
           </div>
           <%= form_with url: save_game_path, method: :post do %>
-            <%= hidden_field_tag "game[igdb_id]", game[:igdb_id] %>
+            <%= hidden_field_tag 'game_info[igdb_id]', game[:igdb_id] %>
+            <%= hidden_field_tag 'game_info[name]', game[:name] %>
+            <%= hidden_field_tag 'game_info[cover_url]', game[:cover_url] %>
+            <% game[:genres].each do |genre| %>
+              <%= hidden_field_tag 'game_info[genres][]', genre %>
+            <% end %>
+            <% game[:platforms].each do |platform| %>
+              <%= hidden_field_tag 'game_info[platforms][]', platform %>
+            <% end %>
+            <%= submit_tag "ライブラリに追加",
+              class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
+          <% end %>
         </div>
       </div>
     </div>

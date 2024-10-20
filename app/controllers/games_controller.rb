@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   def save_game
     game_data = params[:game_info]
     game = Game.find_or_initialize_by(igdb_id: game_data[:igdb_id])
-    game.name = game_data[:name]
+    game.game_title = game_data[:name]
     game.cover_url = game_data[:cover_url]
 
     genres = game_data[:genres].map do |genre_name|
@@ -33,7 +33,7 @@ class GamesController < ApplicationController
 
     unless current_user.games.include?(game)
       current_user.games << game
-    end    
+    end
 
     if game.persisted?
       flash[:notice] = "ゲームライブラリに登録しました"
