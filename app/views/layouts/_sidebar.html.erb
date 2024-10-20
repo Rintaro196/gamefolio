@@ -7,17 +7,19 @@
    <div class="py-4 overflow-y-auto text-xl">
      <ul class="space-y-2 font-medium">
         <li>
-           <%= link_to "トップへ戻る", root_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+          <%= link_to "トップへ戻る", root_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
         </li>
         <li>
-           <%= link_to "みんなのゲームログ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+          <%= link_to "みんなのゲームログ", "#", class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
         </li>
-        <li>
-         <%= link_to "ゲーム登録", search_games_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
-        </li>
-        <li>
-         <%= link_to "ゲームライブラリ", user_games_path(id: current_user.id), class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
-        </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "ゲーム登録", search_games_path, class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+          </li>
+          <li>
+            <%= link_to "ゲームライブラリ", user_games_path(id: current_user.id), class: "ms-3 flex items-center p-2 rounded-lg text-white hover:bg-indigo-300 hover:text-gray-800 hover:no-underline group sidebar-link" %>
+         </li>
+        <% end %>
      </ul>
      <ul class="space-y-2 pt-2 font-medium border-t border-gray-200">
        <li>

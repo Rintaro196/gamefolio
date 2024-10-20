@@ -1,3 +1,16 @@
-<% @user_games.each do |user_game| %>
-  <%= user_game.game_title %>
+<head>
+  <title><% content_for(:title, "ゲーム登録") %></title>
+</head>
+<h1 class="text-white text-center"></h1>
+<% if @user_games.present? %>
+  <%= render "user_games/user_game", user_games: @user_games %>
+<% else %>
+  <div class="text-center">
+    <p class="text-white">登録ゲームがありません</p>
+    <%= link_to search_games_path do %>
+      <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
+        ゲームを登録する
+      </button>
+    <% end %>
+  </div>
 <% end %>
