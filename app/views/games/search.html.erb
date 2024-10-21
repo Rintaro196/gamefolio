@@ -15,6 +15,6 @@
 <% if @game_info.present? %>
   <h2 class="text-lime-400 text-center text-2xl my-4">"<%= @game_title %>"の検索結果一覧</h2>
   <%= render "games/game", game_info: @game_info %>
-<% else %>
+<% elsif @game_title.present? %>
   <p xlass="text-center text-white text-2xl">"<%= @game_title %>"の検索結果はありません</p>
 <% end %>

@@ -1,7 +1,7 @@
 <head>
-  <title><% content_for(:title, "ゲーム登録") %></title>
+  <title><% content_for(:title, "ゲームライブラリ") %></title>
 </head>
-<h1 class="text-white text-center"></h1>
+<h1 class="text-white text-5xl text-center my-6"><%= @user.name %>のゲームライブラリ</h1>
 <% if @user_games.present? %>
   <%= render "user_games/user_game", user_games: @user_games %>
 <% else %>

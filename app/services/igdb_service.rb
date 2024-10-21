@@ -46,8 +46,8 @@ class IgdbService
             igdb_id: game_data["id"],
             name: game_data["name"],
             cover_url: game_data.dig("cover", "url"),
-            genres: game_data["genres"]&.map { |genre| genre["name"] },
-            platforms: game_data["platforms"]&.map { |platform| platform["name"] }
+            genres: game_data["genres"]&.map { |genre| genre["name"] } || [],
+            platforms: game_data["platforms"]&.map { |platform| platform["name"] } || []
           }
         end
     end
