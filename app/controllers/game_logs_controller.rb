@@ -1,0 +1,2 @@
+class GameLogsController < ApplicationController
+end
