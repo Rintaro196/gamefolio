@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root "home_pages#home"
 
   resources :users, only: %i[index show]
+  resources :user_games, only: %i[index]
 
-  get "search_games/search", to: "search_games#search", as: "search_games"
+  get "games/search", to: "games#search", as: "search_games"
+  post "games/save_game", to: "games#save_game", as: "save_game"
 end
