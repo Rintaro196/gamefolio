@@ -1,49 +1,49 @@
 <% game_info.each do |game| %>
-    <div class="flex justify-center my-8">
-      <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 sm:w-3/5 lg:w-2/5">
-        <div class="items-center text-center">
-            <h3 class="text-3xl text-lime-400 my-4"><%= game[:name] %></h3>
-            <div class="flex justify-center">
-              <% if game[:cover_url].present? %>
-                <%= image_tag "#{game[:cover_url]}" %>
+  <div class="flex justify-center my-8">
+    <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 sm:w-3/5 lg:w-2/5">
+      <div class="items-center text-center">
+        <h3 class="text-3xl text-lime-400 my-4"><%= game[:name] %></h3>
+        <div class="flex justify-center">
+          <% if game[:cover_url].present? %>
+            <%= image_tag "#{game[:cover_url]}" %>
+          <% end %>
+        </div>
+        <div class="my-4">
+          <% if game[:genres].present? %>
+            <p class="text-white text-lime-400">ジャンル</p>
+            <div class="my-2">
+              <% game[:genres].each do |genru| %>
+                <div class="badge badge-accent badge-outline"><%= genru %></div>
               <% end %>
             </div>
-            <div class="my-4">
-            <% if game[:genres].present? %>
-              <p class="text-white text-lime-400">ジャンル</p>
-              <div class="my-2">
-                <% game[:genres].each do |genru| %>
-                  <div class="badge badge-accent badge-outline"><%= genru %></div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-          <div class="my-4">
-            <% if game[:platforms].present? %>
-              <p class="text-white text-lime-400">プラットフォーム</p>
-              <div class="my-2">
-                <% game[:platforms].each do |platform| %>
-                  <div class="badge badge badge-primary badge-outline"><%= platform %></div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-          <div class="my-6">
-            <%= form_with url: save_game_path, method: :post do %>
-              <%= hidden_field_tag 'game_info[igdb_id]', game[:igdb_id] %>
-              <%= hidden_field_tag 'game_info[name]', game[:name] %>
-              <%= hidden_field_tag 'game_info[cover_url]', game[:cover_url] %>
-              <% game[:genres].each do |genre| %>
-                <%= hidden_field_tag 'game_info[genres][]', genre %>
-              <% end %>
-              <% game[:platforms].each do |platform| %>
-                <%= hidden_field_tag 'game_info[platforms][]', platform %>
-              <% end %>
-              <%= submit_tag "ライブラリに追加",
-                class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
           <% end %>
-          </div>
+        </div>
+        <div class="my-4">
+          <% if game[:platforms].present? %>
+            <p class="text-white text-lime-400">プラットフォーム</p>
+            <div class="my-2">
+              <% game[:platforms].each do |platform| %>
+                <div class="badge badge badge-primary badge-outline"><%= platform %></div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="my-6">
+          <%= form_with url: save_game_path, method: :post do %>
+            <%= hidden_field_tag 'game_info[igdb_id]', game[:igdb_id] %>
+            <%= hidden_field_tag 'game_info[name]', game[:name] %>
+            <%= hidden_field_tag 'game_info[cover_url]', game[:cover_url] %>
+            <% game[:genres].each do |genre| %>
+              <%= hidden_field_tag 'game_info[genres][]', genre %>
+            <% end %>
+            <% game[:platforms].each do |platform| %>
+              <%= hidden_field_tag 'game_info[platforms][]', platform %>
+            <% end %>
+            <%= submit_tag "ライブラリに追加",
+              class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
+          <% end %>
         </div>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
