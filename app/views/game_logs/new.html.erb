@@ -1,0 +1,33 @@
+<head>
+  <title><% content_for(:title, "ゲームログ作成") %></title>
+</head>
+<div class="flex justify-center my-8">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+    <div class="items-center text-center">
+      <h2 class="text-white text-6xl mt-6">ゲームログ作成</h2>
+
+      <%= form_with(model: @game_log) do |f| %>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :title, "タイトル", class: "text-white text-2xl" %></br>
+          </div>
+          <%= f.text_field :title, autofocus: true,
+            class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :body, "本文", class: "text-white text-2xl" %></br>
+          </div>
+          <%= f.text_area :body, class: "textarea text-area-accent w-2/3 h-24 min-w-xs" %>
+        </div>
+
+        <div class="actions my-8">
+        <%= f.submit "記録",
+          class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
