@@ -1,23 +1,23 @@
 class GameLogsController < ApplicationController
     before_action :authenticate_user!
-    
+    before_action :set_user_game, only: %i[new create]
+
     def index
-        @game_logs = Game_log.includes(:user)
+        @game_logs = GameLog.includes(:user)
     end
 
     def show
-        @game_log = Game_log.includes(:user).find(params[:id])
+        @game_log = GameLog.includes(:user).find(params[:id])
     end
 
     def new
-        @game_log = Game_log.new
+        @game_log = GameLog.new
     end
 
     def create
         @game_log = current_user.game_logs.build(game_log_params)
         if @game_log.save
-            flash[:notice] = "ゲームログを記録しました"
-            redirect_to game_logs_path
+            redirect_to game_logs_path, notice: "ゲームログを記録しました"
         else
             flash[:alert] = "ゲームログを記録出来ませんでした"
             render :new
@@ -26,7 +26,11 @@ class GameLogsController < ApplicationController
 
     private
 
+    def set_user_game
+        @user_game = current_user.user_game.includes(:game)
+    end
+
     def game_log_params
-        params.require(:game_log).permit(:title. :body, :play_time, :spending_amount).merge(user_game_id: params[:user_game_id])
+        params.require(:game_log).permit(:title. :body, :play_time, :spending_amount, :user_game_id)
     end
 end
