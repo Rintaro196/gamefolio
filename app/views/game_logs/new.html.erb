@@ -10,6 +10,13 @@
 
         <div class="field mt-6">
           <div class="mb-4">
+            <%= f.label :user_game_id, "ゲームを選択" %>
+            <%= f.collection_select :user_game_id, @user_games, :id, :game_title, prompt: "ゲームを選んでください", class: "select select-accent" %>
+          </div>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
             <%= f.label :title, "タイトル", class: "text-white text-2xl" %></br>
           </div>
           <%= f.text_field :title, autofocus: true,
@@ -22,10 +29,24 @@
           </div>
           <%= f.text_area :body, class: "textarea text-area-accent w-2/3 h-24 min-w-xs" %>
         </div>
+        
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :play_time, "プレイ時間", class: "text-white text-2xl" %></br>
+          </div>
+          <%= f.number_field :title, prompt: "分", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+        <div class="mb-4">
+          <%= f.label :play_time, "課金額", class: "text-white text-2xl" %></br>
+        </div>
+        <%= f.number_field :title, prompt: "円", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
+      </div>
 
         <div class="actions my-8">
-        <%= f.submit "記録",
-          class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
+          <%= f.submit "記録",
+            class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
         </div>
       <% end %>
     </div>
