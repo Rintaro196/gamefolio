@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_16_053749) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_23_005523) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_053749) do
     t.index ["game_id", "genre_id"], name: "index_game_genres_on_game_id_and_genre_id", unique: true
     t.index ["game_id"], name: "index_game_genres_on_game_id"
     t.index ["genre_id"], name: "index_game_genres_on_genre_id"
+  end
+
+  create_table "game_logs", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.integer "play_time"
+    t.integer "spending_amount"
+    t.bigint "user_id", null: false
+    t.bigint "user_game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_game_id"], name: "index_game_logs_on_user_game_id"
+    t.index ["user_id"], name: "index_game_logs_on_user_id"
   end
 
   create_table "game_platforms", force: :cascade do |t|
@@ -100,6 +113,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_053749) do
 
   add_foreign_key "game_genres", "games"
   add_foreign_key "game_genres", "genres"
+  add_foreign_key "game_logs", "user_games"
+  add_foreign_key "game_logs", "users"
   add_foreign_key "game_platforms", "games"
   add_foreign_key "game_platforms", "platforms"
   add_foreign_key "user_games", "games"

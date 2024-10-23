@@ -1,11 +1,11 @@
 <head>
   <title><% content_for(:title, "ゲームログ作成") %></title>
 </head>
+<h2 class="text-white text-6xl text-center mt-6">ゲームログ作成</h2>
+<% if @user_games.present? %>
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
-      <h2 class="text-white text-6xl mt-6">ゲームログ作成</h2>
-
       <%= form_with(model: @game_log) do |f| %>
 
         <div class="field mt-6">
@@ -52,3 +52,14 @@
     </div>
   </div>
 </div>
+<% else %>
+  <div class="text-center my-10">
+    <p class="text-white text-2xl">ゲームライブラリにゲームを登録してください</P>
+    <div class="my-6">
+      <%= link_to search_games_path do %>
+        <button class="bg-lime-950 text-lime-400 text-2xl border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+          ゲームを登録しに行く</button>
+      <% end %>
+    </div>
+  </div>
+<% end %>
