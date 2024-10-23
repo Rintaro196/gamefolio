@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      game_log: 'ゲームログ'
     attributes:
       user:
         name: 'ユーザーネーム'
@@ -15,6 +16,11 @@ ja:
         email: 'メールアドレス'
         password: '復活の呪文'
         password_confirmation: '復活の呪文再詠唱'
+      game_log:
+        title: 'タイトル'
+        body: '本文'
+        play_time: 'プレイ時間'
+        spending_amount: '課金額'
   enums:
     user:
       gender:
