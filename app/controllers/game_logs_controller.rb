@@ -1,5 +1,6 @@
 class GameLogsController < ApplicationController
     before_action :authenticate_user!
+    before_action :set_game_log, only: %i[edit update destroy]
     before_action :set_user_game, only: %i[new create]
 
     def index
@@ -25,19 +26,27 @@ class GameLogsController < ApplicationController
         end
     end
 
-    def edit
-    end
+    def edit; end
 
     def update
+        if @game_log.update(game_log_params)
+            redirect_to game_log_path(@game_log), notice: "ゲームログを編集しました"
+        else
+            flash[:alert] = "ゲームログを編集出来ませんでした"
+            render :edit, status: :unprocessable_entity
+        end
     end
 
-    def destroy
-        @game_log = current_user.game_logs.find(params[:id])
+    def destroy   
         @game_log.destroy!
         redirect_to user_path(id: current_user.id), status: :see_other, notice: "ゲームログを削除しました"
     end
 
     private
+
+    def set_game_log
+        @game_log = current_user.game_logs.find(params[:id])
+    end
 
     def set_user_game
         @user_games = current_user.user_games.includes(:game)
