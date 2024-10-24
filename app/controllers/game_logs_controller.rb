@@ -25,6 +25,18 @@ class GameLogsController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
+        @game_log = current_user.game_logs.find(params[:id])
+        @game_log.destroy!
+        redirect_to user_path(id: current_user.id), status: :see_other, notice: "ゲームログを削除しました"
+    end
+
     private
 
     def set_user_game
