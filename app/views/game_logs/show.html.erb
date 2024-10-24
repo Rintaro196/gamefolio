@@ -3,9 +3,9 @@
     <span class="text-white text-3xl absolute -top-3 left-2.5 py-2 inline-block"><%= @game_log.user.name %></span>
     <p class="text-white text-2xl"><%= @game_log.title %></P>
     <p class="text-white text-2xl"><%= @game_log.body %></P>
-    <p class="text-white text-2xl">プレイ時間：<%= @game_log.play_title %>分</P>
+    <p class="text-white text-2xl">プレイ時間：<%= @game_log.play_time %>分</P>
     <p class="text-white text-2xl">課金額：<%= @game_log.spending_amount %>円</P>
-    <% if @game_log.own? %>
+    <% if current_user && current_user.own?(@game_log) %>
       <%= link_to "編集", "#",
         class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
       <%= link_to "削除", game_log_path(@game_log),

@@ -1,7 +1,7 @@
 class GameLogsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_game_log, only: %i[edit update destroy]
-    before_action :set_user_game, only: %i[new create]
+    before_action :set_user_game, only: %i[new create edit update]
 
     def index
         @game_logs = GameLog.includes(:user)
@@ -21,8 +21,8 @@ class GameLogsController < ApplicationController
         if @game_log.save
             redirect_to game_logs_path, notice: "ゲームログを記録しました"
         else
-            flash[:alert] = "ゲームログを記録出来ませんでした"
-            render :new
+            flash.now[:alert] = "ゲームログを記録出来ませんでした"
+            render :new, status: :unprocessable_entity
         end
     end
 
@@ -32,7 +32,7 @@ class GameLogsController < ApplicationController
         if @game_log.update(game_log_params)
             redirect_to game_log_path(@game_log), notice: "ゲームログを編集しました"
         else
-            flash[:alert] = "ゲームログを編集出来ませんでした"
+            flash.now[:alert] = "ゲームログを編集出来ませんでした"
             render :edit, status: :unprocessable_entity
         end
     end
