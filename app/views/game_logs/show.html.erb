@@ -8,7 +8,7 @@
     <% if @game_log.own? %>
       <%= link_to "編集", "#",
         class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
-      <%= link_to "削除", "#",
+      <%= link_to "削除", game_log_path(@game_log),
         class: "bg-red-950 text-2xl text-red-400 border border-red-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150",
         data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
     <% end %>
