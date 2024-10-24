@@ -7,7 +7,7 @@
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
       <%= form_with(model: @game_log) do |f| %>
-
+        <%= render "shared/form_error_messages", object: @game_log %>
         <div class="field mt-6">
           <div class="mb-4">
             <%= f.label :user_game_id, "ゲームを選択" %>
