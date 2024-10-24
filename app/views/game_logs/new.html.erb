@@ -11,7 +11,7 @@
         <div class="field mt-6">
           <div class="mb-4">
             <%= f.label :user_game_id, "ゲームを選択" %>
-            <%= f.collection_select :user_game_id, @user_games, :id, :game_title, prompt: "ゲームを選んでください", class: "select select-accent" %>
+            <%= f.collection_select :user_game_id, @user_games, :id, :game_title_method, prompt: "ゲームを選んでください", class: "select select-accent" %>
           </div>
         </div>
 
