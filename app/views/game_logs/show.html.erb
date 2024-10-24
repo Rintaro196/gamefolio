@@ -14,3 +14,8 @@
     <% end %>
   </div>
 </div>
+<%= link_to "https://twitter.com/share?url=#{request.url}&text=本日のゲームログ：#{@game_log.title}%0a%23Gamefolio_m%0a",
+  target: '_blank',
+  class: "btn btn-outline inline-flex items-center space-x-2" do %>
+  <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
+<% end %>
