@@ -56,10 +56,8 @@
   <div class="text-center my-10">
     <p class="text-white text-2xl">ゲームライブラリにゲームを登録してください</P>
     <div class="my-6">
-      <%= link_to search_games_path do %>
-        <button class="bg-lime-950 text-lime-400 text-2xl border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
-          ゲームを登録しに行く</button>
-      <% end %>
+      <%= link_to "ゲームを登録しに行く", search_games_path,
+        class: "bg-lime-950 text-lime-400 text-2xl border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
     </div>
   </div>
 <% end %>

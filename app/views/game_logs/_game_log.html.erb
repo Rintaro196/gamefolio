@@ -2,5 +2,6 @@
   <div class="relative border-solid border-2 border-white rounded-lg inline-block bg-gray-950 sm:w-3/5 lg:w-2/5 px-2 py-4">
     <span class="text-white text-3xl absolute -top-3 left-2.5 py-2 inline-block"><%= game_log.user.name %></span>
     <p class="text-white text-2xl"><%= game_log.title %></P>
+    <% link_to "詳細", game_log, class: "btn btn-outline btn-accent btn-sm" %>
   </div>
 </div>
