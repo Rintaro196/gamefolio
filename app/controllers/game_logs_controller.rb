@@ -1,5 +1,5 @@
 class GameLogsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only: %i[new create edit update destroy]
     before_action :set_game_log, only: %i[edit update destroy]
     before_action :set_user_game, only: %i[new create edit update]
 
