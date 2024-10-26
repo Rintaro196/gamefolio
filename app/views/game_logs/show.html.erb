@@ -1,21 +1,43 @@
 <div class="flex justify-center my-8">
-  <div class="relative border-solid border-2 border-white rounded-lg inline-block bg-gray-950 sm:w-3/5 lg:w-2/5 px-2 py-4">
-    <span class="text-white text-3xl absolute -top-3 left-2.5 py-2 inline-block"><%= @game_log.user.name %></span>
-    <p class="text-white text-2xl"><%= @game_log.title %></P>
-    <p class="text-white text-2xl"><%= @game_log.body %></P>
-    <p class="text-white text-2xl">プレイ時間：<%= @game_log.play_time %>分</P>
-    <p class="text-white text-2xl">課金額：<%= @game_log.spending_amount %>円</P>
-    <% if current_user && current_user.own?(@game_log) %>
-      <%= link_to "編集", "#",
-        class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
-      <%= link_to "削除", game_log_path(@game_log),
-        class: "bg-red-950 text-2xl text-red-400 border border-red-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150",
-        data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+  <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 sm:w-3/5 lg:w-2/5 p-2 p-4">
+    <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-4xl font-bold px-2 leading-none hover:text-lime-800 hover:no-underline"><%= link_to "#{@game_log.user.name}", user_path(id: @game_log.user.id) %></span>
+    <div class="text-center">
+      <div class="mt-6">
+        <p class="text-lime-400 text-4xl"><span class="text-white text-2xl">【タイトル】</span><br>
+          <%= @game_log.title %></P>
+      </div>
+      <div class="mt-6">
+        <p class="text-white text-xl"><%= @game_log.body %></P>
+      </div>
+    <% if @game_log.play_time.present? %>
+      <div class="mt-6">
+        <p class="text-white">プレイ時間：<%= @game_log.play_time %>分</P>
+      </div>
+    <% end %>
+    <% if @game_log.spending_amount.present? %>
+      <div class="mt-6">
+        <p class="text-white">課金額：<%= @game_log.spending_amount %>円</P>
+      </div>
+    <% end %>
+    </div>
+    <p class="text-white text-center my-4">ゲームタイトル：<%= @game_log.user_game.game_title_method %></p>
+    <% if current_user.present? %>
+      <% if current_user && current_user.own?(@game_log) %>
+        <div class="flex justify-end space-x-2 mt-6">
+        <%= link_to "編集", "#",
+          class: "btn btn-outline btn-accent btn-sm" %>
+        <%= link_to "削除", game_log_path(@game_log),
+          class: "btn btn-outline btn-error btn-sm",
+          data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
-<%= link_to "https://twitter.com/share?url=#{request.url}&text=本日のゲームログ：#{@game_log.title}%0a%23Gamefolio_m%0a",
+<div class="text-center">
+<%= link_to "https://twitter.com/share?url=#{request.url}&text=【本日のゲームログ】#{@game_log.title}%0a%23Gamefolio_m%0a",
   target: '_blank',
-  class: "btn btn-outline inline-flex items-center space-x-2" do %>
+  class: "bg-gray-950 text-2xl text-gray-400 border border-gray-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 inline-flex items-center space-x-2" do %>
   <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
 <% end %>
+</div>
