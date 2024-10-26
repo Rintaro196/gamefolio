@@ -1,0 +1,63 @@
+<head>
+  <title><% content_for(:title, "ゲームログ作成") %></title>
+</head>
+<h2 class="text-white text-6xl text-center mt-6">ゲームログ作成</h2>
+<% if @user_games.present? %>
+<div class="flex justify-center my-8">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+    <div class="items-center text-center">
+      <%= form_with(model: @game_log, local: true) do |f| %>
+        <%= render "shared/form_error_messages", object: @game_log %>
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :user_game_id, "ゲームを選択", class: "text-white text-2xl" %>
+            <%= f.collection_select :user_game_id, @user_games, :id, :game_title_method, {}, prompt: "ゲームを選んでください", class: "select select-accent w-80" %>
+          </div>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :title, class: "text-white text-2xl" %>
+          </div>
+          <%= f.text_field :title, autofocus: true,
+            class: "input input-bordered input-accent h-12 w-2/3 min-w-xs" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :body, class: "text-white text-2xl" %></br>
+          </div>
+          <%= f.text_area :body, class: "textarea textarea-accent w-2/3 h-24 min-w-xs" %>
+        </div>
+        
+        <div class="field mt-6">
+          <div class="mb-4">
+            <%= f.label :play_time, class: "text-white text-2xl" %>
+          </div>
+          <p class="text-white text-2xl"><%= f.number_field :play_time, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %> 分</p>
+        </div>
+
+        <div class="field mt-6">
+        <div class="mb-4">
+          <%= f.label :spending_amount, class: "text-white text-2xl" %></br>
+        </div>
+        <p class="text-white text-2xl"><%= f.number_field :spending_amount, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %> 円</p>
+      </div>
+
+        <div class="actions my-8">
+          <%= f.submit "記録",
+            class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% else %>
+  <div class="text-center my-10">
+    <p class="text-white text-2xl">ゲームライブラリにゲームを登録してください</P>
+    <div class="my-6">
+      <%= link_to "ゲームを登録しに行く", search_games_path,
+        class: "bg-lime-950 text-lime-400 text-2xl border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+    </div>
+  </div>
+<% end %>

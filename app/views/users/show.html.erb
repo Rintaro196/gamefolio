@@ -32,9 +32,13 @@
     </div>
   </div>
 </div>
-<div class="text-center">
-  <%= link_to edit_user_registration_path do %>
-    <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
-      編集</button>
+<% if current_user.present? %>
+  <% if @user.id == current_user.id %>
+    <div class="flex justify-evenly">
+      <%= link_to "ゲームライブラリ", user_games_path(id: current_user.id),
+        class: "bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+      <%= link_to "編集", edit_user_registration_path,
+        class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+    </div>
   <% end %>
-</div>
+<% end %>

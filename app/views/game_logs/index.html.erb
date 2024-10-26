@@ -1,0 +1,9 @@
+<head>
+  <title><% content_for(:title, "ゲームログ一覧") %></title>
+</head>
+<h1 class="text-white text-6xl text-center my-6">みんなのゲームログ</h1>
+<% if @game_logs.present? %>
+  <%= render @game_logs %>
+<% else %>
+  <p class="text-white text-2xl text-center mt-6">ゲームログの投稿はありません</p>
+<% end %>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show]
   resources :user_games, only: %i[index]
+  resources :game_logs, only: %i[index show new create destroy]
 
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"
