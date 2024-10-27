@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root "home_pages#home"
 
   resources :users, only: %i[index show]
-  resources :user_games, only: %i[index]
+  resources :user_games, only: %i[index show]
   resources :game_logs
 
   get "games/search", to: "games#search", as: "search_games"

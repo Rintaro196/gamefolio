@@ -1,0 +1,51 @@
+<head>
+  <title><% content_for(:title, "ゲームライブラリ:#{@user_game.game_title_method}") %></title>
+</head>
+<div class="flex justify-center my-8">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 sm:w-3/5 lg:w-2/5">
+    <div class="items-center text-center">
+      <div class="flex justify-center">
+        <div class="grid grid-cols-4 gap-4 place-items-center m-8">
+          <% if @user_game.game.cover_url.present? %>
+            <%= image_tag "#{@user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
+          <% else %>
+            <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
+          <% end %>
+          <div class="col-span-2">
+            <h1 class="text-lime-400 text-4xl"><%= @user_game.game_title_method %></h1><br>
+            <% if @total_play_time.present? %>
+              <p class="text-white text-2xl mb-2">プレイ総時間:<%= @total_play_time %>分</p>
+            <% end %>
+            <% if @total_spnding_amount.present? %>
+              <p class="text-white text-2xl mb-2">総課金額:<%= @total_spnding_amount %>円</p>
+            <% end %>
+          </div>
+          <% if @user_game.game.genres.present? %>
+            <div class="col-span-4 mt-4">
+              <p class="text-white text-lime-400">ジャンル</p>
+            </div>
+            <div class="col-span-4 my-2">
+              <% @user_game.game.genres.each do |genru| %>
+                <div class="badge badge-accent badge-outline"><%= genru.name %></div>
+              <% end %>
+            </div>
+          <% end %>
+          <% if @user_game.game.platforms.present? %>
+            <div class="col-span-4 mt-4">
+              <p class="text-white text-lime-400">プラットフォーム</p>
+            </div>
+            <div class="col-span-4 my-2">
+              <% @user_game.game.platforms.each do |platform| %>
+                <div class="badge badge badge-primary badge-outline"><%= platform.name %></div>                  
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center my-6">
+  <%= link_to "一覧に戻る", user_games_path(id: @user_game.user.id),
+    class:"bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
+</div>
