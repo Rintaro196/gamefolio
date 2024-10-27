@@ -37,7 +37,7 @@ class GameLogsController < ApplicationController
         end
     end
 
-    def destroy   
+    def destroy
         @game_log.destroy!
         redirect_to user_path(id: current_user.id), status: :see_other, notice: "ゲームログを削除しました"
     end
