@@ -1,7 +1,7 @@
 <head>
-  <title><% content_for(:title, "ゲームログ作成") %></title>
+  <title><% content_for(:title, "ゲームログ編集") %></title>
 </head>
-<h2 class="text-white text-6xl text-center mt-6">ゲームログ作成</h2>
+<h2 class="text-white text-6xl text-center mt-6">ゲームログ編集</h2>
 <% if @user_games.present? %>
   <%= render "game_logs/form", game_log: @game_log %>
 <% else %>
