@@ -2,12 +2,12 @@
   <title><% content_for(:title, "#{@user.name}") %></title>
 </head>
 <div class="flex justify-center my-8">
-  <div class="rounded-lg border-solid border-white border-4 bg-gray-950  w-full sm:w-3/5 lg:w-2/5">
+  <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
       <div class="grid grid-cols-4 gap-4 place-items-center m-8">
-        <%= image_tag 'avater.png', class: "col-span-2 border-solid border-white border-4 w-64 rounded" %>
+        <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-64 rounded" %>
         <div class="col-span-2">
-          <h1 class=" text-lime-400 text-6xl"><%= @user.name %></h1></br>
+          <h1 class=" text-lime-400 text-6xl"><%= @user.name %></h1><br>
           <p class="text-gray-400 text-2xl mb-2">ユーザーID: <%= @user.user_code %></p>
           <p class="text-white text-2xl mb-2">年齢： <%= @user.age %>歳</p>
           <p class="text-white text-2xl">性別： <%= @user.gender_i18n %></p>

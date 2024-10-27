@@ -8,4 +8,12 @@ class UserGame < ApplicationRecord
   def game_title_method
     game.game_title
   end
+
+  def total_play_time
+    game_logs.sum(:play_time)
+  end
+
+  def total_spnding_amount
+    game_logs.sum(:spending_amount)
+  end
 end

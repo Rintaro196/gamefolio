@@ -1,34 +1,17 @@
-<% user_games.each do |user_game| %>
-  <div class="flex justify-center my-8">
-    <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 sm:w-3/5 lg:w-2/5">
-      <div class="items-center text-center">
-        <h3 class="text-3xl text-lime-400 my-4"><%= user_game.game_title %></h3>
-          <div class="flex justify-center">
-            <% if user_game.cover_url.present? %>
-              <%= image_tag "#{user_game.cover_url}" %>
-            <% end %>
-          </div>
-          <div class="my-4">
-          <% if user_game.genres.present? %>
-            <p class="text-white text-lime-400">ジャンル</p>
-            <div class="my-2">
-              <% user_game.genres.each do |genru| %>
-                <div class="badge badge-accent badge-outline"><%= genru.name %></div>
-              <% end %>
-            </div>
-          <% end %>
-          </div>
-          <div class="my-4">
-          <% if user_game.platforms.present? %>
-            <p class="text-white text-lime-400">プラットフォーム</p>
-            <div class="my-2">
-              <% user_game.platforms.each do |platform| %>
-                <div class="badge badge badge-primary badge-outline"><%= platform.name %></div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+<div class="grid grid-cols-1 gap-4 place-items-center md:grid-cols-4">
+  <% user_games.each do |user_game| %>
+    <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 h-auto w-96">
+      <h1 class="text-lime-400 text-4xl text-center my-6"><%= user_game.game_title %></h1>
+      <div class="place-items-center">
+        <% if user_game.cover_url.present? %>
+          <%= image_tag "#{user_game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
+        <% else %>
+          <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
+        <% end %>
+      </div>
+      <div class="text-center my-4">
+        <%= link_to "詳細", user_game_path(user_game), class: "btn btn-outline btn-accent btn-sm" %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
