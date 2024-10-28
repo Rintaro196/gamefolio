@@ -53,6 +53,6 @@ class GameLogsController < ApplicationController
     end
 
     def game_log_params
-        params.require(:game_log).permit(:title, :body, :play_time, :spending_amount, :user_game_id)
+        params.require(:game_log).permit(:title, :body, :play_time, :spending_amount, :user_game_id, game_log_images: [])
     end
 end
