@@ -41,9 +41,9 @@
 
           <div class="field mt-6"
             <div class="mb-4">
-              <%= f.label :images, "画像ファイル", class: "text-white text-2xl" %>
+              <%= f.label :images, "画像ファイル（4枚まで）", class: "text-white text-2xl" %>
             </div>
-            <%= f.file_field :images, multiplue: true %>
+            <%= f.file_field :images, multiplue: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
           </div>
   
           <div class="actions my-8">
