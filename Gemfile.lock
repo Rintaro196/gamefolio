@@ -60,6 +60,8 @@ GEM
       activerecord (= 7.2.1)
       activesupport (= 7.2.1)
       marcel (~> 1.0)
+    activestorage-validator (0.4.0)
+      rails (>= 6.1.0)
     activesupport (7.2.1)
       base64
       bigdecimal
@@ -320,6 +322,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activestorage-validator
   bootsnap
   brakeman
   capybara

@@ -39,11 +39,9 @@
             <%= f.number_field :spending_amount, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
           </div>
 
-          <div class="field mt-6"
-            <div class="mb-4">
-              <%= f.label :images, "画像ファイル（4枚まで）", class: "text-white text-2xl" %>
-            </div>
-            <%= f.file_field :images, multiplue: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
+          <div class="field mt-6">
+            <p class="text-white text-2xl mb-4">画像ファイル（4枚まで）</p>
+            <%= f.file_field :images, multiple: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
           </div>
   
           <div class="actions my-8">
