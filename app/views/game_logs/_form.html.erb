@@ -50,7 +50,10 @@
           <% if game_log.images.attached? %>
             <% game_log.images.each do |image| %>
               <div class="flex justify-evenly">
-                <%= image_tag image.resized %>
+                <%= image_tag image.variant(resize: "80x80").processed, style: "object-fit: cover;" %><br>
+                <%= link_to "削除", remove_image_game_log_path(game_log, image_id: image.id),
+                  class: "btn btn-outline btn-error btn-sm",
+                  data: { turbo_method: :delete } %>
               </div>
              <% end %>
           <% end %>
