@@ -1,6 +1,6 @@
 class GameLogsController < ApplicationController
     before_action :authenticate_user!, only: %i[new create edit update destroy]
-    before_action :set_game_log, only: %i[edit update destroy]
+    before_action :set_game_log, only: %i[edit update destroy remove_image]
     before_action :set_user_game, only: %i[new create edit update]
 
     def index
@@ -40,6 +40,13 @@ class GameLogsController < ApplicationController
     def destroy
         @game_log.destroy!
         redirect_to user_path(id: current_user.id), status: :see_other, notice: "ゲームログを削除しました"
+    end
+
+    def remove_image
+        image = @game_log.images.find(params[:image_id])
+        image.purge
+
+        redirect_to edit_game_log_path(@game_log)
     end
 
     private
