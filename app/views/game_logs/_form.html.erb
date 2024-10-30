@@ -49,7 +49,7 @@
 
           <% if game_log.images.attached? %>
             <% game_log.images.each do |image| %>
-              <%= image_tag image %>
+              <%= image_tag image.resized %>
              <% end %>
           <% end %>
   
