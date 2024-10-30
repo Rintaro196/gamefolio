@@ -49,7 +49,9 @@
 
           <% if game_log.images.attached? %>
             <% game_log.images.each do |image| %>
-              <%= image_tag image.resized %>
+              <div class="flex justify-evenly">
+                <%= image_tag image.resized %>
+              </div>
              <% end %>
           <% end %>
   
