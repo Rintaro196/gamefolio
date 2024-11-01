@@ -51,6 +51,10 @@
 </div>
 
 <h2 class="text-lime-400 text-3xl text-center mt-4"><%= @user_game.game_title_method %>のゲームログ</h2>
-<% @game_logs.each do |game_log| %>
-  <%= render "game_logs/game_log", game_log: game_log %>
+<% if @game_log.present? %>
+  <% @game_logs.each do |game_log| %>
+    <%= render "game_logs/game_log", game_log: game_log %>
+  <% end %>
+<% else %>
+  <p class="text-white text-2xl">ゲームログがありません</P>
 <% end %>
