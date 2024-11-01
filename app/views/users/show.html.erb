@@ -45,8 +45,10 @@
 </div>
 
 <% if @user_game_logs.present? %>
-  <h2 class="text-lime-400 text-3xl text-center mt-4">最近のゲームログ</h2>
+  <h2 class="text-lime-400 text-3xl text-center mt-4">最新のゲームログ</h2>
   <% @user_game_logs.each do |user_game_log| %>
     <%= render "game_logs/game_log", game_log: user_game_log %>
   <% end %>
+<% else %>
+  <p class="text-white text-2xl">ゲームログの投稿はありません</p>
 <% end %>
