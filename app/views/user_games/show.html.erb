@@ -17,7 +17,7 @@
               <p class="text-white text-2xl mb-2">プレイ総時間:<%= @total_play_time %>分</p>
             <% end %>
             <% if @total_spnding_amount.present? %>
-              <p class="text-white text-2xl mb-2">総課金額:<%= @total_spnding_amount %>円</p>
+              <p class="text-white text-2xl mb-2">総課金額:<%= @total_spending_amount %>円</p>
             <% end %>
           </div>
           <% if @user_game.game.genres.present? %>
@@ -49,3 +49,8 @@
   <%= link_to "一覧に戻る", user_games_path(id: @user_game.user.id),
     class:"bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
 </div>
+
+<h2 class="text-lime-400 text-3xl text-center mt-4"><%= @user_game.game_title_method %>のゲームログ</h2>
+<% @game_logs.each do |game_log| %>
+  <%= render "game_logs/game_log", game_log: game_log %>
+<% end %>
