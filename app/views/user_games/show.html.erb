@@ -49,6 +49,7 @@
   <%= link_to "一覧に戻る", user_games_path(id: @user_game.user.id),
     class:"bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
 </div>
+
 <h2 class="text-lime-400 text-3xl text-center mt-4"><%= @user_game.game_title_method %>のゲームログ</h2>
 <% @game_logs.each do |game_log| %>
   <%= render "game_logs/game_log", game_log: game_log %>
