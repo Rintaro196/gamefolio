@@ -3,7 +3,7 @@
 </head>
 <div class="slider">
   <% @game_log.images.each do |image| %>
-    <%= image_tag image if image.attached? %>
+    <%= image_tag image.variant(resize: "200x300").processed if image.attached?, style: "object-fit: cover;" %>
   <% end %>
 </div>
 <div class="flex justify-center my-8">
