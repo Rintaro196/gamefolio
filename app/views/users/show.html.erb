@@ -42,3 +42,7 @@
     </div>
   <% end %>
 <% end %>
+<h2 class="text-lime-400 text-3xl text-center mt-4">最近のゲームログ</h2>
+<% @user_game_logs.each do |user_game_log| %>
+  <%= render "game_logs/game_log", game_log: user_game_log %>
+<% end %>
