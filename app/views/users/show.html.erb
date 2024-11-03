@@ -32,13 +32,23 @@
     </div>
   </div>
 </div>
-<% if current_user.present? %>
-  <% if @user.id == current_user.id %>
-    <div class="flex justify-evenly">
-      <%= link_to "ゲームライブラリ", user_games_path(id: current_user.id),
-        class: "bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+
+<div class="flex justify-evenly">
+  <%= link_to "ゲームライブラリ", user_games_path(id: @user.id),
+    class: "bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+  <% if current_user.present? %>
+    <% if @user.id == current_user.id %>
       <%= link_to "編集", edit_user_registration_path,
         class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
-    </div>
+    <% end %>
   <% end %>
+</div>
+
+<% if @user_game_logs.present? %>
+  <h2 class="text-lime-400 text-3xl text-center mt-4">最新のゲームログ</h2>
+  <% @user_game_logs.each do |user_game_log| %>
+    <%= render "game_logs/game_log", game_log: user_game_log %>
+  <% end %>
+<% else %>
+  <p class="text-white text-2xl">ゲームログの投稿はありません</p>
 <% end %>

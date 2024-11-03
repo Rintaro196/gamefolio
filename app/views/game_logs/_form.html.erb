@@ -29,15 +29,38 @@
             <div class="mb-4">
               <%= f.label :play_time, class: "text-white text-2xl" %>(分)
             </div>
-            <p class="text-white text-2xl"><%= f.number_field :play_time, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %></p>
+            <%= f.number_field :play_time, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
           </div>
   
           <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :spending_amount, class: "text-white text-2xl" %>(円)</br>
+            <div class="mb-4">
+              <%= f.label :spending_amount, class: "text-white text-2xl" %>(円)</br>
+            </div>
+            <%= f.number_field :spending_amount, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
           </div>
-          <p class="text-white text-2xl"><%= f.number_field :spending_amount, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %></p>
-        </div>
+
+          <div class="field mt-6">
+            <p class="text-white text-2xl mb-4">画像ファイル（4枚まで）</p>
+            <% if game_log.persisted? && game_log.images.attached? %>
+              <% game_log.images.each do |image| %>
+                <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
+              <% end %>
+            <% end %>
+            <%= f.file_field :images, multiple: true, direct_upload: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
+          </div>
+
+          <% if game_log.images.attached? %>
+          <div class="flex justify-evenly my-2">
+            <% game_log.images.each do |image| %>
+              <div>
+                <%= image_tag image.variant(resize: "80x80").processed, style: "object-fit: cover;" %>
+                <%= link_to "削除", remove_image_game_log_path(game_log, image_id: image.id),
+                  class: "btn btn-outline btn-error btn-sm",
+                  data: { turbo_method: :delete } %>
+              </div>
+            <% end %>
+          </div>
+          <% end %>
   
           <div class="actions my-8">
             <%= f.submit "記録",
