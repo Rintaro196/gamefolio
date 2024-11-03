@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show]
   resources :user_games, only: %i[index show]
-  
+
   resources :game_logs do
     member do
       delete :remove_image
