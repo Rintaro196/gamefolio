@@ -1,13 +1,7 @@
 <head>
   <title><% content_for(:title, "#{@game_log.title}") %></title>
 </head>
-<div class="slider">
-  <% if @game_log.images.attached? %>
-    <% @game_log.images.each do |image| %>
-      <%= image_tag image.variant(resize: "200x300").processed, style: "object-fit: cover;" %>
-    <% end %>
-  <% end %>
-</div>
+
 <div class="flex justify-center my-8">
   <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 sm:w-3/5 lg:w-2/5 p-2 p-4">
     <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-4xl font-bold px-2 leading-none hover:text-lime-800 hover:no-underline"><%= link_to "#{@game_log.user.name}", user_path(id: @game_log.user.id) %></span>
