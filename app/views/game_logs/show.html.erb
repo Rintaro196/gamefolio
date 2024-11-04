@@ -1,12 +1,14 @@
 <head>
   <title><% content_for(:title, "#{@game_log.title}") %></title>
 </head>
-<div class="slider">
-  <% if @game_log.images.attached? %>
-    <% @game_log.images.each do |image| %>
-      <%= image_tag image.variant(resize: "200x300").processed, style: "object-fit: cover;" %>
+<div class="swiper-container">
+  <div class="flex justify-center">
+    <% if @game_log.images.attached? %>
+      <% @game_log.images.each do |image| %>
+        <%= image_tag image.variant(resize: "200x300").processed, class: "swiper-slide", style: "object-fit: cover;" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 <div class="flex justify-center my-8">
   <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 sm:w-3/5 lg:w-2/5 p-2 p-4">

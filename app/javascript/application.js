@@ -1,27 +1,29 @@
 // Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
-import "./controllers"
+import "@hotwired/turbo-rails";
+import "./controllers";
 
-document.addEventListener('turbo:load', function() {
-  const toggleSidebar = document.getElementById('toggle-sidebar');
-  const closeSidebar = document.getElementById('close-sidebar');
-  const sidebar = document.getElementById('sidebar');
-  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+import "./sidebar";
 
-  toggleSidebar.addEventListener('click', function() {
-    sidebar.classList.toggle('-translate-x-full');
-    sidebar.classList.toggle('translate-x-0');
-  });
+$(document).ready(function() {
+    new Swiper('.swiper-container', {
+      loop: true,
+      direction: 'horizontal',
+      mousewheel: {
+          forceToAxis: false,
+          invert: false
+      },
 
-  closeSidebar.addEventListener('click', function() {
-    sidebar.classList.add('-translate-x-full');
-    sidebar.classList.remove('translate-x-0');
-  });
+      keyboard: true,
 
-  sidebarLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      sidebar.classList.add('-translate-x-full');
-      sidebar.classList.remove('translate-x-0');
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
     });
   });
-});

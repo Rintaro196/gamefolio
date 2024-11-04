@@ -2,3 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 @import "./node_modules/nes.css/css/nes.css";
+@import 'swiper/css/swiper';

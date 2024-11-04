@@ -14,6 +14,7 @@
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.10",
     "postcss": "^8.4.47",
+    "swiper": "^11.1.14",
     "tailwindcss": "^3.4.12"
   }
 }
