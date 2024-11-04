@@ -7,12 +7,7 @@
       <p class="text-white text-4xl my-6"><%= game_log.title %></p>
       <p class="text-white text-2xl my-4"><%= game_log.body.truncate(140) %></p>
       <p class="text-white my-4">ゲームタイトル：<%= game_log.user_game.game_title_method %></p>
-        <% if game_log.images.attached? %>
-        <div class="flex justify-center space-x-2 my-4">
-          <% game_log.images.each do |image| %>
-            <%= image_tag image.variant(resize: "100x100").processed, style: "object-fit: cover;" %>
-          <% end %>
-        </div>
+
         <% end %>
       <%= link_to "詳細", game_log, class: "btn btn-outline btn-accent btn-sm" %>
     </div>
