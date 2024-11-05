@@ -10,7 +10,7 @@
       <% if game_log.images.attached? %>
         <div class="flex justify-center space-x-2 my-4">
           <% game_log.images.each do |image| %>
-            <%= image_tag image.variant(resize: "100x100").processed, style: "object-fit: cover;" %>
+            <%= image_tag image, class:"h-28 w-28", style: "object-fit: cover;" %>
           <% end %>
         </div>
       <% end %>

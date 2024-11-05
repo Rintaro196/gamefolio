@@ -2,11 +2,11 @@
   <title><% content_for(:title, "#{@game_log.title}") %></title>
 </head>
 
-<div class="carousel w-full h-80 md:w-4/5">
+<div class="carousel h-80 w-full lg:w-3/5">
   <% if @game_log.images.attached? %>
     <% @game_log.images.each do |image, index| %>
-     <div id="slide<%= index + 1 %>" class="carousel-item relative w-full h-80 md:w-4/5">
-        <%= image_tag image, class: "w-full h-80 md:w-4/5", style: "object-fit: cover;" %>
+     <div id="slide<%= index + 1 %>" class="carousel-item relative h-80 w-full lg:w-3/5">
+        <%= image_tag image, class: "h-80 w-full lg:w-3/5", style: "object-fit: cover;" %>
         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <a href="#slide<%= (index == 0 ? igames.size : index) %>" class="btn btn-circle btn-outline btn-accent">❮</a>
           <a href="#slide<%= (index + 2 > igames.size ? 1 : index + 2) %>" class="btn btn-circle btn-outline btn-accent">❯</a>
