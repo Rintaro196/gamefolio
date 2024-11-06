@@ -3,7 +3,9 @@ class UserGame < ApplicationRecord
   belongs_to :game
   has_many :game_logs, dependent: :destroy
 
-  enum status: { incomplete: 0, completed: 1 }
+  validates :memo, length: { maxium: 3000 }
+
+  enum status: { incomplete: 0, completed: 1, playing_now: 3 }
 
   def game_title_method
     game.game_title

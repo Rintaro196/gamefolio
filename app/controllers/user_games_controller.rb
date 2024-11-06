@@ -38,6 +38,6 @@ class UserGamesController < ApplicationController
     end
 
     def user_game_params
-        params.require(:user_game).permit(:status)
+        params.require(:user_game).permit(:status、:memo)
     end
 end

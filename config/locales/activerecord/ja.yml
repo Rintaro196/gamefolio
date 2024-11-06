@@ -33,6 +33,7 @@ ja:
       status:
         incomplete: '未クリア'
         completed: 'クリア済'
+        playing_now: 'プレイ中'
   errors:
     messages:
       blank: "を入力してください"
