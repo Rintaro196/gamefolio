@@ -19,6 +19,7 @@
             <% if @total_spnding_amount.present? %>
               <p class="text-white text-2xl mb-2">総課金額:<%= @total_spending_amount %>円</p>
             <% end %>
+            <p class="text-white text-2xl mb-2">ステータス：<%= @user_game.status_i18n %></p>
           </div>
           <% if @user_game.game.genres.present? %>
             <div class="col-span-4 mt-4">
@@ -40,6 +41,15 @@
               <% end %>
             </div>
           <% end %>
+          <% if current_user && current_user.own?(@user_game) %>
+            <div class="flex justify-end space-x-2 my-6">
+              <%= link_to "編集", edit_user_game_path(@user_game),
+                class: "btn btn-outline btn-accent btn-sm" %>
+              <%= link_to "削除", user_game_path(@user_game),
+                class: "btn btn-outline btn-error btn-sm",
+                data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -56,5 +66,5 @@
     <%= render "game_logs/game_log", game_log: game_log %>
   <% end %>
 <% else %>
-  <p class="text-white text-2xl text-center my-6">ゲームログがありません</P>
+  <p class="text-white text-2xl text-center my-6">関連するゲームログがありません</P>
 <% end %>

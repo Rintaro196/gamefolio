@@ -9,8 +9,13 @@
           <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
         <% end %>
       </div>
-      <div class="text-center my-4">
+      <div class="flex justify-end space-x-2 my-4">
         <%= link_to "詳細", user_game_path(user_game), class: "btn btn-outline btn-accent btn-sm" %>
+        <% if if current_user && current_user.own?(user_game) %>
+          <%= link_to "削除", user_game_path(user_game),
+            class: "btn btn-outline btn-error btn-sm",
+            data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+        <% end %>
       </div>
     </div>
   <% end %>
