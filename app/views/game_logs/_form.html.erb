@@ -53,7 +53,7 @@
           <div class="flex justify-evenly my-2">
             <% game_log.images.each do |image| %>
               <div>
-                <%= image_tag image.variant(resize: "80x80").processed, style: "object-fit: cover;" %>
+                <%= image_tag image, class: "h-20 w-20", style: "object-fit: cover;" %>
                 <%= link_to "削除", remove_image_game_log_path(game_log, image_id: image.id),
                   class: "btn btn-outline btn-error btn-sm",
                   data: { turbo_method: :delete } %>

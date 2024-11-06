@@ -1,14 +1,25 @@
 <head>
   <title><% content_for(:title, "#{@game_log.title}") %></title>
 </head>
-<div class="slider">
+
+<div class="flex justify-center w-fill">
   <% if @game_log.images.attached? %>
-    <% @game_log.images.each do |image| %>
-      <%= image_tag image.variant(resize: "200x300").processed, style: "object-fit: cover;" %>
-    <% end %>
+    <div class="carousel w-full md:w-3/5 my-6">
+      <% @game_log.images.each_with_index do |image, index| %>
+        <div id="slide<%= index + 1 %>" class="carousel-item relative w-full">
+          <%= image_tag image, class: "w-full border-2 border-white rounded-lg", style: "object-fit: cover;" %>
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide<%= (index == 0 ? @size : index) %>" class="btn btn-circle">❮</a>
+            <a href="#slide<%= (index + 2 > @size ? 1 : index + 2) %>" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
-<div class="flex justify-center my-8">
+
+
+<div class="flex justify-center my-2">
   <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 sm:w-3/5 lg:w-2/5 p-2 p-4">
     <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-4xl font-bold px-2 leading-none hover:text-lime-800 hover:no-underline"><%= link_to "#{@game_log.user.name}", user_path(id: @game_log.user.id) %></span>
     <div class="text-center">
@@ -43,10 +54,11 @@
     <% end %>
   </div>
 </div>
-<div class="text-center">
-<%= link_to "https://twitter.com/share?url=#{request.url}&text=【本日のゲームログ】#{@game_log.title}%0a%23Gamefolio_m%0a%23#{@game_log.user_game.game_title_method}%0a",
-  target: '_blank',
-  class: "bg-gray-950 text-2xl text-gray-400 border border-gray-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 inline-flex items-center space-x-2" do %>
-  <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
-<% end %>
+
+<div class="text-center my-6">
+  <%= link_to "https://twitter.com/share?url=#{request.url}&text=【本日のゲームログ】#{@game_log.title}%0a%23Gamefolio_m%0a%23#{@game_log.user_game.game_title_method}%0a",
+    target: '_blank',
+    class: "bg-gray-950 text-2xl text-gray-400 border border-gray-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 inline-flex items-center space-x-2" do %>
+      <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
+  <% end %>
 </div>
