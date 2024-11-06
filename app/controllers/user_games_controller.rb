@@ -19,7 +19,7 @@ class UserGamesController < ApplicationController
 
     def update
         if @user_game.update(user_game_params)
-            redirect_to game_log_path(@game_log), notice: "登録ゲームのステータスを更新しました"
+            redirect_to user_game_path(@user_game), notice: "登録ゲームのステータスを更新しました"
         else
             flash.now[:alert] = "登録ゲームのステータスを更新出来ませんでした"
             render :edit, status: :unprocessable_entity
