@@ -1,18 +1,18 @@
 <head>
-  <title><% content_for(:title, "ゲームライブラリ:#{@user_game.game_title_method}") %></title>
+  <title><% content_for(:title, "ゲームライブラリ:#{@user_game.game_title}") %></title>
 </head>
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
       <div class="flex justify-center">
         <div class="grid grid-cols-4 gap-4 place-items-center m-8">
-          <% if @user_game.game.cover_url.present? %>
-            <%= image_tag "#{@user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
+          <% if @user_game.game_cover.present? %>
+            <%= image_tag "#{@user_game.game_cover}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
           <% else %>
             <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
           <% end %>
           <div class="col-span-2">
-            <h1 class="text-lime-400 text-4xl"><%= @user_game.game_title_method %></h1><br>
+            <h1 class="text-lime-400 text-4xl"><%= @user_game.game_title %></h1><br>
             <% if @total_play_time.present? %>
               <p class="text-white text-2xl mb-2">プレイ総時間:<%= @total_play_time %>分</p>
             <% end %>
@@ -42,7 +42,7 @@
             </div>
           <% end %>
           <% if current_user && current_user.own?(@user_game) %>
-            <div class="flex justify-end space-x-2 my-6">
+            <div class="col-span-4 justify-self-end space-x-2 my-6">
               <%= link_to "編集", edit_user_game_path(@user_game),
                 class: "btn btn-outline btn-accent btn-sm" %>
               <%= link_to "削除", user_game_path(@user_game),
@@ -60,7 +60,7 @@
     class:"bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
 </div>
 
-<h2 class="text-lime-400 text-3xl text-center mt-4"><%= @user_game.game_title_method %>のゲームログ</h2>
+<h2 class="text-lime-400 text-3xl text-center mt-4"><%= @user_game.game_title %>のゲームログ</h2>
 <% if @game_logs.present? %>
   <% @game_logs.each do |game_log| %>
     <%= render "game_logs/game_log", game_log: game_log %>

@@ -5,10 +5,10 @@
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
       <%= form_with(model: @user_game) do |f| %>
-        <h1 class="text-lime-400 text-4xl my-6"><%= @user_game.game_title_method %></h1>
+        <h1 class="text-lime-400 text-4xl my-6"><%= @user_game.game_title %></h1>
         <div class="place-items-center">
-          <% if @user_game.cover_url.present? %>
-            <%= image_tag "#{@user_game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
+          <% if @user_game.game_cover.present? %>
+            <%= image_tag "#{@user_game.game_cover}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
           <% else %>
             <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
           <% end %>

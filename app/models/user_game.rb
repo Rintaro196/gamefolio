@@ -5,8 +5,12 @@ class UserGame < ApplicationRecord
 
   enum status: { incomplete: 0, completed: 1 }
 
-  def game_title_method
+  def game_title
     game.game_title
+  end
+
+  def game_cover
+    game.cover_url
   end
 
   def total_play_time
