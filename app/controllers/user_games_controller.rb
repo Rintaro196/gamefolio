@@ -4,7 +4,7 @@ class UserGamesController < ApplicationController
 
     def index
         @user = User.find(params[:id])
-        @user_games = @user.games
+        @user_games = @user.user_games
     end
 
     def show

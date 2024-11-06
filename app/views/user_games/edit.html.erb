@@ -7,8 +7,8 @@
       <%= form_with(model: @user_game) do |f| %>
         <h1 class="text-lime-400 text-4xl my-6"><%= @user_game.game_title_method %></h1>
         <div class="place-items-center">
-          <% if @user_game.cover_url.present? %>
-            <%= image_tag "#{@user_game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
+          <% if @user_game.game.cover_url.present? %>
+            <%= image_tag "#{@user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
           <% else %>
             <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
           <% end %>
@@ -19,7 +19,6 @@
             <%= f.select :status, UserGame.statuses_i18n.invert, {}, class: "select select-accent" %>
           </div>
         </div>
-  
         <div class="actions my-8">
           <%= f.submit "更新",
             class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>

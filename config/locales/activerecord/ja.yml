@@ -16,6 +16,8 @@ ja:
         email: 'メールアドレス'
         password: '復活の呪文'
         password_confirmation: '復活の呪文再詠唱'
+      user_game:
+        status: 'ステータス'
       game_log:
         title: 'タイトル'
         body: '本文'
