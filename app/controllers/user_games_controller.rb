@@ -27,6 +27,8 @@ class UserGamesController < ApplicationController
     end
 
     def destroy
+        @user_game.destroy!
+        redirect_to user_games_path(id: current_user.id), status: :see_other, notice: "ゲームライブラリから削除しました"
     end
 
     private
