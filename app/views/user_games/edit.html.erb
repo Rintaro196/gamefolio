@@ -4,19 +4,25 @@
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
+　　  <h1 class="text-lime-400 text-4xl my-6"><%= @user_game.game_title_method %></h1>
+      <div class="place-items-center">
+        <% if @user_game.game.cover_url.present? %>
+          <%= image_tag "#{@user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
+        <% else %>
+          <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
+        <% end %>
+      </div>
       <%= form_with(model: @user_game) do |f| %>
-        <h1 class="text-lime-400 text-4xl my-6"><%= @user_game.game_title_method %></h1>
-        <div class="place-items-center">
-          <% if @user_game.game.cover_url.present? %>
-            <%= image_tag "#{@user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
-          <% else %>
-            <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
-          <% end %>
-        </div>
         <div class="field mt-6">
           <div class="mb-4">
             <%= f.label :status, class: "text-white text-2xl" %>
             <%= f.select :status, UserGame.statuses_i18n.invert, {}, class: "select select-accent" %>
+          </div>
+        </div>
+        <div class="field mt-6">
+          <div class="mb-4">
+　　　　　　<%= f.label :memo, class: "text-white text-2xl" %>
+            <%= f.text_area :memo, placeholder: "プレイ状況などを書き込もう（3000文字以内)", class: "textarea textarea-accent w-2/3 h-24 min-w-xs" %>
           </div>
         </div>
         <div class="actions my-8">
