@@ -5,7 +5,7 @@
         <h3 class="text-3xl text-lime-400 my-4"><%= game[:name] %></h3>
         <div class="flex justify-center">
           <% if game[:cover_url].present? %>
-            <%= image_tag "#{game[:cover_url]}" %>
+            <%= image_tag "#{game[:cover_url]}", class: "w-80 h-80 rounded-lg border-sloid border-white border-4" %>
           <% end %>
         </div>
         <div class="my-4">

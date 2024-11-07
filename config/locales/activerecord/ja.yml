@@ -18,6 +18,7 @@ ja:
         password_confirmation: '復活の呪文再詠唱'
       user_game:
         status: 'ステータス'
+        memo: 'プレイメモ'
       game_log:
         title: 'タイトル'
         body: '本文'
@@ -33,6 +34,7 @@ ja:
       status:
         incomplete: '未クリア'
         completed: 'クリア済'
+        playing_now: 'プレイ中'
   errors:
     messages:
       blank: "を入力してください"
