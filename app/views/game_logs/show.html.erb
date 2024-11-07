@@ -11,13 +11,13 @@
           <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <% if index == 0 %>
               <a href="#slide<%= @size %>" class="btn btn-circle">❮</a>
-              <a href="#slide<%= index + 1 %>" class="btn btn-circle">❯</a>
+              <a href="#slide<%= index + 2 %>" class="btn btn-circle">❯</a>
             <% elsif index == @size - 1 %>
               <a href="#slide<%= @size - 1 %>" class="btn btn-circle">❮</a>
               <a href="#slide1" class="btn btn-circle">❯</a>
             <% else %>
               <a href="#slide<%= index %>" class="btn btn-circle">❮</a>
-              <a href="#slide<%= index + 2>" class="btn btn-circle">❯</a>
+              <a href="#slide<%= index + 2 %>" class="btn btn-circle">❯</a>
             <% end %>
           </div>
         </div>
