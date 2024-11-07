@@ -9,7 +9,7 @@
         <div id="slide<%= index + 1 %>" class="carousel-item relative w-full">
           <%= image_tag image, class: "w-full border-2 border-white rounded-lg", style: "object-fit: cover;" %>
           <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide<%= (index == 0 ? @size : index) %>" class="btn btn-circle">❮</a>
+            <a href="#slide<%= (index == 0 ? @size : index - 1) %>" class="btn btn-circle">❮</a>
             <a href="#slide<%= (index + 2 > @size ? 1 : index + 2) %>" class="btn btn-circle">❯</a>
           </div>
         </div>
