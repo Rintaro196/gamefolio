@@ -1,10 +1,11 @@
 class UserGamesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only: %i[edit update destroy]
     before_action :set_user_game, only: %i[edit update destroy]
 
     def index
         @user = User.find(params[:id])
         @user_games = @user.user_games
+        @playing_games = @user_games.where(status: 3)
     end
 
     def show
