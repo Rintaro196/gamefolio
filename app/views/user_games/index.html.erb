@@ -1,18 +1,43 @@
 <head>
   <title><% content_for(:title, "ゲームライブラリ") %></title>
 </head>
+
 <h1 class="text-white text-6xl text-center my-6"><%= @user.name %>のゲームライブラリ</h1>
+
 <% if @user_games.present? %>
-  <%= render "user_games/user_game", user_games: @user_games %>
-<% else %>
-  <div class="text-center">
-    <p class="text-white text-2xl">登録ゲームがありません</p>
-    <div class="py-6">
-      <%= link_to search_games_path do %>
-        <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
-          ゲームを登録する
-        </button>
+
+  <div role="tablist" class="tabs tabs-lifted lg:tabs-lg rounded-lg border-sloid border-white border-4 bg-gray-950 lg:mx-32">
+    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-4xl" aria-label="すべて" checked="checked"/>
+    <div role="tabpanel" class="tab-content">
+      <%= render "user_games/user_game", user_games: @user_games %>
+    </div>
+
+    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-4xl" aria-label="プレイ中"/>
+    <div role="tabpanel" class="tab-content">
+      <% if @playing_games.present? %>
+        <%= render "user_games/user_game", user_games: @playing_games %>
+      <% else %>
+        <p class="text-white text-4xl text-center my-10">該当するゲームがありません</p>
       <% end %>
     </div>
   </div>
+
+<% else %>
+
+  <div class="text-center">
+
+    <p class="text-white text-2xl">登録ゲームがありません</p>
+
+    <% if @user.id == current_user.id %>
+      <div class="py-6">
+        <%= link_to search_games_path do %>
+          <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
+            ゲームを登録する
+          </button>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
 <% end %>
