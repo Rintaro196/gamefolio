@@ -16,13 +16,15 @@
         <div class="field mt-6">
           <div class="mb-4">
             <%= f.label :status, class: "text-white text-2xl" %>
-            <%= f.select :status, UserGame.statuses_i18n.invert, {}, class: "select select-accent" %>
+            <%= f.select :status, UserGame.statuses_i18n.invert, {}, class: "text-white select select-accent w-64" %>
           </div>
         </div>
         <div class="field mt-6">
           <div class="mb-4">
-　　　　　　<%= f.label :memo, class: "text-white text-2xl" %>
-            <%= f.text_area :memo, placeholder: "プレイ状況などを書き込もう（3000文字以内)", class: "textarea textarea-accent w-2/3 h-24 min-w-xs" %>
+            <div class="mb-2">
+              <%= f.label :memo, class: "text-white text-2xl" %>
+            </div>
+            <%= f.text_area :memo, placeholder: "プレイ状況などを書き込もう（3000文字以内)", class: "textarea textarea-accent w-full md:w-2/3 h-60" %>
           </div>
         </div>
         <div class="actions my-8">

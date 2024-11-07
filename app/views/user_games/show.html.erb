@@ -19,16 +19,15 @@
             <% if @total_spnding_amount.present? %>
               <p class="text-white text-2xl mb-2">総課金額:<%= @total_spending_amount %>円</p>
             <% end %>
-            <p class="text-white text-2xl mb-2">ステータス：<%= @user_game.status_i18n %></p>
+            <p class="text-white text-2xl mb-2">ステータス：<span class="text-lime-400"><%= @user_game.status_i18n %></span></p>
           </div>
-　　　　　<div class="col-span-4 mt-4>
-            <div class="rounded-lg border-sloid border-white border-4 bg-gray-950">
-              <p class="text-white"><%= @user_game.memo %></p>
-            <//div>
+          <div class="col-span-4 mt-10">
+            <p class="text-lime-400 mb-2">ゲームメモ</p>
+            <p class="text-white"><%= @user_game.memo %></p>
           </div>
           <% if @user_game.game.genres.present? %>
             <div class="col-span-4 mt-4">
-              <p class="text-white text-lime-400">ジャンル</p>
+              <p class="text-lime-400">ジャンル</p>
             </div>
             <div class="col-span-4 my-2">
               <% @user_game.game.genres.each do |genru| %>
@@ -38,7 +37,7 @@
           <% end %>
           <% if @user_game.game.platforms.present? %>
             <div class="col-span-4 mt-4">
-              <p class="text-white text-lime-400">プラットフォーム</p>
+              <p class="text-lime-400">プラットフォーム</p>
             </div>
             <div class="col-span-4 my-2">
               <% @user_game.game.platforms.each do |platform| %>
@@ -60,16 +59,19 @@
     </div>
   </div>
 </div>
+
 <div class="text-center my-6">
   <%= link_to "一覧に戻る", user_games_path(id: @user_game.user.id),
     class:"bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
 </div>
 
-<h2 class="text-lime-400 text-3xl text-center mt-4"><%= @user_game.game_title_method %>のゲームログ</h2>
-<% if @game_logs.present? %>
-  <% @game_logs.each do |game_log| %>
-    <%= render "game_logs/game_log", game_log: game_log %>
+<div class="my-10">
+  <h2 class="text-lime-400 text-3xl text-center"><%= @user_game.game_title_method %>のゲームログ</h2>
+  <% if @game_logs.present? %>
+    <% @game_logs.each do |game_log| %>
+      <%= render "game_logs/game_log", game_log: game_log %>
+    <% end %>
+  <% else %>
+    <p class="text-white text-2xl text-center my-6">関連するゲームログがありません</P>
   <% end %>
-<% else %>
-  <p class="text-white text-2xl text-center my-6">関連するゲームログがありません</P>
-<% end %>
+</div>
