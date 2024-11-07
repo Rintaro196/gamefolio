@@ -21,6 +21,11 @@
             <% end %>
             <p class="text-white text-2xl mb-2">ステータス：<%= @user_game.status_i18n %></p>
           </div>
+　　　　　<div class="col-span-4 mt-4>
+            <div class="rounded-lg border-sloid border-white border-4 bg-gray-950">
+              <p class="text-white"><%= @user_game.memo %></p>
+            <//div>
+          </div>
           <% if @user_game.game.genres.present? %>
             <div class="col-span-4 mt-4">
               <p class="text-white text-lime-400">ジャンル</p>
