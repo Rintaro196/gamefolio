@@ -10,6 +10,7 @@ ja:
         age: '年齢'
         gender: '性別'
         profile: 'プロフィール'
+        user_icon: 'プロフィール画像'
         twitter: 'Xアカウント'
         twitch: 'twitchチャンネル'
         discord: 'discordアカウント'
