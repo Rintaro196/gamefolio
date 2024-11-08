@@ -4,8 +4,7 @@ class IgdbService
     def initialize
         @client_id = ENV["CLIENT_ID"]
         @client_secret = ENV["CLIENT_SECRET"]
-        token = Token.find_by(id: 1)
-        @access_token = token.access_token
+        @access_token = ENV["ACCESS_TOKEN"]
         @headers = {
           "Client-ID" => @client_id,
           "Authorization" => "Bearer #{@access_token}"
