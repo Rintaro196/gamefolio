@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :name, :user_code, length: { maximum: 64 }
   validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
   validates :profile, length: { maximum: 3000 }
-  validates :user_icon, content_type: { in: "image/png", "image/jpg", "image/jpeg", message: "無効なファイル形式です" },
+  validates :user_icon, content_type: { "image/png", "image/jpg", "image/jpeg" },
                         size: { less_than: 5.megabytes, message: "画像サイズが大きすぎます(5MBまで)" }
 
   enum gender: { male: 0, female: 1, other: 2 }
