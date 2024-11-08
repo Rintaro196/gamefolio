@@ -5,13 +5,21 @@
 </div>
 <% if user_signed_in? %>
   <div class="mr-4 md:mr-40">
-      <%= link_to new_game_log_path do %>
-        <button class="btn btn-circle btn-outline btn-info">
-          <i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i>
-        </button>
-      <% end %>
-    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete },
-      class: "bg-rose-950 text-2xl text-rose-400 border border-rose-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" %>
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn btn-neutral border-2 border-white rounded-lg h-auto py-2">
+          <% if current_user.user_icon.attached? %>
+            <%= image_tag current_user.user_icon, class: "w-16 h-16 border-2 border-white rounded" %>
+          <% else %>
+            <%= image_tag "avater.png", class: "w-16 h-16 border-2 border-white rounded" %>
+          <% end %>
+          <p class="text-lime-400 text-2xl"><%= current_user.name %></p>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu bg-indigo-900 rounded-box z-[1] w-52 p-2 shadow">
+        <li><%= link_to "ゲームログ作成", new_game_log_path, class: "text-white" %></li>
+        <li><%= link_to "プロフィール", user_path(id: current_user.id), class: "text-white" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white" %></li>
+      </ul>
+    </div>
   </div>
 <% else %>
   <div class="mr-4 md:mr-40">
