@@ -43,18 +43,20 @@
           <%= f.text_area :profile, class: "textarea textarea-accent w-2/3 h-24 min-w-xs" %>
         </div>
 
-        <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :user_icon, class: "text-white text-2xl" %>
-          </div>
-          <%= f.file_field :user_icon, direct_upload: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
-        </div>
+        <div class="flex justify-center space-x-4 mt-6">
+          <% if @user.user_icon.attached? %>
+            <div class="flex justify-center">
+              <%= image_tag @user.user_icon, size: "100x100", class: "rounded-lg border-sloid border-white border-2", style: "object-fit: cover;" %>
+            </div>
+          <% end %>
 
-        <% if @user.user_icon.attached? %>]
-          <div class="my-4">
-            <%= image_tag @user.user_icon, size: "100x100", style: "object-fit: cover;" %>
+          <div class="field">
+            <div class="mb-2">
+              <%= f.label :user_icon, class: "text-white text-2xl" %>
+            </div>
+            <%= f.file_field :user_icon, direct_upload: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
           </div>
-        <% end %>
+        </div>
 
         <div class="divider divider-primary m-12">SNSアカウント</div>
 
