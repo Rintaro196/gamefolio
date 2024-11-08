@@ -215,7 +215,7 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
-    pg (1.5.8)
+    pg (1.5.9)
     psych (5.2.0)
       stringio
     public_suffix (6.0.1)
@@ -370,7 +370,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   meta-tags
-  pg (~> 1.1)
+  pg (~> 1.5)
   puma (>= 5.0)
   rails (~> 8.0.0)
   rubocop-rails-omakase
