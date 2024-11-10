@@ -132,11 +132,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_06_232038) do
     t.string "twitter"
     t.string "twitch"
     t.string "discord"
-    t.index ["discord"], name: "index_users_on_discord", unique: true
+    t.index ["discord"], name: "index_users_on_discord"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["twitch"], name: "index_users_on_twitch", unique: true
-    t.index ["twitter"], name: "index_users_on_twitter", unique: true
+    t.index ["twitch"], name: "index_users_on_twitch"
+    t.index ["twitter"], name: "index_users_on_twitter"
     t.index ["user_code"], name: "index_users_on_user_code", unique: true
   end
 
