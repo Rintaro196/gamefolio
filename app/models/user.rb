@@ -20,4 +20,12 @@ class User < ApplicationRecord
   def own?(object)
     id == object&.user_id
   end
+
+  def top_5_genres
+    genres = games.joins(:genres)
+                  .group('genres.name')
+                  .order('count(genres.name) DESC')
+                  .limit(5)
+                  .count('genres.name')
+  end
 end

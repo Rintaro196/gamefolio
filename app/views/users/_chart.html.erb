@@ -1,0 +1,47 @@
+<%= content_for :javascript do %>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<% end %>
+
+<canvas id="genreRadarChart"></canvas>
+
+<script>
+  document.addEventListener("turbo:load", initializeGenreRadarChart);
+  document.addEventListener("turbo:render", initializeGenreRadarChart);
+  document.addEventListener("turbo:frame-load", initializeGenreRadarChart);
+
+  function initializeGenreRadarChart() {
+    const canvas = document.getElementById('genreRadarChart');
+  
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+    
+      const data = {
+        labels: <%= raw top_5_genres.keys.to_json %>,
+        datasets: [{
+          label: 'Top 5 Genres',
+          data: <%= raw top_5_genres.values.to_json %>,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }]
+      };
+
+    if (canvas.chartInstance) {
+      canvas.chartInstance.destroy();
+    }
+
+    canvas.chartInstance = new Chart(ctx, {
+      type: 'radar',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          r: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+}
+</script>
