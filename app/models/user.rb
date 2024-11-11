@@ -27,5 +27,7 @@ class User < ApplicationRecord
                   .order("count(genres.name) DESC")
                   .limit(5)
                   .count("genres.name")
+
+    genres.transform_keys { |name| I18n.t("genres.#{name}", default: name) }
   end
 end
