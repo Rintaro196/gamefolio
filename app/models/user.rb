@@ -23,9 +23,9 @@ class User < ApplicationRecord
 
   def top_5_genres
     genres = games.joins(:genres)
-                  .group('genres.name')
-                  .order('count(genres.name) DESC')
+                  .group("genres.name")
+                  .order("count(genres.name) DESC")
                   .limit(5)
-                  .count('genres.name')
+                  .count("genres.name")
   end
 end
