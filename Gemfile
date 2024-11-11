@@ -71,3 +71,5 @@ gem "dotenv-rails"
 gem "httparty"
 
 gem "whenever", require: false
+
+gem "chart-js-rails"

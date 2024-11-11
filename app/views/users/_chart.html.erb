@@ -1,0 +1,84 @@
+<%= content_for :javascript do %>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<% end %>
+
+<div>
+  <canvas id="genreRadarChart"></canvas>
+</div>
+
+<script>
+  document.addEventListener("turbo:visit", initializeGenreRadarChart);
+  document.addEventListener("turbo:load", initializeGenreRadarChart);
+  document.addEventListener("turbo:render", initializeGenreRadarChart);
+  document.addEventListener("turbo:submit-end", initializeGenreRadarChart);
+  document.addEventListener("turbo:frame-load", initializeGenreRadarChart);
+
+  function initializeGenreRadarChart() {
+    const canvas = document.getElementById('genreRadarChart');
+
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+
+      let labels = <%= raw top_5_genres.keys.to_json %>;
+      let values = <%= raw top_5_genres.values.to_json %>;
+
+      while (labels.length < 5) {
+        labels.push(`???`);
+        values.push(0);
+      }
+
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Top 5 Genres',
+          data: values,
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2
+        }]
+      };
+
+      if (canvas.chartInstance) {
+        canvas.chartInstance.destroy();
+      }
+
+      canvas.chartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: data,
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+
+          scales: {
+            r: {
+              grid: {
+                color: '#FFFFFF'
+              },
+              beginAtZero: true,
+              ticks: {
+                stepSize: 1,
+                color: '#000000',
+                font: {
+                  size: 20
+                }
+              },
+              pointLabels: {
+                color: '#FFFFFF',
+                padding: 0,
+                font: {
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  }
+</script>

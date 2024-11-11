@@ -39,7 +39,7 @@
 
 <div class="flex justify-evenly">
   <%= link_to "ゲームライブラリ", user_games_path(id: @user.id),
-    class: "bg-blue-950 text-2xl text-blue-400 border border-blue-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+    class: "bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
   <% if current_user.present? %>
     <% if @user.id == current_user.id %>
       <%= link_to "編集", edit_user_registration_path,
@@ -47,6 +47,15 @@
     <% end %>
   <% end %>
 </div>
+
+<% if @user.user_games.present? %>
+  <div class="flex justify-center my-8">
+    <div class="rounded-lg border-solid border-white border-4 bg-gray-950 p-4 w-full sm:w-3/5 lg:w-2/5">
+      <h1 class="text-lime-400 lg:text-3xl text-center">もっとも遊んでいるジャンルTOP5</h1>
+        <%= render "users/chart", top_5_genres: @top_5_genres %>
+    </div>
+  </div>
+<% end %>
 
 <% if @user_game_logs.present? %>
   <h2 class="text-lime-400 text-3xl text-center mt-4">最新のゲームログ</h2>

@@ -10,7 +10,6 @@
 
     <%= yield :head %>
 
-    <!--<link rel="manifest" href="/manifest.json">-->
     <%= favicon_link_tag("gf_favicon.ico") %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
@@ -25,7 +24,7 @@
     </style>
 
     <script src="https://kit.fontawesome.com/ed5990692e.js" crossorigin="anonymous"></script>
-    
+    <%= yield :javascript %>
     <%= display_meta_tags(default_meta_tags) %>
   </head>
 
