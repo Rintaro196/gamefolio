@@ -3,10 +3,11 @@
 <% end %>
 
 <div>
- <canvas id="genreRadarChart"></canvas>
+  <canvas id="genreRadarChart"></canvas>
 </div>
 
 <script>
+  document.addEventListener("turbo:visit", initializeGenreRadarChart);
   document.addEventListener("turbo:load", initializeGenreRadarChart);
   document.addEventListener("turbo:render", initializeGenreRadarChart);
   document.addEventListener("turbo:frame-load", initializeGenreRadarChart);
