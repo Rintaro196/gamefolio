@@ -14,7 +14,12 @@
   
     if (canvas) {
       const ctx = canvas.getContext('2d');
-    
+
+      while (labels.length < 5) {
+        labels.push(`???`);
+        values.push(0);
+      };
+
       const data = {
         labels: <%= raw top_5_genres.keys.to_json %>,
         datasets: [{
@@ -37,7 +42,11 @@
         responsive: true,
         scales: {
           r: {
-            beginAtZero: true
+            beginAtZero: true,
+            min: 10,
+            ticks: {
+              stepSize: 1
+            }
           }
         }
       }
