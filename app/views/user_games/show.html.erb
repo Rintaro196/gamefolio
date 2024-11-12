@@ -31,7 +31,9 @@
             </div>
             <div class="col-span-4 my-2">
               <% @user_game.game.genres.each do |genru| %>
-                <div class="badge badge-accent badge-outline"><%= genru.name %></div>
+                <div class="badge badge-accent badge-outline">
+                  <%= t("genres.#{genru.name}", default: genru.name) %>
+                </div>
               <% end %>
             </div>
           <% end %>
