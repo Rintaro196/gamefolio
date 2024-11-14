@@ -32,7 +32,11 @@ class GamesController < ApplicationController
     game.save!
 
     unless current_user.games.include?(game)
-      current_user.games << game
+      current_user.transaction do
+        current_user.games << game
+        current_user.increment!(:level) if current_user.level < 99999
+        current_user.increment!(:gem, 10)
+      end
     end
 
     if game.persisted?
