@@ -15,12 +15,14 @@ class GameLog < ApplicationRecord
   private
 
   def level_up_by_game_log
-    user_level = user.user_level
+    user_level = user.level
 
-    if user_level.last_level_up_by_log.nil? || user_level.last_level_up_by_log.to_date != Date.today
-      user_level.increment!(:level) if user_level.level < 99999
-      user_level.increment!(:gem, 10) 
-      user_level.update!(last_level_up_by_log: Time.current)
+    if user.last_level_up_by_log.nil? || user.last_level_up_by_log.to_date != Date.today
+      user.transaction do
+        user.increment!(:level) if user.level < 99999
+        user.increment!(:gem, 10) 
+        user.update!(last_level_up_by_log: Time.current)
+      end
     end
   end
 end
