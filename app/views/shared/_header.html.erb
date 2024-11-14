@@ -23,7 +23,10 @@
       <p class="text-white">Lv.<%= current_user.level %></p>
     </div>
     <div>
-      <p class="text-white">ジェムの数：<%= current_user.gem %></p>
+      <p class="text-white">
+        <span><%= image_tag "gem.png", class: "w-8" %></span>
+        <%= current_user.gem %>
+      </p>
     </div>
   </div>
 <% else %>
