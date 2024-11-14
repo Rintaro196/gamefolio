@@ -28,8 +28,19 @@ class UserGamesController < ApplicationController
     end
 
     def destroy
-        @user_game.destroy!
-        redirect_to user_games_path(id: current_user.id), status: :see_other, notice: "ゲームライブラリから削除しました"
+        gem_cost = 10
+
+        if current_user.gem >= gem_cost
+          current_user.transaction do
+            @user_game.destroy!
+            current_user.decrement!(:gem, gem_cost)
+            current_user.decrement!(:level) if current_user.level > 1
+            flash[:notice] = "ゲームライブラリから削除しました"
+          end
+        else
+          flash[:alert] = "ジェムが不足しているため、ゲームを削除できません。"
+        end
+        redirect_to user_games_path(id: current_user.id), status: :see_other
     end
 
     private
