@@ -11,8 +11,11 @@
           <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-64 rounded" %>
         <% end %>
         <div class="col-span-2">
-          <h1 class=" text-lime-400 text-6xl"><%= @user.name %></h1><br>
-          <p class="text-gray-400 text-2xl mb-2">ユーザーID: <%= @user.user_code %></p>
+          <h1 class=" text-lime-400 text-6xl">
+            <%= @user.name %>
+            <span class="text-white text-4xl">Lv.<%= @user.level %></span>
+          </h1>
+          <p class="text-gray-400 text-2xl my-4">ユーザーID: <%= @user.user_code %></p>
           <p class="text-white text-2xl mb-2">年齢： <%= @user.age %>歳</p>
           <p class="text-white text-2xl">性別： <%= @user.gender_i18n %></p>
         </div>
