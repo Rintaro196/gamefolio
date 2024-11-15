@@ -1,6 +1,7 @@
 <div class="flex justify-center my-8">
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
     <div class="items-center text-center">
+      
       <%= form_with(model: game_log) do |f| %>
         <%= render "shared/form_error_messages", object: game_log %>
         <div class="field mt-6">
@@ -49,26 +50,25 @@
           <%= f.file_field :images, multiple: true, direct_upload: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
         </div>
         
-        <% if game_log.images.persisted? %>
-          <% if game_log.images.attached? %>
-            <div class="flex justify-evenly my-2">
-              <% game_log.images.each do |image| %>
-                <div>
-                  <%= image_tag image, class: "h-20 w-20", style: "object-fit: cover;" %>
-                  <%= link_to "削除", remove_image_game_log_path(game_log, image_id: image.id),
-                    class: "btn btn-outline btn-error btn-sm",
-                    data: { turbo_method: :delete } %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+        <% if game_log.images.attached? %>
+          <div class="flex justify-evenly my-4">
+            <% game_log.images.each do |image| %>
+              <div class="space-y-2">
+                <%= image_tag image, class: "size-20", style: "object-fit: cover;" %>
+                <%= link_to "削除", remove_image_game_log_path(game_log, image_id: image.id),
+                  class: "btn btn-outline btn-error btn-sm",
+                  data: { turbo_method: :delete } %>
+              </div>
+            <% end %>
+          </div>
         <% end %>
-  
+
         <div class="actions my-8">
           <%= f.submit "記録",
             class: "bg-blue-950 text-blue-400 text-2xl border border-blue-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>
