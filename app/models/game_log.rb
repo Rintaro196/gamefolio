@@ -20,7 +20,7 @@ class GameLog < ApplicationRecord
     if user.last_level_up_by_log.nil? || user.last_level_up_by_log.to_date != Date.today
       user.transaction do
         user.increment!(:level) if user.level < 99999
-        user.increment!(:gem, 10) 
+        user.increment!(:gem, 10)
         user.update!(last_level_up_by_log: Time.current)
       end
     end
