@@ -6,9 +6,9 @@
     <div class="items-center text-center">
       <div class="grid grid-cols-4 gap-4 place-items-center m-8">
         <% if @user.user_icon.attached? %>
-          <%= image_tag @user.user_icon, class: "col-span-2 border-solid border-white border-4 h-64 w-64 rounded" %>
+          <%= image_tag @user.user_icon, class: "col-span-2 border-solid border-white border-4 size-64 rounded" %>
         <% else %>
-          <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-64 rounded" %>
+          <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 size-64 rounded" %>
         <% end %>
         <div class="col-span-2">
           <h1 class=" text-lime-400 text-6xl">
@@ -34,7 +34,16 @@
           <i class="fa-brands fa-discord fa-2xl" style="color: #ffffff;"></i><%= @user.discord %>
           <% end %>
         </div>
-        <p class="col-span-4 text-white text-2xl my-6"><%= @user.profile %></p>
+        <div class="col-span-4 mt-6 mb-2">
+          <p class="text-white text-2xl"><%= @user.profile %></p>
+        </div>
+        <% if current_user.present? %>
+          <% if @user.id == current_user.id %>
+            <div class="col-span-4 justify-self-end">
+              <%= link_to "編集", edit_user_registration_path,class: "btn btn-outline btn-accent btn-sm" %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -43,12 +52,6 @@
 <div class="flex justify-evenly">
   <%= link_to "ゲームライブラリ", user_games_path(id: @user.id),
     class: "bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
-  <% if current_user.present? %>
-    <% if @user.id == current_user.id %>
-      <%= link_to "編集", edit_user_registration_path,
-        class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
-    <% end %>
-  <% end %>
 </div>
 
 <% if @user.user_games.present? %>
