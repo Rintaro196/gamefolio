@@ -135,11 +135,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_14_063402) do
     t.integer "level", default: 1, null: false
     t.integer "gem", default: 0, null: false
     t.datetime "last_level_up_by_log"
-    t.index ["discord"], name: "index_users_on_discord"
+    t.index ["discord"], name: "index_users_on_discord", unique: true, where: "(discord IS NOT NULL)"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["twitch"], name: "index_users_on_twitch"
-    t.index ["twitter"], name: "index_users_on_twitter"
+    t.index ["twitch"], name: "index_users_on_twitch", unique: true, where: "(twitch IS NOT NULL)"
+    t.index ["twitter"], name: "index_users_on_twitter", unique: true, where: "(twitter IS NOT NULL)"
     t.index ["user_code"], name: "index_users_on_user_code", unique: true
   end
 

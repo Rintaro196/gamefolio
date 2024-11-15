@@ -4,7 +4,7 @@
   </button>
 </div>
 <% if user_signed_in? %>
-  <div class="relative flex justify-end space-x-4 items-center mr-4 md:mr-40">
+  <div class="relative flex justify-end space-x-4 md:space-x-9 items-center mr-4 md:mr-40">
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-neutral border-2 border-white rounded-lg h-auto p-0">
           <% if current_user.user_icon.attached? %>
@@ -20,14 +20,12 @@
       </ul>
     </div>
     <div>
-      <p class="text-white">Lv.<%= current_user.level %></p>
+      <p class="text-white text-2xl font-medium">Lv.<%= current_user.level %></p>
     </div>
-    <div>
-      <p class="text-white">
-        <span><%= image_tag "gem.png", class: "w-8" %></span>
-        <%= current_user.gem %>
-      </p>
-    </div>
+      <div class="flex flex-row space-x-2">
+        <%= image_tag "gem.png", class: "size-10" %>
+        <p class="text-white text-2xl font-medium p-1"><%= current_user.gem %></p>
+      </div>
   </div>
 <% else %>
   <div class="mr-4 md:mr-40">
