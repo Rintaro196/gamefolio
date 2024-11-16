@@ -7,6 +7,7 @@
       <p class="text-white text-4xl my-6"><%= game_log.title %></p>
       <p class="text-white text-2xl my-4"><%= game_log.body.truncate(140) %></p>
       <p class="text-white my-4">ゲームタイトル：<%= game_log.user_game.game_title_method %></p>
+      <p class="text-white my-4">投稿日時：<%= game_log.created_at.in_time_zone.to_date %></p>
       <% if game_log.images.attached? %>
         <div class="flex justify-center space-x-2 my-4">
           <% game_log.images.each do |image| %>
