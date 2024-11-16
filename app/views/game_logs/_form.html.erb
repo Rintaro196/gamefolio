@@ -47,7 +47,9 @@
               <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
             <% end %>
           <% end %>
-          <%= f.file_field :images, multiple: true, direct_upload: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
+          <%= f.file_field :images, multiple: true, direct_upload: true,
+            accept: "image/jpg, image/jpeg, image/png",
+            class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
         </div>
         
         <% if game_log.images.attached? %>
