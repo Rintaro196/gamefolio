@@ -4,7 +4,7 @@
 
 <div class="flex justify-center w-fill">
   <% if @game_log.images.attached? %>
-    <div class="carousel w-full md:w-3/5 my-6">
+    <div class="carousel w-full md:w-3/5 mt-8">
       <% @game_log.images.each_with_index do |image, index| %>
         <div id="slide<%= index + 1 %>" class="carousel-item relative w-full">
           <%= image_tag image, class: "w-full border-2 border-white rounded-lg", style: "object-fit: cover;" %>
@@ -19,7 +19,7 @@
 </div>
 
 
-<div class="flex justify-center my-2">
+<div class="flex justify-center mt-6">
   <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full lg:w-2/5">
     <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-4xl font-bold px-2 leading-none hover:text-lime-800 hover:no-underline"><%= link_to "#{@game_log.user.name}", user_path(id: @game_log.user.id) %></span>
     <div class="text-center">
