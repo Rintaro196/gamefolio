@@ -1,6 +1,6 @@
 databases:
   - name: gamefolio_database
-    databaseName: gamefolio_production_h8ui
+    databaseName: gamefolio_production_4qsj
     user: mana
     region: singapore
 
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: gamefolio_production_h8ui
+          name: gamefolio_production_4qsj
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false

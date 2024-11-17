@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: gamefolio_production
+  database: gamefolio_production_4qsj
   username: mana
   password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
