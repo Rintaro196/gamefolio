@@ -13,7 +13,7 @@ class UserGamesController < ApplicationController
         @total_play_time = @user_game.total_play_time
         @total_spending_amount = @user_game.total_spnding_amount
 
-        @game_logs = GameLog.includes(:user).where(user_game_id:  @user_game.id)
+        @game_logs = GameLog.includes(:user, user_game: :game).where(user_game_id:  @user_game.id).order(created_at: :desc)
     end
 
     def edit; end

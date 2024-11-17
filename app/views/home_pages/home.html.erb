@@ -1,5 +1,5 @@
-<div class="flex justify-center my-8">
-  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-3/5 min-w-min">
+<div class="flex justify-center mt-8 mb-4">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-3/5">
     <div class="flex justify-center">
       <%= image_tag 'gf_logo.png', width: '150', height: '150' %>
     </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="text-center my-5">
       <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
-        <button class="bg-rose-950 text-2xl text-rose-400 border border-rose-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+        <button class="bg-rose-950 text-2xl text-rose-400 border border-rose-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 w-44">
           ログアウト</button>
       <% end %>
     </div>

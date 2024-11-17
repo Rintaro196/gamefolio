@@ -16,9 +16,8 @@ class GameLog < ApplicationRecord
 
   def level_up_by_game_log
     user_level = user.level
-    level_up_date = user.last_level_up_by_log.in_time_zone.to_date
 
-    if user.last_level_up_by_log.nil? || level_up_date != Time.zone.today
+    if user.last_level_up_by_log.nil? || user.last_level_up_by_log.in_time_zone.to_date != Time.zone.today
       user.transaction do
         user.increment!(:level) if user.level < 99999
         user.increment!(:gem, 10)

@@ -56,7 +56,9 @@
             <div class="mb-2">
               <%= f.label :user_icon, class: "text-white text-2xl" %>
             </div>
-            <%= f.file_field :user_icon, direct_upload: true, class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
+            <%= f.file_field :user_icon, direct_upload: true,
+              accept: "image/jpg, image/jpeg, image/png",
+              class: "file-input file-input-bordered file-input-accent w-full max-w-xs" %>
           </div>
         </div>
 
