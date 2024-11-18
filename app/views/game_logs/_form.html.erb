@@ -16,14 +16,14 @@
             <%= f.label :title, class: "text-white text-2xl" %>
           </div>
           <%= f.text_field :title, autofocus: true,
-            class: "input input-bordered input-accent h-12 w-2/3 min-w-xs" %>
+            class: "input input-bordered input-accent h-12 w-2/3 min-w-xs", placeholder: "140文字以内" %>
         </div>
   
         <div class="field mt-6">
           <div class="mb-4">
             <%= f.label :body, class: "text-white text-2xl" %></br>
           </div>
-          <%= f.text_area :body, class: "textarea textarea-accent w-2/3 h-24 min-w-xs" %>
+          <%= f.text_area :body, class: "textarea textarea-accent w-2/3 h-24 min-w-xs", placeholder: "1000文字以内" %>
         </div>
           
         <div class="field mt-6">
