@@ -8,7 +8,7 @@ class GameLogsController < ApplicationController
     end
 
     def show
-        @game_log = GameLog.includes(:user).find(params[:id])
+        @game_log = GameLog.includes(:user, user_game: :game).with_attached_images.find(params[:id])
         @size = @game_log.images.size
     end
 
