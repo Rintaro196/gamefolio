@@ -2,7 +2,17 @@
   <title><% content_for(:title, "ゲームライブラリ") %></title>
 </head>
 
-<h1 class="text-white text-6xl text-center my-6"><%= @user.name %>のゲームライブラリ</h1>
+<h1 class="text-yellow-400 text-4xl text-center my-6">【<%= @user.name %>のゲームライブラリ】</h1>
+
+<% if @user.id == current_user.id %>
+  <div class="text-center my-8">
+    <%= link_to search_games_path do %>
+      <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+        ゲームを追加
+      </button>
+    <% end %>
+  </div>
+<% end %>
 
 <% if @user_games.present? %>
 
@@ -23,21 +33,5 @@
   </div>
 
 <% else %>
-
-  <div class="text-center">
-
-    <p class="text-white text-2xl">登録ゲームがありません</p>
-
-    <% if @user.id == current_user.id %>
-      <div class="py-6">
-        <%= link_to search_games_path do %>
-          <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
-            ゲームを登録する
-          </button>
-        <% end %>
-      </div>
-    <% end %>
-
-  </div>
-
+  <p class="text-white text-2xl text-center my-16">登録ゲームがありません</p>
 <% end %>
