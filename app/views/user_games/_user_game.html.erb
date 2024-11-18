@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-4 my-8">
   <% user_games.each do |user_game| %>
     <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 h-auto w-96">
-      <h1 class="text-lime-400 text-4xl text-center my-6"><%= user_game.game_title_method %></h1>
+      <h1 class="whitespace-nowrap overflow-hidden text-ellipsis text-lime-400 text-4xl text-center my-6"><%= user_game.game_title_method %></h1>
       <div class="place-items-center">
         <% if user_game.game.cover_url.present? %>
           <%= image_tag "#{user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
