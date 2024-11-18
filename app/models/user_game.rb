@@ -3,7 +3,7 @@ class UserGame < ApplicationRecord
   belongs_to :game
   has_many :game_logs, dependent: :destroy
 
-  validates :memo, length: { maximum: 3000 }
+  validates :memo, length: { maximum: 1000 }
 
   enum status: { incomplete: 0, completed: 1, playing_now: 3 }
 

@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   validates :name, :user_code, presence: true
   validates :name, :user_code, length: { maximum: 64 }
-  validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
-  validates :profile, length: { maximum: 3000 }
+  validates :age, numericality: { only_integer: true, in: 0 .. 1000000000 }, allow_nil: true
+  validates :profile, length: { maximum: 300 }
 
   validates :twitter, :twitch, :discord, uniqueness: true, allow_blank: true
 

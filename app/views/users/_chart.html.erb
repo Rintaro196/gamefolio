@@ -7,12 +7,7 @@
 </div>
 
 <script>
-  document.addEventListener("turbo:visit", initializeGenreRadarChart);
   document.addEventListener("turbo:load", initializeGenreRadarChart);
-  document.addEventListener("turbo:render", initializeGenreRadarChart);
-  document.addEventListener("turbo:before-stream-render", initializeGenreRadarChart);
-  document.addEventListener("turbo:submit-end", initializeGenreRadarChart);
-  document.addEventListener("turbo:frame-load", initializeGenreRadarChart);
 
   function initializeGenreRadarChart() {
     const canvas = document.getElementById('genreRadarChart');

@@ -1,10 +1,11 @@
 <head>
   <title><% content_for(:title, "登録ゲーム更新") %></title>
 </head>
+<h2 class="text-lime-400 text-2xl text-center my-6">【登録ゲーム更新】</h2>
 <div class="flex justify-center my-8">
-  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-2/5">
     <div class="items-center text-center">
-      <h1 class="text-lime-400 text-4xl my-6"><%= @user_game.game_title_method %></h1>
+      <h1 class="text-lime-400 lg:text-4xl my-6"><%= @user_game.game_title_method %></h1>
       <div class="place-items-center">
         <% if @user_game.game.cover_url.present? %>
           <%= image_tag "#{@user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
@@ -13,18 +14,19 @@
         <% end %>
       </div>
       <%= form_with(model: @user_game) do |f| %>
+      <%= render "shared/form_error_messages", object: @user_game %>
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :status, class: "text-white text-2xl" %>
-            <%= f.select :status, UserGame.statuses_i18n.invert, {}, class: "select select-accent w-64" %>
+          <div class="mb-2">
+            <%= f.label :status, class: "text-white" %>
           </div>
+          <%= f.select :status, UserGame.statuses_i18n.invert, {}, class: "select select-accent w-64" %>
         </div>
         <div class="field mt-6">
           <div class="mb-4">
             <div class="mb-2">
-              <%= f.label :memo, class: "text-white text-2xl" %>
+              <%= f.label :memo, class: "text-white" %>
             </div>
-            <%= f.text_area :memo, placeholder: "プレイ状況などを書き込もう（3000文字以内)", class: "textarea textarea-accent w-full md:w-2/3 h-60" %>
+            <%= f.text_area :memo, placeholder: "プレイ状況などを書き込もう（1000文字以内)", class: "textarea textarea-accent w-full md:w-2/3 h-60" %>
           </div>
         </div>
         <div class="actions my-8">
