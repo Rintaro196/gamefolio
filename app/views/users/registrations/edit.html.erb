@@ -2,24 +2,24 @@
   <title><% content_for(:title, "#{current_user.name}") %></title>
 </head>
 <div class="flex justify-center my-8">
-  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-2/5">
     <div class="items-center text-center">
-      <h2 class="text-white text-6xl mt-6">ユーザー編集 <%= current_user.name %></h2>
+      <h2 class="text-lime-400 text-2xl mt-6">ユーザー編集 <%= current_user.name %></h2>
 
       <%= form_with model: @user, url: registration_path(resource_name), html: { method: :put } do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :name, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :name, class: "text-white" %>
           </div>
           <%= f.text_field :name, autofocus: true, autocomplete: "name",
             class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :email, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :email, class: "text-white" %>
           </div>
           <%= f.email_field :email, autocomplete: "email",
             class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
@@ -27,20 +27,20 @@
 
         <div class="field mt-8">
           <div class="inline pr-4">
-            <%= f.label :gender, class: "text-white text-2xl" %>
+            <%= f.label :gender, class: "text-white" %>
             <%= f.select :gender, User.genders_i18n.invert, {}, class: "select select-accent" %>
           </div>
           <div class="inline">
-            <%= f.label :age, class: "text-white text-2xl" %>
+            <%= f.label :age, class: "text-white" %>
             <%= f.number_field :age, min: 1, class: "input input-accent min-w-xs" %>
           </div>
         </div>
 
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :profile, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :profile, class: "text-white" %>
           </div>
-          <%= f.text_area :profile, class: "textarea textarea-accent w-2/3 h-24 min-w-xs", placeholder: "300文字以内" %>
+          <%= f.text_area :profile, class: "textarea textarea-accent w-2/3 h-32 min-w-xs", placeholder: "300文字以内" %>
         </div>
 
         <div class="flex justify-center space-x-4 mt-6">
@@ -54,7 +54,7 @@
 
           <div class="field">
             <div class="mb-2">
-              <%= f.label :user_icon, class: "text-white text-2xl" %>
+              <%= f.label :user_icon, class: "text-white" %>
             </div>
             <%= f.file_field :user_icon, direct_upload: true,
               accept: "image/jpg, image/jpeg, image/png",
@@ -65,22 +65,22 @@
         <div class="divider divider-primary text-white m-12">SNSアカウント</div>
 
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :twitter, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :twitter, class: "text-white" %>
           </div>
           <%= f.text_field :twitter, placeholder: "URL", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :twitch, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :twitch, class: "text-white" %>
           </div>
           <%= f.text_field :twitch, placeholder: "URL", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :discord, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :discord, class: "text-white" %>
           </div>
           <%= f.text_field :discord, placeholder: "ID", class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>

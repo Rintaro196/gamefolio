@@ -1,49 +1,49 @@
 <div class="flex justify-center my-8">
-  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full sm:w-3/5 lg:w-2/5">
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-2/5">
     <div class="items-center text-center">
       
       <%= form_with(model: game_log) do |f| %>
         <%= render "shared/form_error_messages", object: game_log %>
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :user_game_id, "ゲームを選択", class: "text-white text-2xl" %>
-            <%= f.collection_select :user_game_id, @user_games, :id, :game_title_method, {}, prompt: "ゲームを選んでください", class: "select select-accent w-80" %>
+          <div class="mb-2">
+            <%= f.label :user_game_id, "ゲームを選択", class: "text-white" %>
           </div>
+          <%= f.collection_select :user_game_id, @user_games, :id, :game_title_method, {}, prompt: "ゲームを選んでください", class: "select select-accent w-80" %>
         </div>
   
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :title, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :title, class: "text-white" %>
           </div>
           <%= f.text_field :title, autofocus: true,
             class: "input input-bordered input-accent h-12 w-2/3 min-w-xs", placeholder: "140文字以内" %>
         </div>
   
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :body, class: "text-white text-2xl" %></br>
+          <div class="mb-2">
+            <%= f.label :body, class: "text-white" %></br>
           </div>
           <%= f.text_area :body, class: "textarea textarea-accent w-2/3 h-24 min-w-xs", placeholder: "1000文字以内" %>
         </div>
           
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :play_time, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :play_time, class: "text-white" %>
             <span class="text-white">(分)</span>
           </div>
           <%= f.number_field :play_time, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
   
         <div class="field mt-6">
-          <div class="mb-4">
-            <%= f.label :spending_amount, class: "text-white text-2xl" %>
+          <div class="mb-2">
+            <%= f.label :spending_amount, class: "text-white" %>
             <span class="text-white">(円)</spna>
           </div>
           <%= f.number_field :spending_amount, class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
         <div class="field mt-6">
-          <p class="text-white text-2xl mb-4">画像ファイル（4枚まで）</p>
+          <p class="text-white mb-2">画像ファイル（4枚まで）</p>
           <% if game_log.persisted? && game_log.images.attached? %>
             <% game_log.images.each do |image| %>
               <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
