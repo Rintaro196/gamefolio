@@ -1,21 +1,24 @@
-<div class="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-4 my-8">
+<div class="grid grid-cols-1 gap-4 lg:gap-2 place-items-center md:grid-cols-2 lg:grid-cols-4 my-8">
   <% user_games.each do |user_game| %>
-    <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 h-auto w-96">
-      <h1 class="whitespace-nowrap overflow-hidden text-ellipsis text-lime-400 text-4xl text-center my-6"><%= user_game.game_title_method %></h1>
-      <div class="place-items-center">
-        <% if user_game.game.cover_url.present? %>
-          <%= image_tag "#{user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 h-40 w-40 rounded" %>
-        <% else %>
-          <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 w-40 rounded" %>
-        <% end %>
-      </div>
-      <div class="flex justify-center space-x-2 my-4">
-        <%= link_to "詳細", user_game_path(user_game), class: "btn btn-outline btn-accent btn-sm" %>
-        <% if current_user && current_user.own?(user_game) %>
-          <%= link_to "削除", user_game_path(user_game),
-            class: "btn btn-outline btn-error btn-sm",
-            data: { turbo_method: :delete, turbo_confirm: "10ジェムを消費して削除しますか？ ※レベルも下がります" } %>
-        <% end %>
+    <div class="col-span-1">
+      <div class="border-sloid border-white border-4 rounded-lg bg-gray-950 size-80">
+        <h1 class="whitespace-nowrap overflow-hidden text-ellipsis text-lime-400 text-center mt-6 mb-2"><%= user_game.game_title_method %></h1>
+        <div class="place-items-center">
+          <% if user_game.game.cover_url.present? %>
+            <%= image_tag "#{user_game.game.cover_url}", class: "col-span-2 border-solid border-white border-4 size-40 rounded" %>
+          <% else %>
+            <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 size-40 rounded" %>
+          <% end %>
+        </div>
+        <div class="flex justify-center space-x-2 mt-8">
+          <%= link_to "詳細", user_game_path(user_game), class: "btn btn-outline btn-primary btn-sm" %>
+          <% if current_user && current_user.own?(user_game) %>
+            <%= link_to "編集", edit_user_game_path(user_game), class: "btn btn-outline btn-accent btn-sm" %>
+            <%= link_to "削除", user_game_path(user_game),
+              class: "btn btn-outline btn-error btn-sm",
+              data: { turbo_method: :delete, turbo_confirm: "10ジェムを消費して削除しますか？ ※レベルも下がります" } %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

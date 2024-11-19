@@ -2,9 +2,9 @@
   <title><% content_for(:title, "ゲームライブラリ") %></title>
 </head>
 
-<div class="flex justify-center items-center space-x-4 my-6">
+<div class="flex justify-center items-center space-4 my-6">
   <%= user_icon_display(@user, "border-solid border-white border-2 size-20 rounded") %>
-  <h1 class="text-yellow-400 text-4xl">【<%= @user.name %>のゲームライブラリ】</h1>
+  <h1 class="text-yellow-400 md:text-4xl">【<%= @user.name %>のゲームライブラリ】</h1>
 </div>
 
 <% if @user.id == current_user.id %>
@@ -18,23 +18,27 @@
 <% end %>
 
 <% if @user_games.present? %>
+  <div class="flex justify-center">
+    <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-11/12 my-8">
+      <div role="tablist" class="tabs tabs-lifted lg:tabs-lg">
+      
+        <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400" aria-label="すべて" checked="checked"/>
+        <div role="tabpanel" class="tab-content">
+          <%= render "user_games/user_game", user_games: @user_games %>
+        </div>
 
-  <div role="tablist" class="tabs tabs-lifted lg:tabs-lg rounded-lg border-sloid border-white border-4 bg-gray-950 lg:mx-32">
-    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-2xl" aria-label="すべて" checked="checked"/>
-    <div role="tabpanel" class="tab-content">
-      <%= render "user_games/user_game", user_games: @user_games %>
-    </div>
+        <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400" aria-label="プレイ中"/>
+        <div role="tabpanel" class="tab-content">
+          <% if @playing_games.present? %>
+            <%= render "user_games/user_game", user_games: @playing_games %>
+          <% else %>
+            <p class="text-white md:text-2xl text-center my-10">該当するゲームがありません</p>
+          <% end %>
+        </div>
 
-    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-2xl" aria-label="プレイ中"/>
-    <div role="tabpanel" class="tab-content">
-      <% if @playing_games.present? %>
-        <%= render "user_games/user_game", user_games: @playing_games %>
-      <% else %>
-        <p class="text-white text-4xl text-center my-10">該当するゲームがありません</p>
-      <% end %>
+      </div>
     </div>
   </div>
-
 <% else %>
   <p class="text-white text-2xl text-center my-16">登録ゲームがありません</p>
 <% end %>
