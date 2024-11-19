@@ -46,4 +46,4 @@ ja:
       not_a_number: "は数値で入力してください"
       content_type_invalid: "無効なファイル形式です"
       confirmation: "呪文が一致していません"
-      in: "数が大きすぎます"
+      in: "数値が正しくありません"
