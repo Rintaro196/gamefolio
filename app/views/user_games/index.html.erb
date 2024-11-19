@@ -20,12 +20,12 @@
 <% if @user_games.present? %>
 
   <div role="tablist" class="tabs tabs-lifted lg:tabs-lg rounded-lg border-sloid border-white border-4 bg-gray-950 lg:mx-32">
-    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-4xl" aria-label="すべて" checked="checked"/>
+    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-2xl" aria-label="すべて" checked="checked"/>
     <div role="tabpanel" class="tab-content">
       <%= render "user_games/user_game", user_games: @user_games %>
     </div>
 
-    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-4xl" aria-label="プレイ中"/>
+    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-2xl" aria-label="プレイ中"/>
     <div role="tabpanel" class="tab-content">
       <% if @playing_games.present? %>
         <%= render "user_games/user_game", user_games: @playing_games %>
