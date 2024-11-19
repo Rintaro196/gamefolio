@@ -5,13 +5,11 @@
   <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-full lg:w-2/5">
     <div class="items-center text-center">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 place-items-center m-8">
+
         <div class="col-span-1 lg:col-span-2">
-          <% if @user.user_icon.attached? %>
-            <%= image_tag @user.user_icon, class: "col-span-2 border-solid border-white border-4 size-64 rounded" %>
-          <% else %>
-            <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 size-64 rounded" %>
-          <% end %>
+          <%= user_icon_display(@user, "border-solid border-white border-4 size-64 rounded") %>
         </div>
+
         <div class="col-span-1 lg:col-span-2">
           <h1 class=" text-lime-400 text-6xl">
             <%= @user.name %>
@@ -21,6 +19,7 @@
           <p class="text-white text-2xl mb-2">年齢： <%= @user.age %>歳</p>
           <p class="text-white text-2xl">性別： <%= @user.gender_i18n %></p>
         </div>
+
         <div class="col-span-1 lg:col-span-2">
           <% if @user.twitter.present? %>
             <%= link_to "#{@user.twitter}", target: "_blank" do %>
@@ -36,9 +35,11 @@
           <i class="fa-brands fa-discord fa-2xl" style="color: #ffffff;"></i><%= @user.discord %>
           <% end %>
         </div>
+
         <div class="col-span-1 lg:col-span-4 mt-6 mb-2">
           <p class="text-white text-2xl"><%= @user.profile %></p>
         </div>
+
         <% if current_user.present? %>
           <% if @user.id == current_user.id %>
             <div class="col-span-1 lg:col-span-4 justify-self-end">
@@ -46,6 +47,7 @@
             </div>
           <% end %>
         <% end %>
+
       </div>
     </div>
   </div>
