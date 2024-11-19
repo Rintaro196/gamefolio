@@ -2,8 +2,9 @@
   <title><% content_for(:title, "#{@game_log.title}") %></title>
 </head>
 
-<div class="flex justify-center w-full h-[500px]">
-  <% if @game_log.images.attached? %>
+
+<% if @game_log.images.attached? %>
+  <div class="flex justify-center w-full h-[500px]">
     <div class="carousel w-full md:w-3/5 mt-8">
       <% @game_log.images.each_with_index do |image, index| %>
         <div id="slide<%= index + 1 %>" class="carousel-item relative w-full">
@@ -15,9 +16,8 @@
         </div>
       <% end %>
     </div>
-  <% end %>
-</div>
-
+  </div>
+<% end %>
 
 <div class="flex justify-center mt-6">
   <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full lg:w-2/5">
