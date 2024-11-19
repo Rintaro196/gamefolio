@@ -24,10 +24,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     ActiveRecord::Base.transaction do
       if params[:user][:user_icon].present? && current_user.user_icon.attached?
         @old_icon = current_user.user_icon
+        @old_icon.purge_later
       end
 
       if resource.update(account_update_params)
-        @old_icon&.purge_later
         redirect_to after_update_path_for(resource)
       else
         render :edit
