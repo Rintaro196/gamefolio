@@ -2,42 +2,43 @@
   <title><% content_for(:title, "ゲームライブラリ") %></title>
 </head>
 
-<h1 class="text-white text-6xl text-center my-6"><%= @user.name %>のゲームライブラリ</h1>
+<div class="flex justify-center items-center space-4 my-6">
+  <%= user_icon_display(@user, "border-solid border-white border-2 size-20 rounded") %>
+  <h1 class="text-yellow-400 md:text-4xl">【<%= @user.name %>のゲームライブラリ】</h1>
+</div>
+
+<% if @user.id == current_user.id %>
+  <div class="text-center my-4">
+    <%= link_to search_games_path do %>
+      <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+        ゲームを追加
+      </button>
+    <% end %>
+  </div>
+<% end %>
 
 <% if @user_games.present? %>
+  <div class="flex justify-center">
+    <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-11/12 my-4">
+      <div role="tablist" class="tabs tabs-lifted lg:tabs-lg">
+      
+        <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400" aria-label="すべて" checked="checked"/>
+        <div role="tabpanel" class="tab-content">
+          <%= render "user_games/user_game", user_games: @user_games %>
+        </div>
 
-  <div role="tablist" class="tabs tabs-lifted lg:tabs-lg rounded-lg border-sloid border-white border-4 bg-gray-950 lg:mx-32">
-    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-4xl" aria-label="すべて" checked="checked"/>
-    <div role="tabpanel" class="tab-content">
-      <%= render "user_games/user_game", user_games: @user_games %>
-    </div>
+        <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400" aria-label="プレイ中"/>
+        <div role="tabpanel" class="tab-content">
+          <% if @playing_games.present? %>
+            <%= render "user_games/user_game", user_games: @playing_games %>
+          <% else %>
+            <p class="text-white md:text-2xl text-center my-10">該当するゲームがありません</p>
+          <% end %>
+        </div>
 
-    <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400 lg:text-4xl" aria-label="プレイ中"/>
-    <div role="tabpanel" class="tab-content">
-      <% if @playing_games.present? %>
-        <%= render "user_games/user_game", user_games: @playing_games %>
-      <% else %>
-        <p class="text-white text-4xl text-center my-10">該当するゲームがありません</p>
-      <% end %>
-    </div>
-  </div>
-
-<% else %>
-
-  <div class="text-center">
-
-    <p class="text-white text-2xl">登録ゲームがありません</p>
-
-    <% if @user.id == current_user.id %>
-      <div class="py-6">
-        <%= link_to search_games_path do %>
-          <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150">
-            ゲームを登録する
-          </button>
-        <% end %>
       </div>
-    <% end %>
-
+    </div>
   </div>
-
+<% else %>
+  <p class="text-white text-2xl text-center my-16">登録ゲームがありません</p>
 <% end %>

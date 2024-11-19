@@ -30,4 +30,12 @@ module ApplicationHelper
       }
     }
   end
+
+  def user_icon_display(user, css_class)
+    if user.user_icon.attached?
+      image_tag user.user_icon, class: css_class
+    else
+     image_tag "avater.png", class: css_class
+    end
+  end
 end

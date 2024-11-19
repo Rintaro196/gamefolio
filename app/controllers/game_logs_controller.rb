@@ -39,13 +39,20 @@ class GameLogsController < ApplicationController
     end
 
     def destroy
-        @game_log.destroy!
+        if @game_log.images.attached?
+          @game_log.transaction do
+            @game_log.images.purge_later
+            @game_log.destroy!
+          end
+        else
+          @game_log.destroy!
+        end
         redirect_to user_path(id: current_user.id), status: :see_other, notice: "ゲームログを削除しました"
     end
 
     def remove_image
         image = @game_log.images.find(params[:image_id])
-        image.purge
+        image.purge_later
 
         redirect_to edit_game_log_path(@game_log)
     end

@@ -1,4 +1,4 @@
-<div class="my-4 ml-4 md:ml-24">
+<div class="items-center ml-4 md:ml-24">
   <button id="toggle-sidebar" class="bg-lime-950 text-lime-400 border border-lime-400 border-b-4 font-medium relative h-16 px-4 py-2 rounded-md hover:brightness-150" type="button">
     <p class="text-2xl">メニュー</p>
   </button>
@@ -7,11 +7,7 @@
   <div class="relative flex justify-end space-x-4 md:space-x-9 items-center mr-4 md:mr-40">
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-neutral border-2 border-white rounded-lg h-auto p-0">
-          <% if current_user.user_icon.attached? %>
-            <%= image_tag current_user.user_icon, class: "w-16 h-16 rounded" %>
-          <% else %>
-            <%= image_tag "avater.png", class: "w-16 h-16 rounded" %>
-          <% end %>
+        <%= user_icon_display(current_user, "size-16 rouded") %>
       </div>
       <ul tabindex="0" class="dropdown-content menu bg-indigo-900 rounded-box z-[1] w-52 p-2 shadow">
         <li><%= link_to "ゲームログ作成", new_game_log_path, class: "text-white" %></li>
