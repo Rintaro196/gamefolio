@@ -41,7 +41,7 @@ class GameLogsController < ApplicationController
     def destroy
         if @game_log.images.attached?
           @game_log.transaction do
-            @game_log.images.purge
+            @game_log.images.purge_later
             @game_log.destroy!
           end
         else
@@ -52,7 +52,7 @@ class GameLogsController < ApplicationController
 
     def remove_image
         image = @game_log.images.find(params[:image_id])
-        image.purge
+        image.purge_later
 
         redirect_to edit_game_log_path(@game_log)
     end
