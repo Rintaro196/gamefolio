@@ -2,7 +2,10 @@
   <title><% content_for(:title, "ゲームライブラリ") %></title>
 </head>
 
-<h1 class="text-yellow-400 text-4xl text-center my-6">【<%= @user.name %>のゲームライブラリ】</h1>
+<div class="flex justify-center items-center space-x-4 my-6">
+  <%= user_icon_display(@user, "border-solid border-white border-2 size-20 rounded") %>
+  <h1 class="text-yellow-400 text-4xl">【<%= @user.name %>のゲームライブラリ】</h1>
+</div>
 
 <% if @user.id == current_user.id %>
   <div class="text-center my-8">
