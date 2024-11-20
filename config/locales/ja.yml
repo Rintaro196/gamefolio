@@ -22,4 +22,8 @@ ja:
     "Point-and-click": "ポイント＆クリック"
     Tactical: "タクティクス"
     Platform: "プラットフォーム"
-    
+  views:
+    pagination:
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
