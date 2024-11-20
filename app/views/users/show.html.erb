@@ -53,9 +53,17 @@
   </div>
 </div>
 
-<div class="flex justify-evenly">
+<div class="flex justify-center space-x-8">
+
   <%= link_to "ゲームライブラリ", user_games_path(id: @user.id),
     class: "bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+
+  <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{@user.name}のゲームフォリオがあらわれた！見に行く？%0a%3eはい%0a%20いいえ%0a%23Gamefolio_m%0a",
+    target: '_blank',
+    class: "bg-gray-950 text-2xl text-gray-400 border border-gray-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 inline-flex items-center space-x-2" do %>
+      <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
+  <% end %>
+
 </div>
 
 <% if @user.user_games.present? %>
