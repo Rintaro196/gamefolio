@@ -20,7 +20,10 @@ class IgdbService
     def search_game(title)
         url = "https://api.igdb.com/v4/games"
 
-        query = "search \"#{title}\"; fields name, genres.name, platforms.name, cover.url, game_localizations.region, game_localizations.cover.image_id, game_localizations.name; where category = (0,8,9) & version_parent = null;"
+        query = "search *\"#{title}\"*;
+                 fields name, genres.name, platforms.name, cover.url, game_localizations.region, game_localizations.cover.image_id, game_localizations.name;
+                 where category = (0,8,9) & version_parent = null & themes != (42) & platforms != null;
+                 limit 50;"
 
         response = HTTParty.post(url, headers: @headers, body: query)
 
