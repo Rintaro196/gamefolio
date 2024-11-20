@@ -25,12 +25,22 @@
         <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400" aria-label="すべて" checked="checked"/>
         <div role="tabpanel" class="tab-content">
           <%= render "user_games/user_game", user_games: @user_games %>
+          <div class="flex justify-center my-8">
+            <div class="join">
+              <%= paginate @user_games %>
+            </div>
+          </div>
         </div>
 
         <input type="radio" name="my_tabs_1" role="tab" class="tab text-lime-400" aria-label="プレイ中"/>
         <div role="tabpanel" class="tab-content">
           <% if @playing_games.present? %>
             <%= render "user_games/user_game", user_games: @playing_games %>
+            <div class="flex justify-center my-8">
+              <div class="join">
+                <%= paginate @playing_games %>
+              </div>
+            </div>
           <% else %>
             <p class="text-white md:text-2xl text-center my-10">該当するゲームがありません</p>
           <% end %>
