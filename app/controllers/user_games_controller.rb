@@ -4,8 +4,8 @@ class UserGamesController < ApplicationController
 
     def index
         @user = User.with_attached_user_icon.find(params[:id])
-        @user_games = @user.user_games
-        @playing_games = @user_games.where(status: 3)
+        @user_games = @user.user_games.order(created_at: :desc).page params[:page]
+        @playing_games = @user_games.where(status: 3).order(created_at: :desc).page params[:page]
     end
 
     def show

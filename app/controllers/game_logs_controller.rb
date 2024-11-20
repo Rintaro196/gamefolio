@@ -4,7 +4,7 @@ class GameLogsController < ApplicationController
     before_action :set_user_game, only: %i[new create edit update]
 
     def index
-        @game_logs = GameLog.includes(:user, user_game: :game).with_attached_images.order(created_at: :desc)
+        @game_logs = GameLog.includes(:user, user_game: :game).with_attached_images.order(created_at: :desc).page(params[:page]).per(5)
     end
 
     def show

@@ -72,6 +72,11 @@
   <% @user_game_logs.each do |user_game_log| %>
     <%= render "game_logs/game_log", game_log: user_game_log %>
   <% end %>
+  <div class="flex justify-center my-8">
+    <div class="join">
+      <%= paginate @user_game_logs %>
+    </div>
+  </div>
 <% else %>
   <p class="text-white text-center text-2xl my-10">ゲームログの投稿はありません</p>
 <% end %>
