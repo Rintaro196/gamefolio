@@ -1,0 +1,40 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "7776f5d6cc8f755e22d6af8bf38f409c90f44e816a0ac621db5014e91fd25eae",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/game_logs/index.html.erb",
+      "line": 6,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => GameLog.includes(:user, :user_game => :game).with_attached_images.order(:created_at => :desc).page(params[:page]).per(5), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "GameLogsController",
+          "method": "index",
+          "line": 8,
+          "file": "app/controllers/game_logs_controller.rb",
+          "rendered": {
+            "name": "game_logs/index",
+            "file": "app/views/game_logs/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "game_logs/index"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2024-11-20 18:14:02 +0900",
+  "brakeman_version": "6.2.2"
+}
