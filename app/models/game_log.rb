@@ -5,7 +5,7 @@ class GameLog < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 140 }
   validates :body, length: { maximum: 1000 }
-  validates :play_time, :spending_amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
+  validates :play_time, :spending_amount, numericality: { only_integer: true, in: 0 .. 999999999 }, allow_nil: true
   validates :images, content_type: [ "image/png", "image/jpg", "image/jpeg" ],
                      limit: { max: 4, message: "画像は４枚まで" },
                      size: { less_than: 5.megabytes, message: "画像サイズが大きすぎます(5MBまで)" }

@@ -1,13 +1,13 @@
 <div class="flex justify-center my-8">
-  <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full lg:w-2/5">
+  <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
     <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-4xl font-bold px-2 leading-none hover:text-lime-800 hover:no-underline">
       <%= link_to "#{game_log.user.name}", user_path(id: game_log.user.id) %>
     </span>
     <div class="text-center">
-      <p class="text-white text-4xl my-6"><%= game_log.title %></p>
+      <p class="text-lime-400 text-4xl my-6"><%= game_log.title %></p>
       <p class="text-white text-2xl my-4"><%= game_log.body.truncate(140) %></p>
       <p class="text-white my-4">ゲームタイトル：<%= game_log.user_game.game_title_method %></p>
-      <p class="text-white my-4">投稿日時：<%= game_log.created_at.in_time_zone.to_date %></p>
+      <p class="text-gray-300 my-4">投稿日時：<%= game_log.created_at.in_time_zone.to_date %></p>
       <% if game_log.images.attached? %>
         <div class="flex justify-center space-x-2 my-4">
           <% game_log.images.each do |image| %>
@@ -15,7 +15,7 @@
           <% end %>
         </div>
       <% end %>
-      <%= link_to "詳細", game_log, class: "btn btn-outline btn-accent btn-sm" %>
+      <%= link_to "詳細", game_log, class: "btn btn-outline btn-primary btn-sm" %>
     </div>
   </div>
 </div>

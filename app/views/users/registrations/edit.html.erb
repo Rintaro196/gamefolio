@@ -1,10 +1,10 @@
 <head>
   <title><% content_for(:title, "#{current_user.name}") %></title>
 </head>
-<div class="flex justify-center my-8">
+<h2 class="text-lime-400 text-2xl text-center my-6">【ユーザー編集 <%= current_user.name %>】</h2>
+<div class="flex justify-center my-4">
   <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-full lg:w-2/5">
     <div class="items-center text-center">
-      <h2 class="text-lime-400 text-2xl mt-6">ユーザー編集 <%= current_user.name %></h2>
 
       <%= form_with model: @user, url: registration_path(resource_name), html: { method: :put } do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
@@ -25,15 +25,18 @@
             class: "input input-bordered input-accent h-12 w-80 min-w-xs" %>
         </div>
 
-        <div class="field mt-8">
-          <div class="inline pr-4">
+        <div class="field mt-6">
+          <div class="mb-2">
             <%= f.label :gender, class: "text-white" %>
-            <%= f.select :gender, User.genders_i18n.invert, {}, class: "select select-accent" %>
           </div>
-          <div class="inline">
+          <%= f.select :gender, User.genders_i18n.invert, {}, class: "select select-accent" %>
+        </div>
+
+        <div class="field mt-6">
+          <div class="mb-2">
             <%= f.label :age, class: "text-white" %>
-            <%= f.number_field :age, min: 1, class: "input input-accent min-w-xs" %>
           </div>
+          <%= f.number_field :age, min: 1, class: "input input-accent min-w-xs" %>
         </div>
 
         <div class="field mt-6">
@@ -95,8 +98,8 @@
 </div>
 
 <div class="text-center my-6">
-<%= link_to :back do %> 
-  <button class="bg-lime-950 text-lime-400 text-2xl border border-lime-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150">
-    戻る</button>
-<% end %>
+  <%= link_to user_path(id: current_user.id) do %> 
+    <button class="bg-lime-950 text-lime-400 text-2xl border border-lime-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150">
+      戻る</button>
+  <% end %>
 </div>

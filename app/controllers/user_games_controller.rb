@@ -3,7 +3,7 @@ class UserGamesController < ApplicationController
     before_action :set_user_game, only: %i[edit update destroy]
 
     def index
-        @user = User.find(params[:id])
+        @user = User.with_attached_user_icon.find(params[:id])
         @user_games = @user.user_games
         @playing_games = @user_games.where(status: 3)
     end
@@ -13,7 +13,7 @@ class UserGamesController < ApplicationController
         @total_play_time = @user_game.total_play_time
         @total_spending_amount = @user_game.total_spnding_amount
 
-        @game_logs = GameLog.includes(:user, user_game: :game).where(user_game_id:  @user_game.id).order(created_at: :desc)
+        @game_logs = GameLog.includes(:user, user_game: :game).with_attached_images.where(user_game_id:  @user_game.id).order(created_at: :desc)
     end
 
     def edit; end

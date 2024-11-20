@@ -2,26 +2,25 @@
   <title><% content_for(:title, "#{@user.name}") %></title>
 </head>
 <div class="flex justify-center my-8">
-  <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-full lg:w-2/5">
+  <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-full md:w-4/5 lg:w-2/5">
     <div class="items-center text-center">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 place-items-center m-8">
-        <div class="col-span-1 lg:col-span-2">
-          <% if @user.user_icon.attached? %>
-            <%= image_tag @user.user_icon, class: "col-span-2 border-solid border-white border-4 size-64 rounded" %>
-          <% else %>
-            <%= image_tag "avater.png", class: "col-span-2 border-solid border-white border-4 size-64 rounded" %>
-          <% end %>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 place-items-center m-8">
+
+        <div class="col-span-1 md:col-span-2">
+          <%= user_icon_display(@user, "border-solid border-white border-4 size-64 rounded") %>
         </div>
-        <div class="col-span-1 lg:col-span-2">
-          <h1 class=" text-lime-400 text-6xl">
+
+        <div class="col-span-1 md:col-span-2">
+          <h1 class=" text-lime-400 text-4xl">
             <%= @user.name %>
-            <span class="text-white text-4xl">Lv.<%= @user.level %></span>
+            <span class="text-white text-2xl ml-4">Lv.<%= @user.level %></span>
           </h1>
           <p class="text-gray-400 text-2xl my-4">ユーザーID: <%= @user.user_code %></p>
           <p class="text-white text-2xl mb-2">年齢： <%= @user.age %>歳</p>
           <p class="text-white text-2xl">性別： <%= @user.gender_i18n %></p>
         </div>
-        <div class="col-span-1 lg:col-span-2">
+
+        <div class="col-span-1 md:col-span-2">
           <% if @user.twitter.present? %>
             <%= link_to "#{@user.twitter}", target: "_blank" do %>
               <i class="fa-brands fa-square-x-twitter fa-2xl" style="color: #ffffff;"></i>
@@ -36,16 +35,19 @@
           <i class="fa-brands fa-discord fa-2xl" style="color: #ffffff;"></i><%= @user.discord %>
           <% end %>
         </div>
-        <div class="col-span-1 lg:col-span-4 mt-6 mb-2">
+
+        <div class="col-span-1 md:col-span-4 mt-6 mb-2">
           <p class="text-white text-2xl"><%= @user.profile %></p>
         </div>
+
         <% if current_user.present? %>
           <% if @user.id == current_user.id %>
-            <div class="col-span-1 lg:col-span-4 justify-self-end">
+            <div class="col-span-1 md:col-span-4 justify-self-end">
               <%= link_to "編集", edit_user_registration_path,class: "btn btn-outline btn-accent btn-sm" %>
             </div>
           <% end %>
         <% end %>
+
       </div>
     </div>
   </div>
@@ -58,15 +60,15 @@
 
 <% if @user.user_games.present? %>
   <div class="flex justify-center my-8">
-    <div class="rounded-lg border-solid border-white border-4 bg-gray-950 p-4 w-full sm:w-3/5 lg:w-2/5">
-      <h1 class="text-lime-400 lg:text-3xl text-center">もっとも遊んでいるジャンルTOP5</h1>
+    <div class="rounded-lg border-solid border-white border-4 bg-gray-950 p-4 w-full md:w-3/5 lg:w-2/5">
+      <h1 class="text-lime-400 md:text-2xl lg:text-3xl text-center">もっとも遊んでいるジャンルTOP5</h1>
         <%= render "users/chart", top_5_genres: @top_5_genres %>
     </div>
   </div>
 <% end %>
 
 <% if @user_game_logs.present? %>
-  <h2 class="text-lime-400 text-3xl text-center mt-4">最新のゲームログ</h2>
+  <h2 class="text-yellow-400 text-2xl text-center mt-16">【ゲームログ一覧】</h2>
   <% @user_game_logs.each do |user_game_log| %>
     <%= render "game_logs/game_log", game_log: user_game_log %>
   <% end %>
