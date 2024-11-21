@@ -18,15 +18,16 @@ class GamesController < ApplicationController
     game.game_title = game_data[:name]
     game.cover_url = game_data[:cover_url]
 
-    genres = game_data[:genres].map do |genre_name|
-      Genre.find_or_create_by(name: genre_name)
+    if game_data[:genres].present?
+      genres = game_data[:genres].map do |genre_name|
+        Genre.find_or_create_by(name: genre_name)
+      end
+      game.genres = genres
     end
 
     platforms = game_data[:platforms].map do |platform_name|
       Platform.find_or_create_by(name: platform_name)
     end
-
-    game.genres = genres
     game.platforms = platforms
 
     game.save!
