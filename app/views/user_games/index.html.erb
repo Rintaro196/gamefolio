@@ -7,14 +7,16 @@
   <h1 class="text-yellow-400 md:text-4xl">【<%= @user.name %>のゲームライブラリ】</h1>
 </div>
 
-<% if @user.id == current_user.id %>
-  <div class="text-center my-4">
-    <%= link_to search_games_path do %>
-      <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
-        ゲームを追加
-      </button>
-    <% end %>
-  </div>
+<% if current_user.present? %>
+  <% if @user.id == current_user.id %>
+    <div class="text-center my-4">
+      <%= link_to search_games_path do %>
+        <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+          ゲームを追加
+        </button>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 
 <% if @user_games.present? %>
