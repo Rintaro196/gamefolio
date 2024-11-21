@@ -4,7 +4,7 @@
       <%= link_to "#{game_log.user.name}", user_path(id: game_log.user.id) %>
     </span>
     <div class="text-center">
-      <p class="text-lime-400 text-4xl my-6"><%= game_log.title %></p>
+      <p class="text-lime-400 text-4xl my-6"><%= game_log.title.truncate(30) %></p>
       <p class="text-white text-2xl my-4"><%= game_log.body.truncate(140) %></p>
       <p class="text-white my-4">ゲームタイトル：<%= game_log.user_game.game_title_method %></p>
       <p class="text-gray-300 my-4">投稿日時：<%= game_log.created_at.in_time_zone.to_date %></p>
