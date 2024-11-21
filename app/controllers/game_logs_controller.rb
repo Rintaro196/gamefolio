@@ -20,7 +20,7 @@ class GameLogsController < ApplicationController
         @game_log = GameLog.new(game_log_params)
         @game_log.user = current_user
         if @game_log.save
-            redirect_to game_logs_path, notice: "ゲームログを記録しました"
+            redirect_to game_log_path(@game_log), notice: "ゲームログを記録しました"
         else
             flash.now[:alert] = "ゲームログを記録出来ませんでした"
             render :new, status: :unprocessable_entity
