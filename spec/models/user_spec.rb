@@ -2,14 +2,15 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "バリデーションチェック" do
+    let(:user) { user: user }
 
-    it "nullだとユーザー登録できないこと" do
-      user = user.new
+    it "空だとinvalied" do
+      user.name = ""
+      expect(user).not_to be_valid
     end
-    it "user_codeバリデーション" do end
-    it "ageバリデーション" do end
-    it "profileバリデーション" do end
-    it "アカウントバリデーション" do end
-    it "user_iconバリデーション" do end
+    #it "重複するとinvalied" do end
+    #it "文字数が長すぎるとinvalied" do end
+    #it "無効な数字だとinvalied" do end
+    #it "" do end
   end
 end
