@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root "home_pages#home"
 
   resources :users, only: %i[index show]
+  resources :likes, only: %i[create destory]
   resources :user_games
 
   resources :game_logs do
