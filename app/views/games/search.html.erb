@@ -1,24 +1,31 @@
 <head>
   <title><% content_for(:title, "ゲーム登録") %></title>
 </head>
+
 <h1 class="text-yellow-400 text-4xl text-center mt-6">【ゲーム検索＆登録】</h1>
 <p class="text-gray-300 text-center">※海外のデータベースで検索します</P>
+
 <div class="flex justify-center">
-  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-60 my-6 p-2">
-  <p class="text-lime-400 text-center">【検索のコツ】</p>
-  <p class="text-white text-center">
-    フルネームで検索する<br>
-    英語版タイトルを入力する
-  </p>
+  <div class="rounded-lg border-sloid border-white border-4 bg-gray-950 w-auto my-6 py-2 px-8">
+    <p class="text-lime-400 text-center">【検索のコツ】</p>
+    <p class="text-white text-center">
+      ゲームタイトルはフルネームで検索する<br>
+      なかなかヒットしない時は英語版タイトルを入力してみる
+    </p>
   </div>
 </div>
+
 <div class="text-center">
-<%= form_with url: search_games_path, method: :get, local: true do |form| %>
-  <%= form.label :title, "ゲームタイトル", class: "text-white text-2xl md:mr-2" %>
-  <%= form.text_field :title, class: "input input-bordered input-accent md:mr-2 w-80 min-w-xs" %>
-  <%= form.submit "検索",
-    class: "bg-lime-950 md:text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
-<% end %>
+  <%= form_with url: search_games_path, method: :get, local: true do |form| %>
+    <div class="my-2">
+      <%= form.label :title, "ゲームタイトル", class: "text-white text-2xl" %>
+    </div>
+    <div class="join">
+      <%= form.text_field :title, class: "join-item input input-bordered input-accent w-80 min-w-xs" %>
+      <%= form.submit "検索",
+        class: "join-item btn btn-accent" %>
+    </div>
+  <% end %>
 </div>
 
 <% if @game_info.present? %>
