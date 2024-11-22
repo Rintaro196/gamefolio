@@ -6,9 +6,9 @@ class LikesController < ApplicationController
     redirect_back fallback_location: game_logs_path
   end
 
-  def destory
+  def destroy
     game_log = current_user.likes.find(params[:id]).game_log
     current_user.checkout_like(game_log)
-    redirect_back fallback_location: game_logs_path
+    redirect_back fallback_location: game_logs_path, status: :see_other
   end
 end

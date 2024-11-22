@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get "likes/create"
-  get "likes/destory"
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :likes, only: %i[create destory]
+  resources :likes, only: %i[create destroy]
 
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"
