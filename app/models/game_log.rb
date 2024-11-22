@@ -1,6 +1,7 @@
 class GameLog < ApplicationRecord
   belongs_to :user
   belongs_to :user_game
+  has_many :likes, dependent: :destroy
   has_many_attached :images, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 140 }
