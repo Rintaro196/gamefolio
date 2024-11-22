@@ -11,13 +11,15 @@
   <% if @user.id == current_user.id %>
     <div class="flex justify-center space-x-4 my-4">
       <%= link_to search_games_path do %>
-        <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
-          ゲーム追加
+        <button class="bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+        <div class="space-x-2">
+          <i class="fa-solid fa-plus"></i><i class="fa-solid fa-gamepad"></i><span>ゲーム追加</span>
+        </div>
         </button>
       <% end %>
       <%= link_to new_game_log_path do %>
-        <button class="bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
-          ゲームログ作成
+        <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+        <i class="fa-solid fa-pen"></i><span class="ml-2">ゲームログ作成</span>
         </button>
       <% end %>
     </div>
