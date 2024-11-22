@@ -9,10 +9,15 @@
 
 <% if current_user.present? %>
   <% if @user.id == current_user.id %>
-    <div class="text-center my-4">
+    <div class="flex justify-center space-x-4 my-4">
       <%= link_to search_games_path do %>
         <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
-          ゲームを追加
+          ゲーム追加
+        </button>
+      <% end %>
+      <%= link_to new_game_log_path do %>
+        <button class="bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+          ゲームログ作成
         </button>
       <% end %>
     </div>
