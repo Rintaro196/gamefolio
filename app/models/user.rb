@@ -34,4 +34,17 @@ class User < ApplicationRecord
 
     genres.transform_keys { |name| I18n.t("genres.#{name}", default: name) }
   end
+
+  def check_like(game_log)
+    like_logs << game_log
+  end
+
+  def checkout_like(game_log)
+    like_log.destroy(game_log)
+  end
+
+  def check_like?(game_log)
+    like_logs.include?(game_log)
+  end
+
 end

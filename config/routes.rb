@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "likes/create"
+  get "likes/destory"
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
