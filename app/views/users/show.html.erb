@@ -41,7 +41,7 @@
         </div>
 
         <% if current_user.present? %>
-          <% if @user.id == current_user.id %>
+          <% if @user == current_user %>
             <div class="col-span-1 md:col-span-4 justify-self-end">
               <%= link_to "編集", edit_user_registration_path,class: "btn btn-outline btn-accent" %>
             </div>
@@ -55,13 +55,24 @@
 
 <div class="flex justify-center space-x-8">
 
-  <%= link_to "ゲームライブラリ", user_games_path(id: @user.id),
-    class: "bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+  <%= link_to user_games_path(id: @user.id),
+    class: "bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" do %>
+      <i class="fa-solid fa-gamepad"></i><span class="ml-2">ゲームライブラリ</span>
+  <% end %>
+  
+  <% if current_user.present? %>
+    <% if @user == current_user %>
+      <%= link_to new_game_log_path,
+        class: "hidden md:inline bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" do %>
+          <i class="fa-solid fa-pen"></i><span class="ml-2">ゲームログ作成</span>
+      <% end %>
+    <% end %>
+  <% end %>
 
   <%= link_to "https://twitter.com/intent/tweet?url=#{request.url}&text=#{@user.name}のゲームフォリオがあらわれた！見に行く？%0a%3eはい%0a%20いいえ%0a%23Gamefolio_m%0a",
     target: '_blank',
     class: "bg-gray-950 text-2xl text-gray-400 border border-gray-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 inline-flex items-center space-x-2" do %>
-      <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
+      <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i><span class="hidden md:inline">シェア</span>
   <% end %>
 
 </div>
