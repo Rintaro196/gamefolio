@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
@@ -13,7 +14,12 @@ Rails.application.routes.draw do
     member do
       delete :remove_image
     end
+    collection do
+      get :likes
+    end
   end
+
+  resources :likes, only: %i[create destroy]
 
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"
