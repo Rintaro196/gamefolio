@@ -19,5 +19,4 @@ Rails.application.routes.draw do
   post "games/save_game", to: "games#save_game", as: "save_game"
 
   get "policy", to: "home_pages#policy", as: "policy"
-
 end

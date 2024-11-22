@@ -11,7 +11,7 @@ class GameLogsController < ApplicationController
         @game_log = GameLog.includes(:user, user_game: :game).with_attached_images.find(params[:id])
         @size = @game_log.images.size
         game_title = @game_log.user_game.game_title_method
-        @game_title = game_title.gsub(" ", "") 
+        @game_title = game_title.gsub(" ", "")
     end
 
     def new
