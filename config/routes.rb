@@ -9,14 +9,18 @@ Rails.application.routes.draw do
   root "home_pages#home"
 
   resources :users, only: %i[index show]
-  resources :likes, only: %i[create destory]
   resources :user_games
 
   resources :game_logs do
     member do
       delete :remove_image
     end
+    collection do
+      get :likes
+    end
   end
+
+  resources :likes, only: %i[create destory]
 
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"

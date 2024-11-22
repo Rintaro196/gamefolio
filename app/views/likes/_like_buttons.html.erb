@@ -1,0 +1,13 @@
+<div>
+  <% if current_user.check_like?(game_log) %>
+    <%= link_to likes_path(current_user.likes.find_by(game_log_id: game_log.id)), data: { turbo_method: :delete} do %>
+      <i class="fa-solid fa-heart"></i>
+      <%= game_log.likes.count %>
+    <% end %>
+  <% else %>
+    <%= link_to likes_path(game_log_id: game_log.id), data: { turbo_method: :post } do %>
+      <i class="fa-regular fa-heart"></i>
+      <%= game_log.likes.count %>
+    <% end %>
+  <% end %>
+</div>

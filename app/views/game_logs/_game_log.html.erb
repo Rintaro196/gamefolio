@@ -15,7 +15,10 @@
           <% end %>
         </div>
       <% end %>
-      <%= link_to "詳細", game_log, class: "btn btn-outline btn-primary btn-sm" %>
+        <div class="flex justify-center items-center space-x-4">
+        <%= link_to "詳細", game_log, class: "btn btn-outline btn-primary btn-sm" %>
+        <%= render "likes/like_buttons", game_log: game_log %>
+        </div>
     </div>
   </div>
 </div>

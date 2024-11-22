@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
   def create
-    game_log = GaneLog.find(params[:game_log_id])
+    game_log = GameLog.find(params[:game_log_id])
     current_user.check_like(game_log)
     redirect_back fallback_location: game_logs_path
   end
