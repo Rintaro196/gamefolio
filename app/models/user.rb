@@ -12,8 +12,6 @@ class User < ApplicationRecord
   validates :age, numericality: { only_integer: true, in: 0 .. 1000000000 }, allow_nil: true
   validates :profile, length: { maximum: 300 }
 
-  validates :twitter, :twitch, :discord, allow_blank: true
-
   validates :user_icon, content_type: [ "image/png", "image/jpg", "image/jpeg" ],
                         size: { less_than: 5.megabytes, message: "画像サイズが大きすぎます(5MBまで)" }
 
