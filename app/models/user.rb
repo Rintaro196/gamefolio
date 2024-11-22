@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :games, through: :user_games
   has_many :game_logs, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :like_logs, through: :likes, source: :game_log
   has_one_attached :user_icon, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
@@ -40,7 +41,7 @@ class User < ApplicationRecord
   end
 
   def checkout_like(game_log)
-    like_log.destroy(game_log)
+    like_logs.destroy(game_log)
   end
 
   def check_like?(game_log)
