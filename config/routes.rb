@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"
+
+  get "policy", to: "home_pages#policy", as: "policy"
+
 end
