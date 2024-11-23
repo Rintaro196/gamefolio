@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "check-like-for-game-log-#{@game_log.id}" do %>
+  <%= render "checkout_like", game_log: @game_log %>
+<% end %>

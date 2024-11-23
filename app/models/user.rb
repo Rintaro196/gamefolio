@@ -47,5 +47,4 @@ class User < ApplicationRecord
   def check_like?(game_log)
     like_logs.include?(game_log)
   end
-
 end

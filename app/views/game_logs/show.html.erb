@@ -46,7 +46,9 @@
 
     <% if current_user.present? %>
       <div class="flex justify-end space-x-6 items-center mt-6">
-        <%= render "likes/like_buttons", game_log: @game_log %>
+        <div>
+          <%= render "likes/like_buttons", game_log: @game_log %>
+        </div>
         <% if current_user && current_user.own?(@game_log) %>
           <div class="flex space-x-2">
             <%= link_to "編集", edit_game_log_path(@game_log),

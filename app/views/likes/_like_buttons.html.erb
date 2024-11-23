@@ -1,13 +1,5 @@
-<div>
-  <% if current_user.check_like?(game_log) %>
-    <%= link_to like_path(current_user.likes.find_by(game_log_id: game_log.id)), data: { turbo_method: :delete} do %>
-      <i class="fa-solid fa-heart fa-xl" style="color: #ff00a2;"></i>
-      <span class="text-gray-400"><%= game_log.likes.count %></span>
-    <% end %>
-  <% else %>
-    <%= link_to likes_path(game_log_id: game_log.id), data: { turbo_method: :post } do %>
-      <i class="fa-regular fa-heart fa-xl"></i>
-      <span class="trxt-gray-400"><%= game_log.likes.count %></span>
-    <% end %>
-  <% end %>
-</div>
+<% if current_user.check_like?(game_log) %>
+  <%= render "likes/checkout_like", game_log: game_log %>
+<% else %>
+  <%= render "likes/check_like", game_log: game_log %>
+<% end %>
