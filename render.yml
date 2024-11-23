@@ -1,5 +1,5 @@
 databases:
-  - name: gamefolio_database
+  - name: THE_NAME
     databaseName: DATABASE_NAME
     user: mana
     region: singapore
