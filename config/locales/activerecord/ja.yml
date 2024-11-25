@@ -26,6 +26,8 @@ ja:
         play_time: 'プレイ時間'
         spending_amount: '課金額'
         images: '画像'
+      comment:
+        body: 'コメント'
   enums:
     user:
       gender:
