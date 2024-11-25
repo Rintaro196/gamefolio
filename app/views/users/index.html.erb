@@ -4,30 +4,42 @@
 
 <h1 class="text-center text-yellow-400 text-2xl my-8">【ユーザー一覧】</h1>
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 place-items-center">
-  <% @users.each do |user| %>
-    <div clss="col-span-1">
-      <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-96 lg:w-80 p-2">
-        <div class="place-items-center my-2">
-          <%= user_icon_display(user, "border-solid border-white border-4 size-40 rounded") %>
-        </div>
-        <div class="text-center">
-          <h1 class="text-lime-400 text-3xl">
-            <%= user.name.truncate(10) %>
-            <span class="text-white text-xl">Lv.<%= user.level %></span>
-          </h1>
-          <p class="text-gray-400">ID: <%= user.user_code %></p>
-        </div>
-        <div class="text-center mt-2">
-          <%= link_to "詳細", user_path(id: user.id), class: "btn btn-outline btn-accent btn-sm" %>
-        </div>
-      </div>
-    </div>
+<div class="join text-center mb-4">
+  <%= search_fome_for @q, url: users_path do |f| %>
+    <%= f.search_field :name_or_user_code_cont, class: "join-item input input-bordered input-accent min-w-80", placeholder: "ユーザー名orユーザーID" %>
+    <%= f.submit "検索", class: "join-item btn btn-accent" %>
   <% end %>
 </div>
 
-<div class="flex justify-center my-8">
-  <div class="join">
-    <%= paginate @users %>
+<% if @user.present? %>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 place-items-center">
+    <% @users.each do |user| %>
+      <div clss="col-span-1">
+        <div class="rounded-lg border-solid border-white border-4 bg-gray-950 w-96 lg:w-80 p-2">
+          <div class="place-items-center my-2">
+            <%= user_icon_display(user, "border-solid border-white border-4 size-40 rounded") %>
+          </div>
+          <div class="text-center">
+            <h1 class="text-lime-400 text-3xl">
+              <%= user.name.truncate(10) %>
+              <span class="text-white text-xl">Lv.<%= user.level %></span>
+            </h1>
+            <p class="text-gray-400">ID: <%= user.user_code %></p>
+          </div>
+          <div class="text-center mt-2">
+            <%= link_to "詳細", user_path(id: user.id), class: "btn btn-outline btn-accent btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
+
+  <div class="flex justify-center my-8">
+    <div class="join">
+      <%= paginate @users %>
+    </div>
+  </div>
+
+<% else %>
+  <h1 class="text-center text-white text-2xl my-8">ユーザーがいません</h1>
+<% end %>
