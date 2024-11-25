@@ -78,13 +78,15 @@
   </div>
 <% end %>
 
-<h2 class="text-center text-yellow-400 text-2xl mt-6 mb-2">【コメント一覧】</h2>
+<% if @comments.present? %>
+  <h2 class="text-center text-yellow-400 text-2xl mt-6 mb-2">【コメント一覧】</h2>
 
-<% @comments.each do |comment| %>
-  <%= render "comments/comment", comment: comment %>
-<% end %>
-<div class="flex justify-center my-8">
-  <div class="join">
-    <%= paginate @comments %>
+  <% @comments.each do |comment| %>
+    <%= render "comments/comment", comment: comment %>
+  <% end %>
+  <div class="flex justify-center my-8">
+    <div class="join">
+      <%= paginate @comments %>
+    </div>
   </div>
-</div>
+<% end %>
