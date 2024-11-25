@@ -1,6 +1,6 @@
 <% comments.each do |comment| %>
-  <div class="flex justify-center mb-4">
-    <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
+  <div class="flex justify-center mb-2" id="comment_<%= comment.id %>">
+    <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5 my-2">
       <span class="absolute -top-3 left-2 bg-gray-950 text-yellow-400 text-4xl font-bold px-2 leading-none hover:text-lime-800 hover:no-underline">
         <%= link_to "#{comment.user.name}", user_path(id: comment.user.id) %>
       </span>
@@ -8,12 +8,15 @@
         <p class="text-white text-lg my-6"><%= comment.body %></p>
         <p class="text-gray-300 text-sm my-4">投稿日時：<%= comment.created_at.in_time_zone.to_date %></p>
       </div>
-      <div class="flex justify-end my-2">
-        <%= link_to "削除", comment_path(game_log_id: comment.game_log.id, id: comment.id),
-                            class: "btn btn-outline btn-error btn-sm",
-                            data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
-      </div>
+      <% if current_user.present? %>
+        <% if current_user.own?(comment) %>
+          <div class="flex justify-end my-2">
+            <%= link_to "削除", comment_path(game_log_id: comment.game_log.id, id: comment.id),
+                                class: "btn btn-outline btn-error btn-sm",
+                                data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 <% end %>
-  

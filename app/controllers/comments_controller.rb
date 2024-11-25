@@ -4,7 +4,12 @@ class CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
-        @comment.save
+        if @comment.save
+          flash[:notice] = "コメントしました"
+        else
+          flash[:alert] = "コメントできませんでした"
+        end
+        redirect_to request.referer || root_path
     end
 
     def edit
