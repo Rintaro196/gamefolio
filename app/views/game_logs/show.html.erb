@@ -73,12 +73,12 @@
 </div>
 
 <div class="mt-14">
-  <%= render "comment_form", comment: @comment, game_log: @game_log %>
+  <%= render "comments/form", comment: @comment, game_log: @game_log %>
 </div>
 
 <h2 class="text-center text-yellow-400 text-2xl mt-6 mb-2">【コメント一覧】</h2>
 
-<%= render "comment", comments: @comments %>
+<%= render "comments/comment", comments: @comments %>
 <div class="flex justify-center my-8">
   <div class="join">
     <%= paginate @comments %>
