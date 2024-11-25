@@ -71,3 +71,20 @@
       <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
   <% end %>
 </div>
+
+<% if current_user.present? %>
+  <div class="mt-14">
+    <%= render "comments/form", comment: @comment, game_log: @game_log %>
+  </div>
+<% end %>
+
+<h2 class="text-center text-yellow-400 text-2xl mt-6 mb-2">【コメント一覧】</h2>
+
+<% @comments.each do |comment| %>
+  <%= render "comments/comment", comment: comment %>
+<% end %>
+<div class="flex justify-center my-8">
+  <div class="join">
+    <%= paginate @comments %>
+  </div>
+</div>

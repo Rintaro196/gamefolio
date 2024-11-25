@@ -12,6 +12,8 @@ class GameLogsController < ApplicationController
         @size = @game_log.images.size
         game_title = @game_log.user_game.game_title_method
         @game_title = game_title.gsub(" ", "")
+        @comment = Comment.new
+        @comments = @game_log.comments.order(created_at: :desc).page params[:page]
     end
 
     def new

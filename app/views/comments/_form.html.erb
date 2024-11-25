@@ -1,0 +1,26 @@
+<div class="text-center my-4">
+  <button class="bg-lime-950 text-xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150 inline-flex items-center space-x-1"
+          onclick="my_modal.showModal()">
+    <i class="fa-regular fa-comment fa-lg"></i>
+    <span class="mb-1">コメント投稿</span>
+  </button>
+</div>
+
+<dialog id="my_modal" class="modal">
+  <div class="modal-box border-2 border-white rounded-lg p-2 px-4 bg-gray-950">
+    <div class="text-center p-4">
+      <%= form_with model: comment, url: game_log_comments_path(game_log) do |f| %>
+        <div class="mt-4 mb-2">
+          <%= f.label :body, class: "text-white text-2xl" %>
+        </div>
+        <%= f.text_area :body, class: "textarea textarea-success w-full h-52", placeholder: "300文字以内" %>
+        <div class="mt-4">
+          <%= f.submit "登録", class: "btn btn-outline btn-accent" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
