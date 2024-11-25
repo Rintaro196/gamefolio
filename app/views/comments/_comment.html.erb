@@ -5,12 +5,13 @@
         <%= link_to "#{comment.user.name}", user_path(id: comment.user.id) %>
       </span>
       <div class="text-center">
-        <p class="text-white text-lg my-6"><%= comment.body %></p>
-        <p class="text-gray-300 text-sm my-4">投稿日時：<%= comment.created_at.in_time_zone.to_date %></p>
+        <p class="text-white text-lg my-8"><%= comment.body %></p>
+        <p class="text-gray-300 text-sm">投稿日時：<%= comment.created_at.in_time_zone.to_date %></p>
       </div>
       <% if current_user.present? %>
         <% if current_user.own?(comment) %>
-          <div class="flex justify-end my-2">
+          <div class="flex justify-end my-2 space-x-2">
+            <%= render "comments/edit_form", comment: comment %>
             <%= link_to "削除", comment_path(game_log_id: comment.game_log.id, id: comment.id),
                                 class: "btn btn-outline btn-error btn-sm",
                                 data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>

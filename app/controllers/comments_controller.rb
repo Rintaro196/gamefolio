@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
     def update
         @comment = current_user.comments.find(params[:id])
-        @comment.update
+        @comment.update(edit_params)
         redirect_to request.referer || root_path
     end
 
@@ -27,5 +27,9 @@ class CommentsController < ApplicationController
 
     def comment_params
       params.require(:comment).permit(:body).merge(game_log_id: params[:game_log_id])
+    end
+
+    def edit_params
+      params.require(:comment).permit(:body)
     end
 end

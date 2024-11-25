@@ -1,0 +1,20 @@
+<button class="btn btn-outline btn-accent btn-sm" onclick="edit_comment_<%= comment.id %>.showModal()">編集</button>
+
+<dialog id="edit_comment_<%= comment.id %>" class="modal">
+  <div class="modal-box border-2 border-white rounded-lg p-2 px-4 bg-gray-950">
+    <div class="text-center p-4">
+      <%= form_with model: comment, url: comment_path(comment) do |f| %>
+        <div class="mt-4 mb-2">
+          <%= f.label :body, class: "text-white text-2xl" %>
+        </div>
+        <%= f.text_area :body, class: "textarea textarea-success w-full h-52", placeholder: "300文字以内" %>
+        <div class="mt-4">
+          <%= f.submit "登録", class: "btn btn-outline btn-accent" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
