@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
     private
 
-    def comment_patams
+    def comment_params
       params.require(:comment).permit(:body).merge(game_log_id: params[:game_log_id])
     end
 end

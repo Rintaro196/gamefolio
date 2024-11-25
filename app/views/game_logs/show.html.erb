@@ -71,3 +71,9 @@
       <i class="fa-brands fa-x-twitter inline-block hover:text-white"></i>シェア
   <% end %>
 </div>
+
+<div class="mt-14">
+  <%= render "comment_form", comment: @comment, game_log: @game_log %>
+</div>
+<h2 class="text-center text-yellow-400 text-2xl my-6">【コメント一覧】</h2>
+<%= render "comment", comments: @comments %>
