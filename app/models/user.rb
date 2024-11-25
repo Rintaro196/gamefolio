@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :user_games, dependent: :destroy
   has_many :games, through: :user_games
   has_many :game_logs, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_logs, through: :likes, source: :game_log
   has_one_attached :user_icon, dependent: :destroy
