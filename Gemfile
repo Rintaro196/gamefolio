@@ -78,3 +78,5 @@ gem "whenever", require: false
 gem "chart-js-rails"
 
 gem "kaminari"
+
+gem "ransack"
