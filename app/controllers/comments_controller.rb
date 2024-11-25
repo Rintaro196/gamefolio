@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
     def update
         @comment = current_user.comments.find(params[:id])
         @comment.update(edit_params)
-        redirect_to request.referer || root_path
     end
 
     def destroy
