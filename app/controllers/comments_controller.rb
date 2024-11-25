@@ -2,20 +2,17 @@ class CommentsController < ApplicationController
     before_action :authenticate_user!, only: %i[create edit destroy]
 
     def create
-        comment = Comment.new(comment_params)
-        comment.user_id = current_user.id
-        if comment.save
-          flash[:notice] = "コメントしました"
-        else
-          flash[:alert] = "コメントできませんでした"
-        end
-        redirect_to request.referer || root_path
+        @comment = Comment.new(comment_params)
+        @comment.user_id = current_user.id
+        @comment.save
     end
 
     def edit
     end
 
     def destroy
+        @comment = current_user.comments.find(params[:id])
+        @comment.destroy!
     end
 
     private
