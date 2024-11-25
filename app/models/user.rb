@@ -48,4 +48,12 @@ class User < ApplicationRecord
   def check_like?(game_log)
     like_logs.include?(game_log)
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    [ "name", "user_code" ]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    [ "user_icon_attachment", "user_icon_blob" ]
+  end
 end

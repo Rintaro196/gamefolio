@@ -4,6 +4,15 @@
 
 <h1 class="text-center text-yellow-400 text-2xl my-8">【ユーザー一覧】</h1>
 
+<div class="text-center mb-4">
+  <%= search_form_for @q, url: users_path do |f| %>
+    <div class="join">
+      <%= f.search_field :name_or_user_code_cont, class: "join-item input input-bordered input-accent w-96", placeholder: "ユーザー名 or ユーザーID" %>
+      <%= f.submit "検索", class: "join-item btn btn-accent" %>
+    </div>
+  <% end %>
+</div>
+
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 place-items-center">
   <% @users.each do |user| %>
     <div clss="col-span-1">
