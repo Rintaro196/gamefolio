@@ -50,10 +50,10 @@ class User < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["name", "user_code"]
+    [ "name", "user_code" ]
   end
 
   def self.ransackable_associations(auth_object = nil)
-    ["user_icon_attachment", "user_icon_blob"]
+    [ "user_icon_attachment", "user_icon_blob" ]
   end
 end
