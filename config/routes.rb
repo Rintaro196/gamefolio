@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       delete :remove_image
     end
 
-    resources :comments, only: %i[create edit destroy], shallow: true
+    resources :comments, only: %i[create update destroy], shallow: true
 
     collection do
       get :likes

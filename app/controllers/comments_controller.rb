@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :authenticate_user!, only: %i[create edit destroy]
+    before_action :authenticate_user!, only: %i[create update destroy]
 
     def create
         @comment = Comment.new(comment_params)
@@ -12,7 +12,10 @@ class CommentsController < ApplicationController
         redirect_to request.referer || root_path
     end
 
-    def edit
+    def update
+        @comment = current_user.comments.find(params[:id])
+        @comment.update
+        redirect_to request.referer || root_path
     end
 
     def destroy
