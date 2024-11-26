@@ -14,6 +14,14 @@ class GameLog < ApplicationRecord
 
   after_create :level_up_by_game_log
 
+  def self.ransackable_attributes(auth_object = nil)
+    [ "title", "body" ]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    [ "user", "user_game", "game", "images_attachment", "images_blob" ]
+  end
+
   private
 
   def level_up_by_game_log
