@@ -3,13 +3,14 @@
 </head>
 <h1 class="text-yellow-400 text-4xl text-center my-6">【みんなのゲームログ】</h1>
 
-<div class="flex justify-center space-x-2">
-  <%= search_form_for @q, url: game_logs_path |f| %>
+
+<%= search_form_for @q, url: game_logs_path do |f| %>
+  <div class="flex justify-center space-x-2">
     <%= f.search_field :user_game_game_game_title_cont, class: "input input-bordered input-accent w-full max-w-xs", placeholder: "ゲームタイトル" %>
     <%= f.search_field :title_or_body_cont, class: "input input-bordered input-accent w-full max-w-xs", placeholder: "キーワード" %>
     <%= f.submit "検索", class: "btn btn-accent" %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <% if @game_logs.present? %>
   <%= render @game_logs %>

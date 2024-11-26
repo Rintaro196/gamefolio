@@ -7,4 +7,8 @@ class Game < ApplicationRecord
     has_many :users, through: :user_games
 
     validates :game_title, presence: true
+
+    def self.ransackable_attributes(auth_object = nil)
+      [ "game_title" ]
+    end
 end
