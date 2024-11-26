@@ -7,7 +7,7 @@
 <%= search_form_for @q, url: game_logs_path do |f| %>
   <div class="flex justify-center space-x-2">
     <%= f.search_field :user_game_game_game_title_cont, class: "input input-bordered input-accent w-full max-w-xs", placeholder: "ゲームタイトル" %>
-    <%= f.search_field :title_or_body_cont, class: "input input-bordered input-accent w-full max-w-xs", placeholder: "キーワード" %>
+    <%= f.search_field :title_or_body_cont, class: "input input-bordered input-accent w-full max-w-xs", placeholder: "タイトル or 本文" %>
     <%= f.submit "検索", class: "btn btn-accent" %>
   </div>
 <% end %>
