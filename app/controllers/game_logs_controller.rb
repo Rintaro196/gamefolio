@@ -4,14 +4,18 @@ class GameLogsController < ApplicationController
     before_action :set_user_game, only: %i[new create edit update]
 
     def index
-        @game_logs = GameLog.includes(:user, user_game: :game).with_attached_images.order(created_at: :desc).page(params[:page]).per(5)
+        @q = GameLog.ransack(params[:q])
+        @game_logs = @q.result.with_attached_images.order(created_at: :desc).page(params[:page]).per(5)
     end
 
     def show
         @game_log = GameLog.includes(:user, user_game: :game).with_attached_images.find(params[:id])
+
         @size = @game_log.images.size
+
         game_title = @game_log.user_game.game_title_method
         @game_title = game_title.gsub(" ", "")
+
         @comment = Comment.new
         @comments = @game_log.comments.order(created_at: :desc).page params[:page]
     end
