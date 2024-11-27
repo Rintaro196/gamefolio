@@ -60,10 +60,10 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     data = auth.info
-    user = User,where(email: data["email"]).first
+    user = User.where(email: data["email"]).first
 
     unless user
-      user = User.crate(
+      user = User.create(
         name: data["name"],
         email: data["email"],
         user_code: generate_user_code,
