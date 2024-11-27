@@ -67,7 +67,7 @@ class User < ApplicationRecord
         name: data["name"],
         email: data["email"],
         user_code: generate_user_code,
-        password: Devise.friendly_token[0,20]
+        password: Devise.friendly_token[0, 20]
       )
     end
 
