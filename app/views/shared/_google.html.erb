@@ -1,0 +1,10 @@
+<% unless user_signed_in? %>
+  <div class="flex justify-center my-6">
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+      <button class="bg-yellow-950 text-yellow-400 text-2xl border border-yellow-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150">
+        <i class="fa-brands fa-google fa-lg"></i>
+        <span>Googleでスタート</span>
+      </button>
+    <% end %>
+  </div>
+<% end %>
