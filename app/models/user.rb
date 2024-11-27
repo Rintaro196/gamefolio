@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_one_attached :user_icon, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[google_oauth2]
 
   validates :name, :user_code, presence: true
   validates :name, :user_code, length: { maximum: 64 }
@@ -55,5 +56,30 @@ class User < ApplicationRecord
 
   def self.ransackable_associations(auth_object = nil)
     [ "user_icon_attachment", "user_icon_blob" ]
+  end
+
+  def self.from_omniauth(auth)
+    data = auth.info
+    user = User,where(email: data["email"]).first
+
+    unless user
+      user = User.crate(
+        name: data["name"],
+        email: data["email"],
+        user_code: generate_user_code,
+        password: Devise.friendly_token[0,20]
+      )
+    end
+
+    user
+  end
+
+  private
+
+  def self.generate_user_code
+    loop do
+      random_code = SecureRandom.alphanumeric(10)
+      break random_code unless User.exists?(user_code: random_code)
+    end
   end
 end
