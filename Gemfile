@@ -80,3 +80,8 @@ gem "chart-js-rails"
 gem "kaminari"
 
 gem "ransack"
+
+# google認証用
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
