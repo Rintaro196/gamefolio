@@ -3,5 +3,5 @@ class HomePagesController < ApplicationController
 
     def policy; end
 
-    def roule; end
+    def rule; end
 end
