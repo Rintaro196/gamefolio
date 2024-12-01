@@ -1,3 +1,6 @@
+require 'capybara/rspec'
+require 'selenium-webdriver'
+
 Capybara.register_driver :remote_chrome do |app|
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('no-sandbox')

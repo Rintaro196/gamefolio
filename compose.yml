@@ -33,6 +33,10 @@ services:
     depends_on:
       db:
         condition: service_healthy
+  chrome:
+    image: seleniarm/standalone-chromium:latest
+    ports:
+      - 4444:4444
 volumes:
   bundle_data:
   postgresql_data:
