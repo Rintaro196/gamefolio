@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :likes, only: %i[create destroy]
 
+  respurces :notifications, only: %I[index destroy]
+
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"
 
