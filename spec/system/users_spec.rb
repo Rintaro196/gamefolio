@@ -58,4 +58,26 @@ RSpec.describe "Users", type: :system do
     end
   end
 
+  describe "ログイン後" do
+
+    before do
+      sign_in user
+    end
+
+    context "ユーザー編集" do
+      it "正常にユーザー更新ができる" do
+        visit edit_user_registration_path
+        select "その他", from: "性別"
+        fill_in "年齢", with: 20
+        click_button "更新"
+        expect(page).not_to have_selector("form[aria-busy='true']")
+        expect(current_path).to eq user_path(user)
+
+        user.reload
+        expect(user.age).to eq 20
+        expect(page).to have_content("その他")
+      end
+    end
+  end
+
 end
