@@ -1,15 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
-  
   let(:user) { create(:user) }
 
   describe "ログイン前" do
     context "ユーザー新規登録" do
-
       it "フォームの入力値が正常の場合登録できる" do
         visit "users/sign_up"
-        expect{
+        expect {
           fill_in "ユーザーネーム", with: "テスト太郎"
           fill_in "ユーザーID", with: "test_taro"
           fill_in "メールアドレス", with: "test@test.com"
@@ -59,7 +57,6 @@ RSpec.describe "Users", type: :system do
   end
 
   describe "ログイン後" do
-
     before do
       sign_in user
     end
@@ -88,5 +85,4 @@ RSpec.describe "Users", type: :system do
       end
     end
   end
-
 end

@@ -51,7 +51,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
 
-  #デバッグ用
+  # デバッグ用
   gem "pry-rails"
   gem "pry-byebug"
   gem "pry-doc"
