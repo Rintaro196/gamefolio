@@ -77,6 +77,15 @@ RSpec.describe "Users", type: :system do
         expect(user.age).to eq 20
         expect(page).to have_content("その他")
       end
+
+      it "無効な値だと更新できない" do
+        visit edit_user_registration_path
+        fill_in "年齢", with: 9999999999999999999999999999
+        click_button "更新"
+        expect(page).not_to have_selector("form[aria-busy='true']")
+        expect(current_path).to eq edit_user_registration_path
+        expect(user.age).to eq 50
+      end
     end
   end
 
