@@ -5,5 +5,4 @@ class Like < ApplicationRecord
   has_one :notification, as: :notifiable, dependent: :destroy
 
   validates :user_id, uniqueness: { scope: :game_log_id }
-
 end

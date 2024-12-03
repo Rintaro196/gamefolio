@@ -17,7 +17,7 @@ class LikesController < ApplicationController
 
   def create_like_notification(user, game_log)
     return if user.id == game_log.user_id
-    like = Like.find_by(user: user, game_log: game_log) 
+    like = Like.find_by(user: user, game_log: game_log)
     Notification.create(
       sender_id: user.id,
       receiver_id: game_log.user_id,

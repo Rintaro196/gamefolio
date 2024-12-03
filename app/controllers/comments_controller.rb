@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     end
 
     private
-  
+
     def create_comment_notification(comment, user)
       return if user.id == comment.game_log.user_id
       Notification.create(
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
         notifiable: comment
       )
     end
-    
+
     def comment_params
       params.require(:comment).permit(:body).merge(game_log_id: params[:game_log_id])
     end
