@@ -1,0 +1,7 @@
+<% noifications.each do |notification| %>
+  <% if comment?(notification) %>
+    <%= render "notifications/comment_notification", notification: notification %>
+  <% elsif like?(notification) %>
+    <%= render "notifications/like_notification", notification: notification %>
+  <% end %>
+<% end %>

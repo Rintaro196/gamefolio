@@ -18,5 +18,4 @@ class Like < ApplicationRecord
       notifiable: self
     )
   end
-
 end

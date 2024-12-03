@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :like_logs, through: :likes, source: :game_log
 
   has_many :send_notifications, class_name: "Notification", foreign_key: "sender_id", dependent: :destroy
-  has_many :recieved_notifications, class_name: "Notification", foreign_key: "reciever_id", dependent: :destroy
+  has_many :received_notifications, class_name: "Notification", foreign_key: "receiver_id", dependent: :destroy
   has_many :notifications, as: :notifiable, dependent: :destroy
 
   has_one_attached :user_icon, dependent: :destroy
