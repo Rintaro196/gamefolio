@@ -9,4 +9,5 @@ class ApplicationController < ActionController::Base
       @notification_count = @unchecked_notifications.count
     end
   end
+  
 end

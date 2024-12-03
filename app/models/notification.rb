@@ -4,10 +4,10 @@ class Notification < ApplicationRecord
   belongs_to :notifiable, polymorphic: true
 
   def comment?(notification)
-    notification.notifiable_type == comment
+    notification.notifiable_type == "Comment"
   end
 
   def like?(notification)
-    notification.notifiable_type == like
+    notification.notifiable_type == "Like"
   end
 end

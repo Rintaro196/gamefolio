@@ -6,19 +6,23 @@
   <h1 class="text-center text-yellow-400 text-4xl">【通知一覧】</h1>
 </div>
 
-<div class="flex justify-center">
-  <% if @notifications.present? %>
+<% if @notifications.present? %>
 
-    <div class="my-4">
-      <%= link_to "全件削除", notification_path(@notifications), data: { turbo_method: :delete },
-          class: "bg-red-950 text-2xl text-red-400 border border-red-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
-    </div>
+  <div class="text-center">
+    <%= link_to "全件削除", notification_path(@notifications), data: { turbo_method: :delete },
+        class: "bg-red-950 text-2xl text-red-400 border border-red-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+  </div>
+  
+  <div class="my-12">
+    <% @notifications.each do |notification| %>
+      <%= render "notifications", notification: notification %>
+    <% end %>
+  </div>
 
-    <%= render "notifications", notifications: @notifications %>
+<% else %>
 
-  <% else %>
-    <div class="my-6">
-      <h2 class="text-white text-2xl">通知はありません</h2> 
-    </div>
-  <% end %>
-</div>
+  <div class="my-6">
+    <h2 class="text-center text-white text-2xl">通知はありません</h2> 
+  </div>
+
+<% end %>
