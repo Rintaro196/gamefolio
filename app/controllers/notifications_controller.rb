@@ -8,8 +8,8 @@ class NotificationsController < ApplicationController
       end 
     end
 
-    def destroy
-      current_user.notifications.destroy_all
-      redirect_to notifications_path, notice: "すべての通知を削除しました"
+    def delete_all
+      current_user.received_notifications.destroy_all
+      redirect_to notifications_path, status: :see_other, notice: "すべての通知を削除しました"
     end
 end

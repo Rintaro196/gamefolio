@@ -9,7 +9,7 @@
 <% if @notifications.present? %>
 
   <div class="text-center">
-    <%= link_to "全件削除", notifications_path, method: :delete,
+    <%= link_to "全件削除", delete_all_notifications_path, method: :delete, data: { turbo_method: :delete },
         class: "bg-red-950 text-2xl text-red-400 border border-red-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
   </div>
   

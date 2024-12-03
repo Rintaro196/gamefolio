@@ -9,14 +9,14 @@
 
     <div class="flex items-center space-x-4">
       
-      <% if @unchecked_notifications.present? %>
+      <% if current_user.received_notifications.where(checked: false).exists? %>
         <%= link_to notifications_path do %>
-          <button class="btn btn-circle btn-outline btn-warning">
-            <div class="indicator">
-              <span class="badge badge-warning badge-sm indicator-item"><%= @notification_count %></span>
+          <div class="indicator">
+            <button class="btn btn-circle btn-outline btn-warning">
+              <span class="badge badge-warning indicator-item indicator-top indicator-end"></span>
               <i class="fa-regular fa-bell fa-lg"></i>
-            </div>
-          </button>
+            </button>
+          </div>
         <% end %>
       <% else %>
         <%= link_to notifications_path do %>

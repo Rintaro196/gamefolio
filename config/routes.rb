@@ -24,7 +24,11 @@ Rails.application.routes.draw do
 
   resources :likes, only: %i[create destroy]
 
-  resources :notifications, only: %i[index destroy]
+  resources :notifications, only: %i[index] do
+    collection do
+      delete :delete_all
+    end
+  end
 
   get "games/search", to: "games#search", as: "search_games"
   post "games/save_game", to: "games#save_game", as: "save_game"
