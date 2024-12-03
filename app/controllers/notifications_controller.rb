@@ -8,8 +8,8 @@ class NotificationsController < ApplicationController
       end 
     end
 
-    def destory
-      @notifications = current_user.notifications.destroy_all
-      redeirect_to notifications_path
+    def destroy
+      current_user.notifications.destroy_all
+      redirect_to notifications_path, notice: "すべての通知を削除しました"
     end
 end

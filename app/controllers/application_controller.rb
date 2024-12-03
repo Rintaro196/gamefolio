@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   def set_notifications
     if current_user.present?
-      @unchecked_notifications = current_user.notifications.where(checked: false)
+      @unchecked_notifications = Notification.where(receiver_id: current_user.id, checked: false)
       @notification_count = @unchecked_notifications.count
     end
   end
-  
+
 end
