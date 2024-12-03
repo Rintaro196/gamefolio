@@ -1,0 +1,14 @@
+<p class="text-white text-center">
+  <i class="fa-solid fa-heart" style="color: #ff00a2;"></i>
+  <span class="text-lime-400 hover:text-lime-800 hover:no-underline">
+    <%= link_to "#{notification.sender.name}", user_path(notification.sender) %>
+  </span>
+  さんがあなたの
+  <span class="text-lime-400 hover:text-lime-800 hover:no-underline">
+    <%= link_to "ゲームログ", game_log_path(notification.notifiable.game_log) %>
+  </span>
+  にいいねしました！
+</p>
+<div class="flex justify-end">
+  <p class="text-gray-400 text-sm"><%= time_ago_in_words(notification.created_at) %>前</p>
+</div>

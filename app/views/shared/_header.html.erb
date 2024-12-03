@@ -5,23 +5,45 @@
 </div>
 <% if user_signed_in? %>
   <div class="relative flex justify-end space-x-4 md:space-x-9 items-center mr-4 md:mr-40">
-    <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-neutral border-2 border-white rounded-lg h-auto p-0">
-        <%= user_icon_display(current_user, "size-16 rouded") %>
+
+
+    <div class="flex items-center space-x-4">
+      
+      <% if current_user.received_notifications.where(checked: false).exists? %>
+        <%= link_to notifications_path do %>
+          <div class="indicator">
+            <button class="btn btn-circle btn-outline btn-warning">
+              <span class="badge badge-warning indicator-item indicator-top indicator-end"></span>
+              <i class="fa-regular fa-bell fa-lg"></i>
+            </button>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to notifications_path do %>
+          <button class="btn btn-circle btn-outline btn-warning"><i class="fa-regular fa-bell fa-lg"></i></button>
+        <% end %>
+      <% end %>
+
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-neutral border-2 border-white rounded-lg h-auto p-0">
+          <%= user_icon_display(current_user, "size-16 rounded") %>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-indigo-900 rounded-box z-[1] w-52 p-2 shadow">
+          <li><%= link_to "ゲームログ作成", new_game_log_path, class: "text-white" %></li>
+          <li><%= link_to "プロフィール", user_path(id: current_user.id), class: "text-white" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white" %></li>
+        </ul>
       </div>
-      <ul tabindex="0" class="dropdown-content menu bg-indigo-900 rounded-box z-[1] w-52 p-2 shadow">
-        <li><%= link_to "ゲームログ作成", new_game_log_path, class: "text-white" %></li>
-        <li><%= link_to "プロフィール", user_path(id: current_user.id), class: "text-white" %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white" %></li>
-      </ul>
     </div>
+
     <div>
       <p class="text-white text-2xl font-medium">Lv.<%= current_user.level %></p>
     </div>
-      <div class="flex flex-row space-x-2">
-        <%= image_tag "gem.png", class: "size-10" %>
-        <p class="text-white text-2xl font-medium p-1"><%= current_user.gem %></p>
-      </div>
+
+    <div class="flex flex-row space-x-2">
+      <%= image_tag "gem.png", class: "size-10" %>
+      <p class="text-white text-2xl font-medium p-1"><%= current_user.gem %></p>
+    </div>
   </div>
 <% else %>
   <div class="mr-4 md:mr-40">

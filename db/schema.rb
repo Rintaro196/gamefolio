@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_25_004250) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_02_061831) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -111,6 +111,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_25_004250) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
+    t.string "notifiable_type", null: false
+    t.bigint "notifiable_id", null: false
+    t.boolean "checked", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable"
+    t.index ["receiver_id"], name: "index_notifications_on_receiver_id"
+    t.index ["sender_id"], name: "index_notifications_on_sender_id"
+  end
+
   create_table "platforms", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -175,6 +188,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_25_004250) do
   add_foreign_key "game_platforms", "platforms"
   add_foreign_key "likes", "game_logs"
   add_foreign_key "likes", "users"
+  add_foreign_key "notifications", "users", column: "receiver_id"
+  add_foreign_key "notifications", "users", column: "sender_id"
   add_foreign_key "user_games", "games"
   add_foreign_key "user_games", "users"
 end
