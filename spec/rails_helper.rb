@@ -75,7 +75,13 @@ RSpec.configure do |config|
     driven_by :remote_chrome
     Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
 
-    Capybara.server_port = ENV["GITHUB_ACTIONS"] ? 4445 : 4444
+    if ENV["GITHUB_ACTIONS"] ? 
+      server = TCPServer.new(Capybara.server_host, 0)
+      Capybara.server_port = server.addr[1]
+      server.close
+    else
+      Capybara.server_port = 4444
+    end
 
     Capybara.app_host = "http://#{Capybara.server_host}:#{Capybara.server_port}"
     Capybara.ignore_hidden_elements = false
