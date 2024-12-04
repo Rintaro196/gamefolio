@@ -52,7 +52,7 @@ jobs:
       chrome:
         image: seleniarm/standalone-chromium:latest
         ports:
-          - 4445:4444
+          - 4445:4445
 
       # redis:
       #   image: redis
