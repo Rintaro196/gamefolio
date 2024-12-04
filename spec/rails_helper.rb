@@ -78,7 +78,6 @@ RSpec.configure do |config|
     if ENV["GITHUB_ACTIONS"] == "true"
       server = TCPServer.new(Capybara.server_host, 0)
       Capybara.server_port = server.addr[1]
-      server.close
     else
       Capybara.server_port = 4444
     end
