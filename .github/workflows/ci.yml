@@ -110,9 +110,6 @@ jobs:
 
       - name: Yarn install
         run: yarn install --check-files
-      
-      - name: Check Selenium Server Health
-        run: curl -v http://chrome:4444/wd/hub/status
 
       - name: Run tests
         env:
@@ -120,6 +117,7 @@ jobs:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
           # REDIS_URL: redis://localhost:6379/0
+        run: curl -v http://chrome:4444/wd/hub/status
         run: bin/rails db:create && bundle exec rspec
 
       - name: Keep screenshots from failed system tests
