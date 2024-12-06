@@ -110,6 +110,9 @@ jobs:
 
       - name: Yarn install
         run: yarn install --check-files
+      
+      - name: Check Selenium Server Health
+        run: curl -v http://chrome:4444/wd/hub/status
 
       - name: Run tests
         env:
