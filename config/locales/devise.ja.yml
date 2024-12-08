@@ -15,7 +15,7 @@ ja:
       unauthenticated: 'ログインまたは登録が必要です'
       unconfirmed: '本登録を行ってください'
       locked: 'アカウントはロックされています'
-      invalid: 'メールアドレスまたはパスワードが違います'
+      invalid: 'メールアドレスまたは呪文が違います'
       invalid_token: '認証キーが不正です'
       timeout: '一定時間が経過したため、再度ログインが必要です'
       inactive: 'アカウントがまだ有効になっていません'
@@ -24,10 +24,10 @@ ja:
       signed_in: 'ログインしました'
       signed_out: 'ログアウトしました'
     passwords:
-      send_instructions: 'パスワードのリセット方法を数分以内にメールでご連絡します'
-      updated: 'パスワードを変更しました。ログイン済みです'
-      updated_not_active: 'パスワードを変更しました'
-      send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、パスワード復旧用のリンク先をメールでご連絡します"
+      send_instructions: '呪文のリセット方法を数分以内にメールでご連絡します'
+      updated: '呪文を変更しました。ログイン済みです'
+      updated_not_active: '呪文を変更しました'
+      send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、呪文復旧用のリンク先をメールでご連絡します"
     confirmations:
       send_instructions: 'アカウントの確認方法を数分以内にメールでご連絡します'
       send_paranoid_instructions: 'ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します'
@@ -52,6 +52,6 @@ ja:
       confirmation_instructions:
         subject: 'アカウントの登録方法'
       reset_password_instructions:
-        subject: 'パスワードの再設定'
+        subject: '呪文の再設定'
       unlock_instructions:
         subject: 'アカウントのロック解除'
