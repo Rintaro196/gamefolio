@@ -4,9 +4,7 @@ RSpec.describe "UserSessions", type: :system do
   let!(:user) { create(:user) }
 
   describe "ログイン前" do
-
     context "ログイン" do
-      
       before do
         visit "users/sign_in"
       end
@@ -42,7 +40,7 @@ RSpec.describe "UserSessions", type: :system do
       sign_in user
     end
 
-    context "ログアウト" do 
+    context "ログアウト" do
       it "正常にログアウトできる" do
         visit root_path
         click_button "ログアウト"
