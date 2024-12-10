@@ -39,6 +39,35 @@ RSpec.describe "GameLogs", type: :system do
     end
 
     context "ゲームログ作成" do
+      it "正常にゲームログを作成できる" do
+        visit new_game_log_path
+        select "RunteQest", from: "ゲームを選択"
+        fill_in "タイトル", with: "test_1"
+        fill_in "本文", with: "test_test_test"
+        click_button "記録"
+        expect(page).not_to have_selector("form[aria-busy='true']")
+        expect(page).to have_content("test_1")
+      end
+
+      it "タイトルが空白だと作成できない" do
+        visit new_game_log_path
+        select "RunteQest", from: "ゲームを選択"
+        fill_in "タイトル", with: ""
+        fill_in "本文", with: "test_test_test"
+        click_button "記録"
+        expect(current_path).to eq new_game_log_path
+        expect(page).to have_content("ゲームログを記録出来ませんでした")
+      end
+    end
+
+    context "ゲームログ編集" do
+      it "ゲームログの編集ができる" do
+      end
+    end
+
+    context "ゲームログ削除" do
+      it "ゲームログの削除ができる" do
+      end
     end
   end
 end
