@@ -50,11 +50,6 @@ jobs:
           - 5432:5432
         options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
 
-      chrome:
-        image: seleniarm/standalone-chromium:latest
-        ports:
-          - 4444:4444
-
     steps:
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y google-chrome-stable curl libjemalloc2 libvips postgresql-client
@@ -88,7 +83,6 @@ jobs:
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
-          SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
         run: bin/rails db:create && bundle exec rspec
 
       - name: Keep screenshots from failed system tests
