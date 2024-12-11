@@ -7,7 +7,6 @@ RSpec.describe "GameLogs", type: :system do
   let!(:game_log) { create(:game_log, user: user, user_game: user_game) }
 
   describe "ログイン前" do
-
     it "ゲーム一覧が見れる" do
       visit game_logs_path
       expect(page).to have_content(game_log.title)
@@ -47,6 +46,7 @@ RSpec.describe "GameLogs", type: :system do
         click_button "記録"
         expect(page).not_to have_selector("form[aria-busy='true']")
         expect(page).to have_content("test_1")
+        expect(page).to have_content("ゲームログを記録しました")
       end
 
       it "タイトルが空白だと作成できない" do
@@ -62,11 +62,28 @@ RSpec.describe "GameLogs", type: :system do
 
     context "ゲームログ編集" do
       it "ゲームログの編集ができる" do
+        visit edit_game_log_path(game_log)
+        fill_in "タイトル", with: "test_EX1"
+        click_button "記録"
+        expect(page).not_to have_selector("form[aria-busy='true']")
+        expect(page).to have_content("test_EX1")
+        expect(page).to have_content("ゲームログを編集しました")
+      end
+
+      it "タイトルが空欄だと編集できない" do
+        visit edit_game_log_path(game_log)
+        fill_in "タイトル", with: ""
+        click_button "記録"
+        expect(page).to have_content("ゲームログを編集出来ませんでした")
       end
     end
 
     context "ゲームログ削除" do
       it "ゲームログの削除ができる" do
+        visit game_log_path(game_log)
+        click_on "削除"
+        page.accept_confirm "削除しますか？"
+        expect(page).to have_content("ゲームログを削除しました")
       end
     end
   end
