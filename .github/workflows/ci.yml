@@ -93,12 +93,23 @@ jobs:
           CAPYBARA_PORT=3001
           echo "CAPYBARA_PORT=$CAPYBARA_PORT" >> $GITHUB_ENV
           echo "DEBUG: Capybara port set to $CAPYBARA_PORT"
+      
+      - name: Database create and migrate
+        run: |
+          cp config/database.yml.ci config/database.yml
+          bundle exec rails db:create RAILS_ENV=test
+          bundle exec rails db:migrate RAILS_ENV=test
+
+      - name: assets precompile
+        run: bundle exec rake assets:precompile RAILS_ENV=test
 
       - name: Run tests
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
-        run: bin/rails db:create && bundle exec rspec
+          SELENIUM_DRIVER_URL: http://localhost:4445/wd/hub
+          CAPYBARA_PORT: ${{ env.CAPYBARA_PORT }
+        run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
