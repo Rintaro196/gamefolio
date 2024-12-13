@@ -45,7 +45,7 @@ jobs:
         image: postgres
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: password
         ports:
           - 5432:5432
         options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -99,14 +99,11 @@ jobs:
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
 
-      - name: assets precompile
-        run: bundle exec rake assets:precompile RAILS_ENV=test
-
       - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432
-          SELENIUM_DRIVER_URL: http://localhost:4445/wd/hub
+          DATABASE_URL: postgres://postgres:password@127.0.0.1:5432/myapp_test
+          SELENIUM_DRIVER_URL: http://127.0.0.1:4445/wd/hub
           CAPYBARA_PORT: ENV ["CAPYBARA_PORT"]
         run: bundle exec rspec
 
