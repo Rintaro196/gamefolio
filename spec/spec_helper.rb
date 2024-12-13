@@ -91,7 +91,4 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  config.before(:each, type: :system) do
-    driven_by :selenium_chrome_headless if ENV["GITHUB_ACTIONS"] == "true"
-  end
 end
