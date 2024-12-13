@@ -52,7 +52,7 @@ jobs:
       chrome:
         image: seleniarm/standalone-chromium:latest
         ports:
-          - 4444:4444
+          - 4445:4444
 
     steps:
       - name: Install packages
@@ -82,6 +82,17 @@ jobs:
 
       - name: Yarn install
         run: yarn install --check-files
+
+      - name: Check for port conflicts and set CAPYBARA_PORT
+        run: |
+          PORT=4444
+          if lsof -i:$PORT; then
+            echo "Port $PORT is in use, killing the process"
+            lsof -ti:$PORT | xargs kill -9
+          fi
+          CAPYBARA_PORT=3001
+          echo "CAPYBARA_PORT=$CAPYBARA_PORT" >> $GITHUB_ENV
+          echo "DEBUG: Capybara port set to $CAPYBARA_PORT"
 
       - name: Run tests
         env:
