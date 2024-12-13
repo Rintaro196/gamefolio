@@ -108,7 +108,7 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           SELENIUM_DRIVER_URL: http://localhost:4445/wd/hub
-          CAPYBARA_PORT: ${{ env.CAPYBARA_PORT }
+          CAPYBARA_PORT: ENV ["CAPYBARA_PORT"]
         run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
