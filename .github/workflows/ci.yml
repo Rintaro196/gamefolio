@@ -100,6 +100,9 @@ jobs:
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
 
+      - name: assets precompile
+        run: bundle exec rake assets:precompile RAILS_ENV=test
+
       - name: Run tests
         env:
           RAILS_ENV: test
