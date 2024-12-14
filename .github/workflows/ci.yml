@@ -41,20 +41,18 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      db:
         image: postgres
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: password
         ports:
           - 5432:5432
         options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
-
-      # redis:
-      #   image: redis
-      #   ports:
-      #     - 6379:6379
-      #   options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
+      chrome:
+        image: seleniarm/standalone-chromium:latest
+        ports:
+          - 4445:4444
 
     steps:
       - name: Install packages
@@ -83,14 +81,35 @@ jobs:
           bundle install --jobs 4 --retry 3 --path vendor/bundle
 
       - name: Yarn install
-        run: yarn install --check-files
+        run: npm install -g yarn && yarn install --check-files
+
+      - name: Check for port conflicts and set CAPYBARA_PORT
+        run: |
+          PORT=4444
+          if lsof -i:$PORT; then
+            echo "Port $PORT is in use, killing the process"
+            lsof -ti:$PORT | xargs kill -9
+          fi
+          CAPYBARA_PORT=3001
+          echo "CAPYBARA_PORT=$CAPYBARA_PORT" >> $GITHUB_ENV
+          echo "DEBUG: Capybara port set to $CAPYBARA_PORT"
+      
+      - name: Database create and migrate
+        run: |
+          cp config/database.yml.ci config/database.yml
+          bundle exec rails db:create RAILS_ENV=test
+          bundle exec rails db:migrate RAILS_ENV=test
+
+      - name: assets precompile
+        run: bundle exec rake assets:precompile RAILS_ENV=test
 
       - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432
-          # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
+          DATABASE_URL: postgres://postgres:password@127.0.0.1:5432/myapp_test
+          SELENIUM_DRIVER_URL: http://127.0.0.1:4445/wd/hub
+          CAPYBARA_PORT: ENV ["CAPYBARA_PORT"]
+        run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
