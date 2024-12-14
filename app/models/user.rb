@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :received_notifications, class_name: "Notification", foreign_key: "receiver_id", dependent: :destroy
   has_many :notifications, as: :notifiable, dependent: :destroy
 
+  has_many :user_titles, dependent: :destroy
+
   has_one_attached :user_icon, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
