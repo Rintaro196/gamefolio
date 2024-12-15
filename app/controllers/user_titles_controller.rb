@@ -7,5 +7,8 @@ class UserTitlesController < ApplicationController
 
   def get_title
     user = current_user
+    gemini = GeminiService.new(user)
+    @user_title = gemini.get_user_title
+    puts @user_title
   end
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show]
   resources :user_games
+  resources :user_titles, only: %i[index]
 
   resources :game_logs do
     member do
@@ -35,4 +36,6 @@ Rails.application.routes.draw do
 
   get "policy", to: "home_pages#policy", as: "policy"
   get "rule", to: "home_pages#rule", as: "rule"
+
+  get "user_titles/get_title", to: "user_titles#get_title", as: "get_title"
 end

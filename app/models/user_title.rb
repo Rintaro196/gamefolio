@@ -1,5 +1,5 @@
 class UserTitle < ApplicationRecord
-  belongs_to: user
+  belongs_to :user
 
   validates :title, presence: true
 end
