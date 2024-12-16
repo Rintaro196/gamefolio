@@ -38,4 +38,5 @@ Rails.application.routes.draw do
   get "rule", to: "home_pages#rule", as: "rule"
 
   get "user_titles/get_title", to: "user_titles#get_title", as: "get_title"
+  post "user_titles/save_title", to: "user_titles#save_title", as: "save_title"
 end

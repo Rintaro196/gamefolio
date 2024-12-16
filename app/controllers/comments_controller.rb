@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         else
           flash[:alert] = "コメントできませんでした"
         end
-        redirect_to request.referer || root_path
+        redirect_to request.referer || root_path, status: :see_other
     end
 
     def update
