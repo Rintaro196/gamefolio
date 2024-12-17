@@ -8,9 +8,12 @@ class UserTitlesController < ApplicationController
   def get_title
     gem_cost = 100
 
-    if current_user.gems >= gem_cost
-      gemini = GeminiService.new(current_user)
-      @user_title = gemini.get_user_title
+    if current_user.gem >= gem_cost
+      current_user.transaction do
+        current_user.decrement!(:gem, gem_cost)
+        gemini = GeminiService.new(current_user)
+        @user_title = gemini.get_user_title
+      end
     else
       flash[:alert] = "ジェムが不足しています"
       redirect_to user_titles_path, status: :see_other

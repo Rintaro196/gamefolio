@@ -2,6 +2,35 @@
   <title><% content_for(:title, "称号一覧") %></title>
 </head>
 
-<h1 class="text-yellow-400 text-center text-4xl">【獲得称号一覧】</h1>
+<h1 class="text-yellow-400 text-center text-4xl my-8">【獲得称号一覧】</h1>
 
-<%= link_to "称号を獲得", get_title_path %>
+<div class="flex justify-center">
+  <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" onclick="my_modal_1.showModal()">称号を獲得</button>
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box border-2 border-white rounded-lg bg-gray-950">
+      <div class="text-center">
+        <h3 class="text-2xl text-yellow-400">称号の獲得</h3>
+        <p class="text-white p-4 my-4">ジェムを<span class="text-lime-400">100</span>個消費して称号を獲得します</p>
+        <%= link_to "獲得する", get_title_path, class: "bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" %>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn btn-outline btn-error">やめる</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+</div>
+
+<% if @user_titles.present? %>
+  <% @user_titles.each do |user_title| %>
+  <div class="flex justify-center my-8">
+    <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
+      <h2 class="text-2xl text-lime-400 text-center my-4"><%= user_title.title %></h2>
+      <p class="text-gray-300 text-center mb-6">取得日：<%= user_title.created_at.in_time_zone.to_date %></p>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p class="text-white text-center text-2xl my-12">獲得した称号はありません</p>
+<% end %>
