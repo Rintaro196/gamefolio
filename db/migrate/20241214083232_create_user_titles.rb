@@ -6,6 +6,5 @@ class CreateUserTitles < ActiveRecord::Migration[7.2]
       
       t.timestamps
     end
-    add_index :user_titles, [:user_id, :title], unique: true
   end
 end

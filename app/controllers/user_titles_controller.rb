@@ -6,6 +6,7 @@ class UserTitlesController < ApplicationController
   end
 
   def get_title
+    @user = current_user
     gem_cost = 100
 
     if current_user.gem >= gem_cost
@@ -21,11 +22,18 @@ class UserTitlesController < ApplicationController
   end
 
   def save_title
-    current_user.transaction do
-      got_title = params[:user_title]
-      user_title = UserTitle.find_or_create_by(user_id: current_user, title: got_title)
+    title_data = params[:user_title]
+    user_title = UserTitle.find_or_create_by(user_id: current_user, title: title_data)
+
+    if user_title.persisted?
+      redirect_to user_titles_path, status: :see_other, alert: "既に獲得している称号です"
+    else
       user_title.save!
+      redirect_to user_titles_path, status: :see_other, notice: "称号を保存しました"
     end
-    redirect_to user_titles_path, status: :see_other, notice: "称号を追加しました"
+
+    rescue ActiveRecord::RecordInvalid => e
+      flash[:alert] = "称号を登録できませんでした: #{e.message}"
+      redirect_to user_titles_path, status: :see_other
   end
 end
