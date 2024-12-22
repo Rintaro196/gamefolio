@@ -154,6 +154,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_16_084024) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "title"], name: "index_user_titles_on_user_id_and_title", unique: true
     t.index ["user_id"], name: "index_user_titles_on_user_id"
   end
 

@@ -25,3 +25,17 @@ genres = [
 genres.each do |genre|
     Genre.find_or_create_by(name: genre)
 end
+
+#称号作成
+user = User.find_by(email: "sample@sample.com")
+
+user_titles = []
+
+10.times do |n|
+  title = "称号#{n+1}"
+  user_titles << title
+end
+
+user_titles.each do |user_title|
+  UserTitle.find_or_create_by(user_id: user.id, title: user_title)
+end

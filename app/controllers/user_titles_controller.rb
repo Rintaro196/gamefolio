@@ -23,17 +23,17 @@ class UserTitlesController < ApplicationController
 
   def save_title
     title_data = params[:user_title]
-    user_title = UserTitle.find_or_create_by(user_id: current_user, title: title_data)
+    user_title = UserTitle.find_or_initialize_by(user_id: current_user.id, title: title_data)
 
-    if user_title.persisted?
-      redirect_to user_titles_path, status: :see_other, alert: "既に獲得している称号です"
+    if user_title.new_record?
+      if user_title.save
+        redirect_to user_titles_path, status: :see_other, notice: "称号を保存しました"
+      else
+        flash[:alert] = "称号を登録できませんでした"
+        redirect_to user_titles_path, status: :see_other
+      end
     else
-      user_title.save!
-      redirect_to user_titles_path, status: :see_other, notice: "称号を保存しました"
+      redirect_to user_titles_path, status: :see_other, alert: "既に獲得している称号です"
     end
-
-    rescue ActiveRecord::RecordInvalid => e
-      flash[:alert] = "称号を登録できませんでした: #{e.message}"
-      redirect_to user_titles_path, status: :see_other
   end
 end
