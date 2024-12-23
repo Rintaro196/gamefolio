@@ -2,7 +2,7 @@ class UserTitlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user_titles = current_user.user_titles.order(created_at: :desc)
+    @user_titles = current_user.user_titles.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def get_title
