@@ -26,7 +26,7 @@ genres.each do |genre|
     Genre.find_or_create_by(name: genre)
 end
 
-#称号作成
+# 称号作成
 user = User.find_by(email: "sample@sample.com")
 
 user_titles = []

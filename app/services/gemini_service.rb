@@ -23,8 +23,8 @@ class GeminiService
         }
 
         body = {
-          contents: [{
-              parts: [{
+          contents: [ {
+              parts: [ {
                 text: "ユーザーが登録したゲーム情報を基に、そのユーザーにふさわしい称号を考えてください。\n
                   #以下はユーザーが登録しているゲーム情報です。\n
                   ゲームタイトル：#{@user_games.join(",")}\n
@@ -37,8 +37,8 @@ class GeminiService
                   4.称号はなるべく重複しないでください。\n
                   5.称号のみ出力してください。
                 "
-              }]
-          }]
+              } ]
+          } ]
         }
 
         response = HTTParty.post(url, headers: headers, body: body.to_json)
