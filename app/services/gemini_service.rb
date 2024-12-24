@@ -10,9 +10,9 @@ class GeminiService
                             .limit(5)
                             .pluck(:name)
 
-        @user_game_counts = user.games.count("games.game_title")
-
         @gemini_api_key = ENV["GEMINI_API_KEY"]
+
+        @number = rand(1..10)
     end
 
     def get_user_title
@@ -29,14 +29,11 @@ class GeminiService
                   #以下はユーザーが登録しているゲーム情報です。\n
                   ゲームタイトル：#{@user_games.join(",")}\n
                   もっとも遊んでいるゲームジャンル上位5つ:#{@user_top_5_genres.join(",")}\n
-                  登録したゲームの数:#{@user_game_counts}\n
                   #条件\n
-                  1.ゲーム情報をもとに創造的な称号を考えてください。\n
-                  2.特徴を反映させる情報は一部でも構いません。\n
-                  3.公序良俗に反する言葉は使わないでください。\n
-                  4.称号のみ出力してください。\n
-                  5.出力する称号の数は１つにしてください。\n
-                  6.連続して同じ情報が与えられた場合、以前と違う称号を考えてください。
+                  1.ユーザーのゲーム情報をもとに創造的な称号を10個考えてください。\n
+                  2.公序良俗に反する言葉は使わないでください。\n
+                  3.#{@number}番目に考えた称号のみを出力してください。\n
+                  4.連続して同じ情報が与えられた場合、以前と違う称号を考えてください。
                 "
               } ]
           } ]

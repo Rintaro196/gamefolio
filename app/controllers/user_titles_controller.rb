@@ -7,7 +7,7 @@ class UserTitlesController < ApplicationController
 
   def get_title
     @user = current_user
-    gem_cost = 100
+    gem_cost = 30
 
     if current_user.gem >= gem_cost
       current_user.transaction do
