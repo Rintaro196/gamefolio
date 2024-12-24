@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_02_061831) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_16_084024) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -149,6 +149,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_02_061831) do
     t.index ["user_id"], name: "index_user_games_on_user_id"
   end
 
+  create_table "user_titles", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "title"], name: "index_user_titles_on_user_id_and_title", unique: true
+    t.index ["user_id"], name: "index_user_titles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "name", null: false
@@ -161,18 +170,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_02_061831) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "level", default: 1, null: false
+    t.integer "gem", default: 0, null: false
+    t.datetime "last_level_up_by_log"
     t.text "profile"
     t.string "twitter"
     t.string "twitch"
     t.string "discord"
-    t.integer "level", default: 1, null: false
-    t.integer "gem", default: 0, null: false
-    t.datetime "last_level_up_by_log"
-    t.index ["discord"], name: "index_users_on_discord", unique: true, where: "(discord IS NOT NULL)"
+    t.string "profile_title"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["twitch"], name: "index_users_on_twitch", unique: true, where: "(twitch IS NOT NULL)"
-    t.index ["twitter"], name: "index_users_on_twitter", unique: true, where: "(twitter IS NOT NULL)"
     t.index ["user_code"], name: "index_users_on_user_code", unique: true
   end
 
@@ -192,4 +199,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_02_061831) do
   add_foreign_key "notifications", "users", column: "sender_id"
   add_foreign_key "user_games", "games"
   add_foreign_key "user_games", "users"
+  add_foreign_key "user_titles", "users"
 end
