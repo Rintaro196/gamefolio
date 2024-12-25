@@ -65,6 +65,11 @@
           </div>
         </div>
 
+        <div class="my-6">
+          <%= f.label :profile_title, "称号設定", class: "text-white" %>
+          <%= f.collection_select :profile_title, @user_titles, :id, :title, { include_blank: true }, class: "select select-accent w-80" %>
+        </div>
+
         <div class="divider divider-primary text-white m-12">SNSアカウント</div>
 
         <div class="field mt-6">

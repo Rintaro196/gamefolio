@@ -15,9 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @user = current_user
+    @user_titles = @user.user_titles
+  end
 
   # PUT /resource
   def update
@@ -59,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [ :name, :user_code, :age, :gender, :profile, :user_icon, :twitter, :twitch, :discord ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [ :name, :user_code, :age, :gender, :profile, :user_icon, :twitter, :twitch, :discord, :profile_title])
   end
 
   def update_resource(resouece, params)
