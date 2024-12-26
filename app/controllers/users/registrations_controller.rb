@@ -17,7 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     @user = current_user
-    @user_titles = @user.user_titles.presence || []
+    @user_titles = @user.user_titles
   end
 
   # PUT /resource
