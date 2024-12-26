@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-span-1 md:col-span-2">
-          <h2 class="text-yellow-400 text-2xl"><%= @profile_title.title if @profile_title.present? %></h2>
+          <h2 class="text-yellow-400 text-2xl">【<%= @profile_title.title.strip if @profile_title.present? %>】</h2>
           <h1 class="text-lime-400 text-4xl">
             <%= @user.name %>
             <span class="text-white text-2xl ml-4">Lv.<%= @user.level %></span>
