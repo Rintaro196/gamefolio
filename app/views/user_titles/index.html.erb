@@ -2,7 +2,8 @@
   <title><% content_for(:title, "称号一覧") %></title>
 </head>
 
-<h1 class="text-yellow-400 text-center text-4xl my-8">【獲得称号一覧】</h1>
+<h1 class="text-yellow-400 text-center text-4xl mt-8">【獲得称号一覧】</h1>
+<p class="text-gray-300 text-center mt-2 mb-8">※称号の設定はプロフィール編集画面から行えます</p>
 
 <div class="flex justify-center">
   <button class="bg-lime-950 text-2xl text-lime-400 border border-lime-400 border-b-4 font-medium relative px-4 py-2 rounded-md hover:brightness-150" onclick="my_modal_1.showModal()">称号を獲得</button>
@@ -26,7 +27,7 @@
   <% @user_titles.each do |user_title| %>
   <div class="flex justify-center my-8">
     <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
-      <h2 class="text-2xl text-yellow-400 text-center my-4">【<%= user_title.title %>】</h2>
+      <h2 class="text-2xl text-yellow-400 text-center my-4">【<%= user_title.title.strip %>】</h2>
       <p class="text-gray-300 text-center mb-6">取得日：<%= user_title.created_at.in_time_zone.to_date %></p>
     </div>
   </div>

@@ -65,6 +65,14 @@
           </div>
         </div>
 
+        <div class="my-6">
+          <div class="mb-2">
+            <%= f.label :profile_title, "称号設定", class: "text-white" %>
+            <p class="text-gray-400 text-sm">※称号の獲得は称号一覧からできます</p>
+          </div>
+          <%= f.collection_select :profile_title, @user_titles || [], :id, :title, { include_blank: true }, class: "select select-accent w-80" %>
+        </div>
+
         <div class="divider divider-primary text-white m-12">SNSアカウント</div>
 
         <div class="field mt-6">
