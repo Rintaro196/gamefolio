@@ -67,7 +67,7 @@ RSpec.describe "Users", type: :system do
         select "その他", from: "性別"
         fill_in "年齢", with: 20
         click_button "更新"
-        expect(page).not_to have_selector("form[aria-busy='true']")
+        expect(page).to have_content("プロフィールを変更しました")
         expect(current_path).to eq user_path(user)
 
         user.reload
