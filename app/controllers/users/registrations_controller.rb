@@ -29,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
 
       if resource.update(account_update_params)
-        redirect_to after_update_path_for(resource)
+        redirect_to after_update_path_for(resource), notice: "プロフィールを変更しました"
       else
         render :edit
         raise ActiveRecord::Rollback

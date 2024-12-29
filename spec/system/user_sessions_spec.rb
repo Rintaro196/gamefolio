@@ -13,7 +13,7 @@ RSpec.describe "UserSessions", type: :system do
         fill_in "メールアドレス", with: user.email
         fill_in "復活の呪文", with: user.password
         click_button "スタート"
-        expect(page).not_to have_selector("form[aria-busy='true']")
+        expect(page).to have_content("ログインしました")
         expect(current_path).to eq user_path(user)
       end
 
