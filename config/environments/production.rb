@@ -107,5 +107,5 @@ Rails.application.configure do
 
   config.hosts << "www.gamefolio-m.com"
   config.hosts << "gamefolio-m.com"
-  config.hosts << "gamefolio-teba.onrender.com"
+  config.hosts << "gamefolio-f2in.onrender.com"
 end
