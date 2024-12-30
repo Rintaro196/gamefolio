@@ -1,0 +1,47 @@
+<div class="flex justify-center my-8">
+  <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
+    <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-2xl px-2 leading-none">
+      GAMEFOLIOとは？
+    </span>
+    <div class="text-left">
+      <p class="text-white indent-4 p-4 pt-8">
+        GAMEFOLIO(ゲームフォリオ)とはゲームとポートフォリオを掛け合わせたアプリです。これまで遊んだゲームや日々のゲームに関する活動を記録していくことで、ユーザー自身のプロフィールが充実していきます。また、登録した記録をほかのユーザーに共有できるソーシャル機能もあります。
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center my-8">
+    <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
+      <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-2xl px-2 leading-none">
+        STEP1:ゲームを登録しよう
+      </span>
+      <div class="text-left">
+        <p class="text-white indent-4 p-4 pt-8">
+          ゲーム登録から自分が遊んだゲームを登録していくことができます。登録されたゲームはゲームライブラリに保存されたり、プロフィールのグラフにも反映されます。
+        </p>
+      </div>
+    </div>
+</div>
+
+<div class="flex justify-center my-8">
+    <div class="relative border-2 border-white rounded-lg p-2 px-4 inline-block bg-gray-950 w-full md:w-4/5 lg:w-2/5">
+      <span class="absolute -top-3 left-2 bg-gray-950 text-lime-400 text-2xl px-2 leading-none">
+        STEP2:ゲームの記録をしよう
+      </span>
+      <div class="text-left">
+        <p class="text-white indent-4 p-4 pt-8">
+          ゲーム登録が済んだら、今度はゲームの記録（ゲームログ）ができるようになります。画像を付けたり、遊んだ時間や課金した金額なども記録できます。
+        </p>
+      </div>
+    </div>
+</div>
+
+<% unless user_signed_in? %>
+  <div class="text-center my-5">
+    <%= link_to new_user_registration_path do %>
+      <button class="bg-yellow-950 text-2xl text-yellow-400 border border-yellow-400 border-b-4 font-medium relative w-40 px-4 py-2 rounded-md hover:brightness-150">
+        はじめる</button>
+    <% end %>
+  </div>
+<% end %>
