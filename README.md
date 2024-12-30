@@ -83,4 +83,6 @@
 [Figma](https://www.figma.com/design/c6yptGLsBiAPzElvSWo7IT/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA?node-id=0-1&t=5zp40octv6rGFT0H-1)
 ## ■ E-R図
 [URL](https://drive.google.com/file/d/1EV_svL9I-K4_CLjvoEyoXjjnHQoK_HPy/view?usp=sharing)<br>
-[![Image from Gyazo](https://i.gyazo.com/89e7fe4e0944b263b3dc9dfe1c089af4.png)](https://gyazo.com/89e7fe4e0944b263b3dc9dfe1c089af4)
+[![Image from Gyazo](https://i.gyazo.com/acccbd2ca578cb29af71643e86634f09.png)](https://gyazo.com/acccbd2ca578cb29af71643e86634f09)
+## サービスのURL
+[GAMEFOLIO](https://gamefolio-m.com/)
