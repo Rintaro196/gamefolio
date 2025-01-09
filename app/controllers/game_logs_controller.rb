@@ -3,6 +3,8 @@ class GameLogsController < ApplicationController
     before_action :set_game_log, only: %i[edit update destroy remove_image]
     before_action :set_user_game, only: %i[new create edit update]
 
+    rescue_from ArgumentError, with: :back_by_error
+
     def index
         @q = GameLog.ransack(params[:q])
         @game_logs = @q.result.with_attached_images.order(created_at: :desc).page(params[:page]).per(5)
@@ -77,5 +79,10 @@ class GameLogsController < ApplicationController
 
     def game_log_params
         params.require(:game_log).permit(:title, :body, :play_time, :spending_amount, :user_game_id, images: [])
+    end
+
+    def back_by_error
+        flash[:alert] = "予期せぬエラーが発生しました"
+        redirect_to game_logs_path
     end
 end
