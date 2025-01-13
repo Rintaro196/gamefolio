@@ -1,4 +1,8 @@
-# GAMEFOLIO（ゲームフォリオ）
+# 🎮GAMEFOLIO（ゲームフォリオ）
+サービスURL: https://gamefolio-m.com/
+
+<img src="app/assets/images/ogp_image.png" width="500">
+
 ## ■ サービス概要
 ゲームフォリオはゲームとポートフォリオを掛け合わせたアプリです。これまで遊んだゲームや日々のゲームに関する活動を記録していくことで、ユーザー自身のプロフィールが充実していきます。また、登録した記録をほかのユーザーに共有できるソーシャル機能もあります。
 ## ■ 作りたいと思った理由
@@ -84,5 +88,3 @@
 ## ■ E-R図
 [URL](https://drive.google.com/file/d/1EV_svL9I-K4_CLjvoEyoXjjnHQoK_HPy/view?usp=sharing)<br>
 [![Image from Gyazo](https://i.gyazo.com/acccbd2ca578cb29af71643e86634f09.png)](https://gyazo.com/acccbd2ca578cb29af71643e86634f09)
-## サービスのURL
-[GAMEFOLIO](https://gamefolio-m.com/)
