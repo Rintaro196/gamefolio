@@ -17,7 +17,12 @@
 | :---: |
 | [![Image from Gyazo](https://i.gyazo.com/bd20d08b79c2686e2497eabc4c48ba1b.png)](https://gyazo.com/bd20d08b79c2686e2497eabc4c48ba1b) |
 |<p align="left">『ユーザーネーム』『ユーザーID』『メールアドレス』『パスワード』『確認用パスワード』を入力してユーザー登録を行えます。アプリのゲームのような世界感に合わせて、「パスワード」を「復活の呪文」に、「新規登録」を「はじめから」というように表記を変えています。<br>またGoogleアカウントを用いてログインする機能もあります。</P>|
+<br>
 
+| ゲーム検索/登録 |
+| :--: |
+| [![Image from Gyazo](https://i.gyazo.com/14ed92fa52b83470a1534c613d4b05bb.gif)](https://gyazo.com/14ed92fa52b83470a1534c613d4b05bb) |
+|<p align="left">ゲームのタイトルを検索して保存することで、ユーザーは遊んだことのあるゲームをゲームライブラリに登録することができます。他のユーザーのゲームライブラリも閲覧することができます。</P>|
 ## ■ 画面遷移図
 [Figma](https://www.figma.com/design/c6yptGLsBiAPzElvSWo7IT/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA?node-id=0-1&t=5zp40octv6rGFT0H-1)
 ## ■ E-R図
