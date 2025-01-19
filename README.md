@@ -34,6 +34,19 @@
 | :--: |
 |[![Image from Gyazo](https://i.gyazo.com/e8502c6e1e546815f944dac3cba4aa84.gif)](https://gyazo.com/e8502c6e1e546815f944dac3cba4aa84)|
 |<p align="left">ゲームライブラリに登録されたゲームをもとに称号を獲得できます。称号獲得にはアプリ内で入手できるジェムを使用します。称号はAIが考えています。</p>|
+
+## ■ 使用技術
+| カテゴリ | 技術内容 |
+| --- | --- |
+| サーバサイド | Ruby on Rails 7.2.2 / Ruby 3.2.3 |
+| フロントエンド | Ruby on Rails / JavaScript |
+| CSSフレームワーク | Tailwindcss + daisyUI |
+| Web API | IGDB API / Gemini API |
+| データベースサーバー | Render.com(PostgreSQL) |
+| ファイルサーバー | AWS S3 |
+| アプリケーションサーバー | Render.com |
+| バージョン管理ツール | GitHub・Git Flow |
+
 ## ■ 画面遷移図
 [Figma](https://www.figma.com/design/c6yptGLsBiAPzElvSWo7IT/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA?node-id=0-1&t=5zp40octv6rGFT0H-1)
 ## ■ E-R図
