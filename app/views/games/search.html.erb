@@ -21,7 +21,7 @@
       <%= form.label :title, "ゲームタイトル", class: "text-white text-2xl" %>
     </div>
     <div class="join">
-      <%= form.text_field :title, class: "join-item input input-bordered input-accent w-80 min-w-xs" %>
+      <%= form.text_field :title, value: @game_title, class: "join-item input input-bordered input-accent w-80 min-w-xs" %>
       <%= form.submit "検索",
         class: "join-item btn btn-accent" %>
     </div>
