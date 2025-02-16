@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :user_titles, dependent: :destroy
 
   has_one_attached :user_icon, dependent: :destroy
+  has_one_attached :user_ogp_image, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
