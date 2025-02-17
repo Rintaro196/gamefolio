@@ -3,16 +3,14 @@ require "mini_magick"
 class OgpGenerator
     def self.generate(user)
 
-        return unless user.user_icon.attached?
-
         base_image = MiniMagick::Image.open(Rails.root.join("app/assets/images/profile_ogp.png"))
-        
-        icon_url = url_for(user.user_icon)
-        icon = MiniMagick::Image.open(icon_url)
+
+        icon_image = Rails.application.routes.url_helpers.url_for(user.user_icon)
+
+        icon = MiniMagick::Image.open(icon_image)
 
         #画像を丸く切り抜く用のマスク画像を作成
-        mask = MiniMagick::Image.open(icon_url)
-        mask.format "png"
+        mask = MiniMagick::Image.open(icon_image)
         mask.combine_options do |img|
             img.alpha "transparent"
             img.background "none"
@@ -21,8 +19,8 @@ class OgpGenerator
         end
 
         #マスクを適用
-        icon.comppsite(mask) do |img|
-            img.compose "CopyAlpha"
+        icon.composite(mask) do |img|
+            img.compose "CopyOpacity"
         end
 
         #背景と合成
@@ -40,6 +38,6 @@ class OgpGenerator
             content_type: "image/png"
         )
 
-        File.delete(temp_path) if File.exist?(temp_path)
+        File.delete(tmp_path) if File.exist?(tmp_path)
     end
 end

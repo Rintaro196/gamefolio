@@ -10,14 +10,14 @@ class UsersController < ApplicationController
     @user_game_logs = @user.game_logs.includes(user_game: :game).with_attached_images.order(created_at: :desc).page(params[:page]).per(5)
     @top_5_genres = @user.top_5_genres
 
-    set_meta_tags(@user)
+    set_meta_tags(@user) if @user.user_icon.attached?
   end
 
   private
 
   def set_meta_tags(user)
 
-    image_url = 
+    OgpGenerator.generate(user)
 
     set_meta_tags og: {
                         site_name: "GAMEFOLIO",
@@ -25,13 +25,12 @@ class UsersController < ApplicationController
                         description: "さっそく覗いてみよう！！",
                         type: "website",
                         url: request.original_url,
-                        image: image_url,
+                        image: user.user_ogp_image,
                         local: "ja-JP"
                       },
                   twitter: {
                         card: "summary_large_image",
-                        image: image_url
+                        image: user.user_ogp_image
                       }
-
   end
 end
