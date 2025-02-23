@@ -1,16 +1,20 @@
 require "mini_magick"
+require "open-uri"
 
 class OgpGenerator
     def self.generate(user)
 
         base_image = MiniMagick::Image.open(Rails.root.join("app/assets/images/profile_ogp.png"))
 
-        icon_image = Rails.application.routes.url_helpers.url_for(user.user_icon)
+        icon_url = Rails.application.routes.url_helpers.rails_representation_url(user.user_icon.variant(resize: "200x200!", strip: true).processed, only_path: true)
 
-        icon = MiniMagick::Image.open(icon_image)
+        icon_image = URI.open(icon_url)
+        icon = MiniMagick::Image.read(icon_image.read)
+        icon.format "png"
+        icon.resize "200x200"
 
         #画像を丸く切り抜く用のマスク画像を作成
-        mask = MiniMagick::Image.open(icon_image)
+        mask = MiniMagick::Image.open(icon.path)
         mask.combine_options do |img|
             img.alpha "transparent"
             img.background "none"
