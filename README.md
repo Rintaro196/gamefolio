@@ -1,5 +1,5 @@
 # 🎮GAMEFOLIO（ゲームフォリオ）
-サービスURL: https://gamefolio-m.com/ ※現在はサービス終了しています。
+※現在はサービス終了しています。
 
 <img src="app/assets/images/ogp_image.png" width="500">
 
